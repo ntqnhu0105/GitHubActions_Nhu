@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title>Thêm Danh mục</title>
+</head>
+<body>
+<section layout:fragment="content">
+    <style>
+        .add-product-container {
+            max-width: 800px;
+            margin: 30px auto;
+            font-family: 'Arial', sans-serif;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .add-product-header {
+            background-color: #feeb50; /* TGDD Yellow */
+            padding: 20px;
+            text-align: center;
+        }
+        .add-product-header h2 {
+            margin: 0;
+            color: #333;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .add-product-body {
+            background-color: #fff;
+            padding: 30px;
+        }
+        .form-label {
+            font-weight: bold;
+            color: #555;
+            margin-bottom: 8px;
+        }
+        .form-control {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 10px;
+            margin-bottom: 20px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .form-control:focus {
+            border-color: #f7d432;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(254, 235, 80, 0.3);
+        }
+        .btn-tgdd-submit {
+            background-color: #d90e16; /* TGDD Red */
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 4px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .btn-tgdd-submit:hover {
+            background-color: #b30b12;
+        }
+        .btn-cancel {
+            background-color: #f1f1f1;
+            color: #333;
+            border: 1px solid #ccc;
+            padding: 12px 30px;
+            border-radius: 4px;
+            margin-right: 10px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-cancel:hover {
+            background-color: #e2e2e2;
+            text-decoration: none;
+            color: #333;
+        }
+        .preview-image {
+            max-width: 200px;
+            max-height: 200px;
+            margin-top: 10px;
+            border: 1px solid #ddd;
+            padding: 5px;
+            border-radius: 4px;
+        }
+    </style>
+
+    <div class="container">
+        <div class="add-product-container">
+            <div class="add-product-header">
+                <h2><i class="bi bi-plus-circle-fill"></i> Thêm Danh Mục Mới</h2>
+            </div>
+            <div class="add-product-body">
+                <form th:action="@{/categories/add}" th:object="${category}" method="post" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Tên danh mục:</label>
+                        <input type="text" th:field="*{name}" class="form-control" id="name" required placeholder="Nhập tên danh mục (VD: Laptop)">
+                        <div class="text-danger small" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
+                    </div>
+                
+                    <div class="mb-3">
+                        <label for="groupName" class="form-label">Nhóm (Cho menu Phụ kiện):</label>
+                        <select th:field="*{groupName}" class="form-control" id="groupName">
+                            <option value="">-- Không thuộc nhóm --</option>
+                            <option value="Phụ kiện di động">Phụ kiện di động</option>
+                            <option value="Phụ kiện laptop, PC">Phụ kiện laptop, PC</option>
+                            <option value="Thiết bị âm thanh">Thiết bị âm thanh</option>
+                            <option value="Camera">Camera</option>
+                            <option value="Phụ kiện gaming">Phụ kiện gaming</option>
+                            <option value="Thiết bị lưu trữ">Thiết bị lưu trữ</option>
+                            <option value="Phụ kiện khác">Phụ kiện khác</option>
+                            <option value="Thương hiệu hàng đầu">Thương hiệu hàng đầu</option>
+                        </select>
+                        <div class="text-muted small mb-2">Chỉ chọn nếu danh mục này thuộc menu "Phụ kiện".</div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="image" class="form-label">Hình ảnh danh mục:</label>
+                        <input class="form-control" type="file" id="image" name="imageFile" onchange="previewImage(this)" accept="image/*">
+                        <div class="text-muted small mb-2">Chấp nhận ảnh JPG, PNG, GIF.</div>
+                        <img id="preview" src="#" alt="Preview" class="preview-image" style="display: none;"/>
+                    </div>
+                    
+                    <script>
+                        function previewImage(input) {
+                            if (input.files && input.files[0]) {
+                                var reader = new FileReader();
+                                reader.onload = function (e) {
+                                    var preview = document.getElementById('preview');
+                                    preview.src = e.target.result;
+                                    preview.style.display = 'block';
+                                }
+                                reader.readAsDataURL(input.files[0]);
+                            }
+                        }
+                    </script>
+                    
+                    <div class="text-end">
+                        <a th:href="@{/categories}" class="btn-cancel">Hủy bỏ</a>
+                        <button type="submit" class="btn-tgdd-submit">Lưu danh mục</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

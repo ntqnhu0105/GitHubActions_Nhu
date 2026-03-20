@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title th:text="${product.name}">Product Detail</title>
+</head>
+<body>
+<section layout:fragment="content" class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <img th:if="${product.image != null and !product.image.isEmpty()}" th:src="@{'/images/' + ${product.image}}" class="img-fluid" th:alt="${product.name}">
+            <img th:unless="${product.image != null and !product.image.isEmpty()}" src="https://placehold.co/400x400?text=No+Image" class="img-fluid" th:alt="${product.name}">
+        </div>
+        <div class="col-md-6">
+            <h2 th:text="${product.name}">Product Name</h2>
+            <p class="text-danger fs-4" th:text="${#numbers.formatDecimal(product.price, 0, 'POINT', 0, 'COMMA')} + '₫'">Price</p>
+            <p th:text="${product.description}">Description</p>
+            <a href="#" class="btn btn-primary">Mua ngay</a>
+        </div>
+    </div>
+</section>
+</body>
+</html>

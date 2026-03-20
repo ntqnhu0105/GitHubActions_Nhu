@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title>Danh sách Danh mục</title>
+</head>
+<body>
+<section layout:fragment="content">
+    <div class="card-glass">
+        <div class="card-header-gradient">
+            <h4><i class="bi bi-tags"></i> Danh sách Danh mục</h4>
+        </div>
+        <div class="card-body">
+            <div class="mb-3">
+                <a th:href="@{/categories/add}" class="btn btn-gradient">
+                    <i class="bi bi-plus-circle me-1"></i> Thêm Danh mục
+                </a>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover">
+                    <thead class="table-dark">
+                    <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Nhóm</th>
+                    <th>Hình ảnh</th>
+                    <th>Actions</th>
+                </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="category : ${categories}">
+                        <td th:text="${category.id}"></td>
+                        <td th:text="${category.name}"></td>
+                        <td th:text="${category.groupName}"></td>
+                         <td>
+                            <img th:if="${category.image}" th:src="@{'/images/' + ${category.image}}" width="50px" height="50px" style="object-fit: contain;"/>
+                        </td>
+                        <td>
+                            <a th:href="@{/categories/edit/{id}(id=${category.id})}" class="btn btn-sm btn-action btn-edit">Edit</a>
+                            <a th:href="@{/categories/delete/{id}(id=${category.id})}"
+                               class="btn btn-sm btn-action btn-delete"
+                               onclick="return confirm('Are you sure?')">Delete</a>
+                        </td>
+                    </tr>
+                    <tr th:if="${#lists.isEmpty(categories)}">
+                        <td colspan="3" class="text-center text-muted">Chưa có danh mục nào</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

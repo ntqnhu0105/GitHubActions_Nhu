@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="vi-VN" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout}">
+<head>
+    <title>Thanh toán đơn hàng</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .custom-container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .checkout-header { display: flex; align-items: center; gap: 10px; margin-bottom: 5px; }
+        .checkout-title { font-size: 24px; font-weight: bold; color: #202b36; }
+        .checkout-subtitle { color: #637381; font-size: 14px; margin-bottom: 30px; }
+    </style>
+</head>
+<body class="bg-[#f4f6f8]">
+<div layout:fragment="content">
+    <div class="custom-container">
+        <!-- Header -->
+        <div class="checkout-header">
+            <i class="fa-regular fa-file-lines text-2xl text-red-500"></i>
+            <h1 class="checkout-title">Thanh toán đơn hàng</h1>
+        </div>
+        <p class="checkout-subtitle">Vui lòng điền thông tin để hoàn tất đặt hàng</p>
+
+        <form th:action="@{/order/submit}" method="post">
+            <div class="flex flex-col lg:flex-row gap-6">
+                <!-- Left Column (User Info & Points) -->
+                <div class="flex-1 space-y-6">
+                    
+                    <!-- Customer Info Box -->
+                    <div class="bg-white rounded-xl shadow-sm p-6">
+                        <h2 class="font-bold text-[#202b36] mb-5 flex items-center gap-2 uppercase text-sm">
+                            <i class="fa-solid fa-user text-purple-700"></i> THÔNG TIN NGƯỜI NHẬN
+                        </h2>
+                        
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-[#202b36] mb-1">Họ và tên <span class="text-red-500">*</span></label>
+                            <input type="text" name="customerName" required placeholder="Họ và tên" class="w-full bg-[#f4f6f8] border border-transparent rounded-lg p-3 text-sm focus:bg-white focus:border-blue-500 outline-none transition-colors">
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <label class="block text-sm font-medium text-[#202b36] mb-1">Số điện thoại <span class="text-red-500">*</span></label>
+                                <input type="tel" name="phone" required placeholder="Số điện thoại" class="w-full bg-[#f4f6f8] border border-transparent rounded-lg p-3 text-sm focus:bg-white focus:border-blue-500 outline-none transition-colors">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-[#202b36] mb-1">Email</label>
+                                <input type="email" placeholder="Email (không bắt buộc)" class="w-full bg-[#f4f6f8] border border-transparent rounded-lg p-3 text-sm focus:bg-white focus:border-blue-500 outline-none transition-colors">
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-[#202b36] mb-1">Địa chỉ giao hàng <span class="text-red-500">*</span></label>
+                            <input type="text" name="address" required placeholder="Nhập địa chỉ giao hàng" class="w-full bg-[#f4f6f8] border border-transparent rounded-lg p-3 text-sm focus:bg-white focus:border-blue-500 outline-none transition-colors">
+                        </div>
+
+                    </div>
+
+                    <!-- Voucher chọn mã giảm giá -->
+                    <div class="bg-white rounded-xl shadow-sm p-6">
+                        <h2 class="font-bold text-[#202b36] mb-4 flex items-center gap-2 uppercase text-sm">
+                            <i class="fa-solid fa-ticket text-amber-500"></i> Mã giảm giá / Voucher
+                        </h2>
+                        <input type="hidden" name="userVoucherId" id="userVoucherIdInput" value="">
+                        <div th:if="${myVouchers == null or myVouchers.isEmpty()}" class="text-sm text-gray-500">
+                            Bạn chưa có voucher. <a th:href="@{/user/points}" class="text-blue-600 underline">Đổi voucher bằng điểm tích lũy</a>.
+                        </div>
+                        <div th:unless="${myVouchers == null or myVouchers.isEmpty()}" class="space-y-2">
+                            <label class="flex items-center gap-3 p-3 border rounded-lg cursor-pointer hover:bg-gray-50">
+                                <input type="radio" name="selectedVoucher" value="" class="voucher-radio w-4 h-4 text-amber-600" data-id="" data-amount="0" th:checked="${preSelectedVoucherId == null}">
+                                <span class="text-sm text-gray-500">Không dùng voucher</span>
+                            </label>
+                            <label th:each="uv : ${myVouchers}" class="flex items-center justify-between gap-3 p-3 border rounded-lg cursor-pointer hover:bg-amber-50/50 border-amber-200 voucher-option"
+                                   th:classappend="${preSelectedVoucherId != null and preSelectedVoucherId == uv.id} ? 'ring-2 ring-amber-500 bg-amber-50/50' : ''">
+                                <div class="flex items-center gap-3">
+                                    <input type="radio" name="selectedVoucher" class="voucher-radio w-4 h-4 text-amber-600" th:value="${uv.id}" th:data-id="${uv.id}" th:data-amount="${uv.voucher.discountAmount}" th:checked="${preSelectedVoucherId != null and preSelectedVoucherId == uv.id}">
+                                    <div>
+                                        <span class="font-semibold text-amber-800" th:text="${uv.voucher.name}">Voucher</span>
+                                        <span class="text-sm text-gray-600 block" th:text="'Giảm ' + ${#numbers.formatInteger(uv.voucher.discountAmount, 1, 'COMMA')} + 'đ'">Giảm 10.000đ</span>
+                                    </div>
+                                </div>
+                                <span class="text-[#d0021c] font-bold" th:text="'-' + ${#numbers.formatInteger(uv.voucher.discountAmount, 1, 'COMMA')} + 'đ'">-10.000đ</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Payment Methods (Added to match backend requirement) -->
+                    <div class="bg-white rounded-xl shadow-sm p-6">
+                        <h2 class="font-bold text-[#202b36] mb-4 flex items-center gap-2 uppercase text-sm">
+                            <i class="fa-solid fa-credit-card text-blue-600"></i> HÌNH THỨC THANH TOÁN
+                        </h2>
+                        
+                        <div class="space-y-3">
+                            <label class="flex items-center gap-3 p-3 border rounded-lg cursor-pointer hover:bg-gray-50">
+                                <input type="radio" name="paymentMethod" value="cash" checked class="w-4 h-4 text-blue-600">
+                                <span class="text-sm font-medium">Thanh toán tiền mặt khi nhận hàng</span>
+                            </label>
+                            <label class="flex items-center gap-3 p-3 border rounded-lg cursor-pointer hover:bg-gray-50">
+                                <input type="radio" name="paymentMethod" value="transfer" class="w-4 h-4 text-blue-600">
+                                <span class="text-sm font-medium">Chuyển khoản ngân hàng</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column (Cart Summary) -->
+                <div class="w-full lg:w-[400px]">
+                    <div class="bg-white rounded-xl shadow-sm p-6 sticky top-4">
+                        <h2 class="font-bold text-[#202b36] mb-5 flex items-center gap-2 uppercase text-sm">
+                            <i class="fa-solid fa-cart-shopping text-gray-500"></i> ĐƠN HÀNG CỦA BẠN
+                        </h2>
+                        
+                        <!-- Item List -->
+                        <div class="space-y-4 mb-6 border-b pb-4">
+                            <div th:each="item : ${cartItems}" class="flex gap-3">
+                                <div class="w-16 h-16 border rounded p-1 flex-shrink-0">
+                                    <img th:if="${item.product.image != null and !item.product.image.isEmpty()}" th:src="@{'/images/' + ${item.product.image}}" alt="" class="w-full h-full object-contain">
+                                    <img th:unless="${item.product.image != null and !item.product.image.isEmpty()}" src="https://placehold.co/100x100?text=No+Image" alt="" class="w-full h-full object-contain">
+                                </div>
+                                <div class="flex-1">
+                                    <div class="text-sm font-medium text-[#202b36] mb-1 line-clamp-2" th:text="${item.product.name}">MacBook Air</div>
+                                    <div class="text-xs text-[#637381] mb-1">Số lượng: <span th:text="${item.quantity}">1</span></div>
+                                    <div class="text-sm font-bold text-[#d0021c]" th:text="${#numbers.formatDecimal(item.product.price, 0, 'COMMA', 0, 'POINT')} + 'đ'">25.990.000đ</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Calculations: Tạm tính, Phí ship, Giảm voucher, Tổng cộng -->
+                        <div class="space-y-3 mb-6 border-b pb-4 text-sm" th:with="subTotal=${#aggregates.sum(cartItems.![product.price * quantity])}">
+                            <div class="flex justify-between text-[#454f5b]">
+                                <span>Tạm tính</span>
+                                <span id="subTotalDisplay" th:text="${#numbers.formatDecimal(subTotal, 0, 'COMMA', 0, 'POINT')} + 'đ'">0đ</span>
+                            </div>
+                            <div class="flex justify-between text-[#454f5b]">
+                                <span>Phí vận chuyển</span>
+                                <span class="text-[#00ab55] font-medium">Miễn phí</span>
+                            </div>
+                            <div id="voucherDiscountRow" class="flex justify-between text-[#d0021c] font-medium" style="display: none;">
+                                <span>Áp dụng voucher</span>
+                                <span id="voucherDiscountDisplay">-0đ</span>
+                            </div>
+                            <div class="flex justify-between text-[#454f5b]">
+                                <span>Điểm tích lũy dự kiến</span>
+                                <span class="text-[#d48806] font-medium" id="pointsDisplay" th:text="'+' + ${#numbers.formatDecimal(subTotal / 10000, 0, 'COMMA', 0, 'POINT')} + ' điểm'">+0 điểm</span>
+                            </div>
+                        </div>
+
+                        <!-- Total -->
+                        <div class="flex justify-between items-center mb-6" th:with="subTotal=${#aggregates.sum(cartItems.![product.price * quantity])}">
+                            <span class="font-bold text-[#202b36] text-lg">Tổng cộng</span>
+                            <span class="font-bold text-[#d0021c] text-xl" id="checkoutTotal" th:text="${#numbers.formatDecimal(subTotal, 0, 'COMMA', 0, 'POINT')} + 'đ'">0đ</span>
+                        </div>
+                        <input type="hidden" id="checkoutSubTotalRaw" th:value="${#aggregates.sum(cartItems.![product.price * quantity])}" value="0">
+                        
+                        <div class="bg-[#f0fdf4] text-[#00ab55] text-xs py-2 px-3 rounded text-center flex items-center justify-center gap-1 mb-4">
+                            <i class="fa-solid fa-lock"></i> Thông tin được bảo mật an toàn
+                        </div>
+
+                        <button type="submit" class="w-full bg-[#d0021c] hover:bg-[#a10216] text-white font-bold py-3 rounded-lg transition-colors uppercase">
+                            Hoàn Tất Đặt Hàng
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script th:inline="javascript">
+    (function() {
+        var subTotalInput = document.getElementById('checkoutSubTotalRaw');
+        var subTotalRaw = subTotalInput ? (parseFloat(subTotalInput.value) || 0) : 0;
+        var totalEl = document.getElementById('checkoutTotal');
+        var voucherDiscountRow = document.getElementById('voucherDiscountRow');
+        var voucherDiscountDisplay = document.getElementById('voucherDiscountDisplay');
+        var userVoucherIdInput = document.getElementById('userVoucherIdInput');
+
+        function formatVnd(n) { return new Intl.NumberFormat('vi-VN').format(Math.round(n)) + 'đ'; }
+
+        function updateCheckoutVoucher() {
+            var radio = document.querySelector('input[name="selectedVoucher"]:checked');
+            var id = radio ? (radio.getAttribute('data-id') || '') : '';
+            var amount = 0;
+            if (radio) {
+                var amt = radio.getAttribute('data-amount');
+                if (amt !== null && amt !== '') amount = parseFloat(amt) || 0;
+            }
+            if (userVoucherIdInput) userVoucherIdInput.value = id;
+            var finalTotal = Math.max(0, subTotalRaw - amount);
+            if (totalEl) totalEl.textContent = formatVnd(finalTotal);
+            if (voucherDiscountRow) voucherDiscountRow.style.display = amount > 0 ? 'flex' : 'none';
+            if (voucherDiscountDisplay) voucherDiscountDisplay.textContent = amount > 0 ? ('-' + formatVnd(amount)) : '-0đ';
+        }
+        var radios = document.querySelectorAll('input[name="selectedVoucher"]');
+        radios.forEach(function(r) { r.addEventListener('change', updateCheckoutVoucher); });
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', updateCheckoutVoucher);
+        } else {
+            updateCheckoutVoucher();
+        }
+    })();
+    </script>
+</div>
+</body>
+</html>

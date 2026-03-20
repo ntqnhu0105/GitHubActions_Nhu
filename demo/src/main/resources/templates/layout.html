@@ -1,0 +1,2084 @@
+<!DOCTYPE html>
+<html lang="vi-VN" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+ <head>
+  <!-- Google Tag Manager -->
+  <!-- End Google Tag Manager -->
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Thegioididong.com - Điện thoại, Laptop, Phụ kiện, Đồng hồ chính hãng
+  </title>
+  <meta content="Thế giới di động, Thegioididong, điện thoại di động, dtdd, smartphone, tablet, máy tính bảng, laptop, máy tính xách tay, phụ kiện, smartwatch, đồng hồ, tin công nghệ" name="keywords"/>
+  <meta content="Hệ thống bán lẻ điện thoại di động, smartphone, máy tính bảng, tablet, laptop, phụ kiện, smartwatch, đồng hồ chính hãng mới nhất, giá tốt, dịch vụ khách hàng được yêu thích nhất VN" name="description"/>
+  <meta content="Thegioididong.com - Điện thoại, Laptop, Phụ kiện, Đồng hồ chính hãng" property="og:title"/>
+  <meta content="Hệ thống bán lẻ điện thoại di động, smartphone, máy tính bảng, tablet, laptop, phụ kiện, smartwatch, đồng hồ chính hãng mới nhất, giá tốt, dịch vụ khách hàng được yêu thích nhất VN" property="og:description"/>
+  <link href="https://www.thegioididong.com/" rel="canonical"/>
+  <meta content="https://cdnv2.tgdd.vn/webmwg/2024/ContentMwg/images/default-tgdd.png" property="og:image"/>
+  <meta content="INDEX,FOLLOW" name="robots"/>
+  <meta content="width=device-width" name="viewport"/>
+  <meta content="Công ty Cổ phần Thế Giới Di Động" name="copyright"/>
+  <meta content="Công ty Cổ phần Thế Giới Di Động" name="author"/>
+  <meta content="General" http-equiv="audience"/>
+  <meta content="Document" name="resource-type"/>
+  <meta content="Global" name="distribution"/>
+  <meta content="1 days" name="revisit-after"/>
+  <meta content="Công ty Cổ phần Thế Giới Di Động" name="GENERATOR"/>
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+  <link href="/favicon_TGDD.ico" rel="shortcut icon" type="image/x-icon"/>
+  <link href="/favicon_TGDD.ico" rel="apple-touch-icon"/>
+  <link href="/favicon_TGDD.ico" rel="apple-touch-icon-precomposed"/>
+  <meta content="Thegioididong.com" property="og:site_name"/>
+  <meta content="website" property="og:type"/>
+  <meta content="vi_VN" property="og:locale"/>
+  <meta content="214993791879039" property="fb:pages"/>
+  <meta content="on" http-equiv="x-dns-prefetch-control"/>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&amp;display=swap" rel="stylesheet"/>
+  <link th:href="@{/css/extracted_style.css}" rel="stylesheet"/>
+  <script th:src="@{/js/extracted_script.js}">
+  </script>
+   <style>
+    /* Custom Admin Styles for Category Management */
+    .card-glass {
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        overflow: hidden;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .card-header-gradient {
+        background: linear-gradient(90deg, #ffd400 0%, #facc00 100%);
+        color: #333;
+        padding: 15px 20px;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+        font-weight: bold;
+    }
+    .card-header-gradient h4 {
+        margin: 0;
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .btn-gradient {
+        background: linear-gradient(90deg, #ffd400 0%, #ff9900 100%);
+        border: none;
+        color: #000;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+    .btn-gradient:hover {
+        background: linear-gradient(90deg, #ff9900 0%, #ffd400 100%);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(255, 153, 0, 0.4);
+        color: #000;
+    }
+    .table-hover tbody tr:hover {
+        background-color: rgba(255, 212, 0, 0.1);
+        transition: background-color 0.3s ease;
+    }
+    .btn-action {
+        border-radius: 5px;
+        padding: 5px 10px;
+        font-size: 0.9rem;
+        transition: all 0.2s;
+        text-decoration: none;
+        display: inline-block;
+        margin-right: 5px;
+    }
+    .btn-edit {
+        background-color: #eafbf0;
+        color: #28a745;
+        border: 1px solid #28a745;
+    }
+    .btn-edit:hover {
+        background-color: #28a745;
+        color: white;
+    }
+    .btn-delete {
+        background-color: #ffecec;
+        color: #dc3545;
+        border: 1px solid #dc3545;
+    }
+    .btn-delete:hover {
+        background-color: #dc3545;
+        color: white;
+    }
+    .form-control:focus {
+        border-color: #ffd400;
+        box-shadow: 0 0 0 0.25rem rgba(255, 212, 0, 0.25);
+    }
+    .card-body {
+        padding: 2rem;
+    }
+    /* Profile ngang hàng với Giỏ hàng, không có khung trắng dư */
+    .header.v2024 .header__top>div {
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+    .header.v2024 .header__top div.profile {
+        display: inline-flex !important;
+        align-items: center;
+        align-self: center;
+        height: 42px;
+        flex-shrink: 0;
+    }
+    /* Ghi đè extracted_style: div.profile>div không áp cho .profile-logged (chỉ dropdown mới có nền trắng) */
+    .header.v2024 .header__top div.profile>div.profile-logged {
+        position: relative !important;
+        left: auto !important;
+        top: auto !important;
+        width: auto !important;
+        background: none !important;
+        background-color: transparent !important;
+        border-radius: 0;
+        display: inline-flex !important;
+        align-items: center;
+        height: 42px;
+        flex-shrink: 0;
+    }
+    /* Ẩn mũi tên trắng: extracted_style vẽ ::before/::after lên div.profile>div (trùng .profile-logged) */
+    .header.v2024 .header__top div.profile>div.profile-logged::before,
+    .header.v2024 .header__top div.profile>div.profile-logged::after {
+        content: none !important;
+        display: none !important;
+    }
+    .header.v2024 .header__top div.profile .profile-logged {
+        position: relative;
+        display: inline-flex !important;
+        align-items: center;
+        height: 42px;
+        flex-shrink: 0;
+    }
+    /* Xin chào user: cùng dòng với Giỏ hàng, không nền trắng, chỉ vàng khi hover */
+    .header.v2024 .header__top div.profile .user-greeting-wrap {
+        display: inline-flex;
+        align-items: center;
+        padding: 0 10px 0 8px;
+        margin: 0 10px 0 0;
+        border-radius: 32px;
+        height: 42px;
+        line-height: 42px;
+        font-size: 14px;
+        font-weight: 500;
+        color: #333;
+        background: none !important;
+        background-color: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        white-space: nowrap;
+        min-width: auto;
+        box-sizing: border-box;
+        transition: background-color 0.2s ease;
+    }
+    .header.v2024 .header__top div.profile .user-greeting-wrap:hover,
+    .header.v2024 .header__top div.profile .profile-logged:hover .user-greeting-wrap {
+        background-color: #fe9 !important;
+    }
+    .header.v2024 .header__top div.profile .user-greeting-wrap > i {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        margin-right: 8px;
+        vertical-align: middle;
+        background: url("//cdnv2.tgdd.vn/webmwg/2024/ContentMwg/images/homev2/desk/iconnew-min.png?v=4") no-repeat left top;
+        background-size: 310px 257px;
+        background-position: -29px -219px;
+        flex-shrink: 0;
+    }
+    .header.v2024 .header__top div.profile .user-greeting-wrap > span:last-of-type {
+        font-weight: 600;
+        color: #333;
+    }
+    /* Dropdown Đăng xuất - gọn như menu thật */
+    .header.v2024 .header__top div.profile .profile-dropdown {
+        position: absolute;
+        left: 0;
+        top: 44px;
+        min-width: 160px;
+        padding: 6px 0;
+        background: #fff;
+        border: 1px solid #e8e8e8;
+        border-radius: 10px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        display: none;
+        overflow: hidden;
+        z-index: 12;
+    }
+    .header.v2024 .header__top div.profile .profile-logged:hover .profile-dropdown {
+        display: block;
+    }
+    .header.v2024 .header__top div.profile .profile-dropdown::before {
+        content: "";
+        position: absolute;
+        bottom: 100%;
+        left: 24px;
+        border: 6px solid transparent;
+        border-bottom-color: #fff;
+        filter: drop-shadow(0 -1px 0 #e8e8e8);
+    }
+    .header.v2024 .header__top div.profile .form-logout {
+        margin: 0;
+    }
+    .header.v2024 .header__top div.profile .btn-logout {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 10px 16px;
+        height: auto;
+        line-height: 1.4;
+        font-size: 14px;
+        font-weight: 500;
+        color: #333;
+        background: #fff;
+        border: none;
+        cursor: pointer;
+        font-family: inherit;
+        text-align: left;
+        transition: background 0.15s ease, color 0.15s ease;
+    }
+    .header.v2024 .header__top div.profile .btn-logout:hover {
+        background: #fff9e6;
+        color: #b8860b;
+    }
+    .header.v2024 .header__top div.profile .profile-dropdown .btn-logout:last-child {
+        border-bottom: none;
+    }
+   </style>
+ </head>
+ <body class="layout-locationnew v2024 body-theme-lunaryear">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+   <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-WKQZL8" style="display:none;visibility:hidden" width="0">
+   </iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <div class="header-top-bar">
+   <div class="banner-media">
+    <div class="media-slider" data-size="1">
+     <div class="item" data-background-color="#B40101" data-order="1">
+      <a aria-label="slide" data-cate="0" data-place="7994" href="https://www.thegioididong.com/flashsale" onclick="jQuery.ajax({ url: '/bannertracking?bid=108181&amp;r='+ (new Date).getTime(), async: true, cache: false });">
+       <img alt="Banner top bar" class="lazyload owl-lazy" data-src="//cdnv2.tgdd.vn/mwg-static/tgdd/Banner/25/28/2528971e6119a5d6b12f5e9b03c11131.png" height="44" loading="lazy" width="1200"/>
+      </a>
+     </div>
+    </div>
+   </div>
+  </div>
+  <header class="header v2024 theme-lunaryear hasbanner" data-sub="0">
+   <div class="header__top">
+    <div>
+     <a aria-label="logo" class="header__logo" href="/">
+      <i class="iconnewglobal-logo">
+      </i>
+     </a>
+     <form action="/tim-kiem" class="header__search" onsubmit="return suggestSearch(event);">
+      <input autocomplete="off" class="input-search" id="skw" maxlength="100" name="key" onkeyup="suggestSearch(event);" placeholder="Bạn tìm gì..." type="text"/>
+      <button aria-label="button suggest search" type="submit">
+       <i class="icon-search">
+       </i>
+      </button>
+      <div id="search-result">
+      </div>
+     </form>
+     <div class="profile">
+      <a class="name-order active" th:href="@{/login}" sec:authorize="!isAuthenticated()">
+       <i></i>
+       Đăng nhập
+      </a>
+      <div class="profile-logged" sec:authorize="isAuthenticated()">
+       <span class="user-greeting-wrap">
+        <i></i>
+        Xin chào, <span sec:authentication="name"></span>
+       </span>
+       <div class="profile-dropdown">
+        <a th:href="@{/user/points}" class="btn-logout" style="text-decoration:none;" sec:authorize="hasAuthority('USER')">Điểm tích lũy</a>
+        <form th:action="@{/logout}" method="post" class="form-logout">
+         <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+         <button type="submit" class="btn-logout">Đăng xuất</button>
+        </form>
+       </div>
+      </div>
+     </div>
+     <a class="header__cart menu-info" href="/cart" id="cart-box">
+      <div class="box-cart">
+       <i class="iconnewglobal-whitecart">
+       </i>
+       <span class="cart-number" th:text="${cartSize ?: 0}">
+       </span>
+      </div>
+      <span>
+       Giỏ hàng
+      </span>
+      <div class="view-cart">
+       <span>
+        Đã thêm vào giỏ hàng
+       </span>
+       <b onclick="window.location.href='/cart'">
+        Xem giỏ hàng
+       </b>
+      </div>
+     </a>
+     <a class="header__address" href="javascript:;" onclick="OpenLocation()">
+      <i class="icon-location">
+      </i>
+      <span>
+       Chọn vị trí để xem giá, thời gian giao:
+      </span>
+      <div class="remind_location hide">
+       <div class="remind_question">
+        Bạn đang ở tại
+        <b>
+         Hồ Chí Minh
+        </b>
+        ?
+        <p class="remind_change">
+         Sửa
+        </p>
+       </div>
+       <p class="remind_content">
+        Giá và khuyến mãi đang lấy theo khu vực này.
+       </p>
+       <div class="remind_btn-close">
+       </div>
+      </div>
+     </a>
+    </div>
+   </div>
+   <div class="header__main">
+    <div>
+     <ul class="main-menu">
+      <li class="">
+       <a href="/dtdd">
+        <i>
+         <img alt="icon Điện thoại" src="https://cdn.tgdd.vn/content/phonne-24x24.png">
+         </img>
+        </i>
+        <span class="">
+         Điện thoại
+        </span>
+       </a>
+      </li>
+      <li class="">
+       <a href="/laptop">
+        <i>
+         <img alt="icon Laptop" src="https://cdn.tgdd.vn/content/laptop-24x24.png"/>
+        </i>
+        <span class="">
+         Laptop
+        </span>
+       </a>
+      </li>
+      <li class="has-list">
+       <a href="/phu-kien">
+        <i>
+         <img alt="icon Phụ kiện" src="https://cdn.tgdd.vn/content/phu-kien-24x24.png"/>
+        </i>
+        <span class="has-child">
+         Phụ kiện
+        </span>
+       </a>
+        <div class="navmwg">
+         <div class="item-child">
+          <strong>
+           Phụ kiện di động
+          </strong>
+          <a href="/sac-dtdd">
+           <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/99/61/9961578164909f8a9ee7678dc95feeb0.png" width="25px"/>
+           <h3>
+            Sạc dự phòng
+           </h3>
+          </a>
+          <a href="/sac-cap">
+           <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/6b/64/6b646ec5f1e9a726933ee31b86a32524.png" width="25px"/>
+           <h3>
+            Sạc, cáp
+           </h3>
+          </a>
+          <a href="/op-lung-flipcover">
+           <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/34/02/3402dd9ba3457b84482572d10bcae84e.png" width="25px"/>
+           <h3>
+            Ốp lưng điện thoại
+           </h3>
+          </a>
+          <a href="/op-lung-may-tinh-bang">
+           <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/83/60/836050bcf5e1c92dd8d9899bef9f039d.png" width="25px"/>
+           <h3>
+            Ốp lưng máy tính bảng
+           </h3>
+          </a>
+          <a href="/mieng-dan-man-hinh">
+           <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/72/f4/72f4b3ee8f5c1b1a170d590b3a07256d.png" width="25px"/>
+           <h3>
+            Miếng dán
+           </h3>
+          </a>
+          <a href="/mieng-dan-camera">
+           <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/33/77/33770e364079ac9dd3888190bd574b8d.png" width="25px"/>
+           <h3>
+            Miếng dán Camera
+           </h3>
+          </a>
+          <a href="/tui-dung-airpods">
+           <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/24/66/2466de3fc4831f43afb0d69462130030.png" width="25px"/>
+           <h3>
+            Túi đựng AirPods
+           </h3>
+          </a>
+          <a href="/airtag">
+           <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/27/e7/27e7538fb93c10e768cd0344ee8f8cd9.png" width="25px"/>
+           <h3>
+            AirTag, Vỏ bảo vệ AirTag
+           </h3>
+          </a>
+          <a href="/phu-kien-thong-minh">
+           <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/3f/d5/3fd5723ac6f01521bd3d768d8ebc8d1a.png" width="25px"/>
+           <h3>
+            Bút tablet
+           </h3>
+          </a>
+          <a href="/gia-do-dien-thoai">
+           <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/26/6f/266f538d2cee7899d54a8b5f57985d83.png" width="25px"/>
+           <h3>
+            Giá đỡ điện thoại/laptop/máy
+                                         tính bảng
+           </h3>
+          </a>
+          <a href="/phu-kien-op-lung">
+           <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/01/d1/01d140b8ea3be3cdbf4b99299fd14969.png" width="25px"/>
+           <h3>
+            Dây đeo điện thoại
+           </h3>
+          </a>
+          <a href="/ong-kinh-tele">
+           <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/ff/9a/ff9a1716ada03c1b0c3498b9bd6b6373.png" width="25px"/>
+           <h3>
+            Ống kinh điện thoại
+           </h3>
+           <span class="label-new menuitem_label">
+            Mới
+           </span>
+          </a>
+          <!-- Dynamic Items -->
+          <th:block th:if="${accessoryGroups != null and accessoryGroups.containsKey('Phụ kiện di động')}">
+             <a th:each="cat : ${accessoryGroups.get('Phụ kiện di động')}" th:href="@{/phu-kien/group/{id}(id=${cat.id})}">
+              <img alt="thumb menu" class="lazy-menu" 
+                   th:src="@{'/images/' + ${cat.image}}" 
+                   th:if="${cat.image != null}"
+                   width="25px"/>
+               <img alt="thumb menu" class="lazy-menu" 
+                   src="https://cdnv2.tgdd.vn/mwg-static/common/Common/99/61/9961578164909f8a9ee7678dc95feeb0.png" 
+                   th:unless="${cat.image != null}"
+                   width="25px"/>
+              <h3 th:text="${cat.name}">Category Name</h3>
+             </a>
+          </th:block>
+         </div>
+         <div class="item-child">
+          <strong>
+           Phụ kiện laptop, PC
+          </strong>
+          <a href="/hub-chuyen-doi">
+           <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/e1/2d/e12deafa7615646e9cafc5bbd0667da8.png" width="25px"/>
+           <h3>
+            Hub, cáp chuyển đổi
+           </h3>
+          </a>
+          <a href="/chuot-may-tinh">
+           <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/53/a6/53a6599a6fc414025b42c5435928008f.png" width="25px"/>
+           <h3>
+            Chuột máy tính
+           </h3>
+          </a>
+          <a href="/ban-phim">
+           <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/7a/d3/7ad3598d5e291815bc6c7f98bb73d078.png" width="25px"/>
+           <h3>
+            Bàn phím
+           </h3>
+          </a>
+          <a href="/thiet-bi-mang">
+           <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/f9/32/f93258b536d9a7c59b7746e533fb271f.png" width="25px"/>
+           <h3>
+            Router - Thiết bị mạng
+           </h3>
+          </a>
+          <a href="/tui-chong-soc">
+           <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/33/8b/338bb7d3763dee703562a108b497fc2f.png" width="25px"/>
+           <h3>
+            Balo, túi chống sốc
+           </h3>
+          </a>
+          <a href="/tui-dung-phu-kien">
+           <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/9e/d6/9ed6b66919dccf3d26fc864184149913.png" width="25px"/>
+           <h3>
+            Túi đựng phụ kiện
+           </h3>
+          </a>
+          <a href="/mieng-phu-ban-phim">
+           <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/c3/97/c397a6f5e562a5f3ad3084e4563d6dda.png" width="25px"/>
+           <h3>
+            Phủ phím laptop
+           </h3>
+          </a>
+          <a href="/phan-mem">
+           <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/bb/07/bb07512d2429a1b38cedd20b750b734c.png" width="25px"/>
+           <h3>
+            Phần mềm
+           </h3>
+          </a>
+          <a href="/gia-treo-man-hinh">
+           <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/7c/a7/7ca750e732738e17142f501ba33eb423.png" width="25px"/>
+           <h3>
+            Giá treo màn hình
+           </h3>
+          </a>
+          <a href="/den-dien-den-sac">
+           <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/b9/ed/b9ed8fbbb77742a0b721bbf2bc6ca8ef.png" width="25px"/>
+           <h3>
+            Đèn thông minh/livestream
+           </h3>
+           <span class="label-new menuitem_label">
+            Mới
+           </span>
+          </a>
+          <a href="/mieng-lot-chuot">
+           <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/b3/0e/b30ead80f9b691b781060ec46e8e2928.png" width="25px"/>
+           <h3>
+            Miếng lót chuột
+           </h3>
+          </a>
+          <a href="/bang-ve-dien-tu">
+           <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/58/c0/58c0179556e1f44469d351ad90cb325e.png" width="25px"/>
+           <h3>
+            Bảng vẽ điện tử
+           </h3>
+           <span class="label-new menuitem_label">
+            Mới
+           </span>
+          </a>
+          <!-- Dynamic Items -->
+          <th:block th:if="${accessoryGroups != null and accessoryGroups.containsKey('Phụ kiện laptop, PC')}">
+             <a th:each="cat : ${accessoryGroups.get('Phụ kiện laptop, PC')}" th:href="@{/phu-kien/group/{id}(id=${cat.id})}">
+              <img alt="thumb menu" class="lazy-menu" 
+                   th:src="@{'/images/' + ${cat.image}}" 
+                   th:if="${cat.image != null}"
+                   width="25px"/>
+               <img alt="thumb menu" class="lazy-menu" 
+                   src="https://cdnv2.tgdd.vn/mwg-static/common/Common/99/61/9961578164909f8a9ee7678dc95feeb0.png" 
+                   th:unless="${cat.image != null}"
+                   width="25px"/>
+              <h3 th:text="${cat.name}">Category Name</h3>
+             </a>
+          </th:block>
+         </div>
+         <div class="item-child">
+          <strong>
+           Thiết bị âm thanh
+          </strong>
+          <a href="/tai-nghe-bluetooth">
+           <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/7c/09/7c09cbc92ef23816aa7d857ba8e0e194.png" width="25px"/>
+           <h3>
+            Tai nghe Bluetooth
+           </h3>
+          </a>
+          <a href="/tai-nghe-co-day">
+           <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/12/1c/121cd7cb1fc1750893b3f41436b12c85.png" width="25px"/>
+           <h3>
+            Tai nghe dây
+           </h3>
+          </a>
+          <a href="/tai-nghe-chup-tai">
+           <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/cf/9e/cf9e0eecbfc3e326f1c89f13b1ffe320.png" width="25px"/>
+           <h3>
+            Tai nghe chụp tai
+           </h3>
+          </a>
+          <a href="/tai-nghe-the-thao">
+           <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/38/f7/38f7bf684502b5aa0c7949f6d38a6a55.png" width="25px"/>
+           <h3>
+            Tai nghe thể thao
+           </h3>
+          </a>
+          <a href="/loa-laptop">
+           <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/76/6b/766be9586a3a82491ba8106b7e558605.png" width="25px"/>
+           <h3>
+            Loa
+           </h3>
+           <span class="label-new menuitem_label">
+            Hot
+           </span>
+          </a>
+          <a href="/micro-cac-loai">
+           <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/c7/13/c71369bc9b7b00cd99d8c8076e5a9e7e.png" width="25px"/>
+           <h3>
+            Micro
+           </h3>
+          </a>
+          <!-- Dynamic Items -->
+          <th:block th:if="${accessoryGroups != null and accessoryGroups.containsKey('Thiết bị âm thanh')}">
+             <a th:each="cat : ${accessoryGroups.get('Thiết bị âm thanh')}" th:href="@{/phu-kien/group/{id}(id=${cat.id})}">
+              <img alt="thumb menu" class="lazy-menu" 
+                   th:src="@{'/images/' + ${cat.image}}" 
+                   th:if="${cat.image != null}"
+                   width="25px"/>
+               <img alt="thumb menu" class="lazy-menu" 
+                   src="https://cdnv2.tgdd.vn/mwg-static/common/Common/99/61/9961578164909f8a9ee7678dc95feeb0.png" 
+                   th:unless="${cat.image != null}"
+                   width="25px"/>
+              <h3 th:text="${cat.name}">Category Name</h3>
+             </a>
+          </th:block>
+         </div>
+         <div class="item-child">
+          <strong>
+           Camera
+          </strong>
+          <a href="/camera-giam-sat">
+           <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Common/af/70/af70e11a54ceeda4d04c41298016f615.png" width="25px"/>
+           <h3>
+            Camera Giám Sát
+           </h3>
+           <span class="label-new menuitem_label">
+            Hot
+           </span>
+          </a>
+          <a href="/camera-giam-sat?g=camera-giam-sat">
+           <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Common/e8/0c/e80cc810cf5d743dc7e88c7031380c80.png" width="25px"/>
+           <h3>
+            Camera trong nhà
+           </h3>
+          </a>
+          <a href="/camera-giam-sat-camera-ngoai-troi">
+           <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/9e/e9/9ee9ae20f38eff97221f040a735752ce.png" width="25px"/>
+           <h3>
+            Camera ngoài trời
+           </h3>
+          </a>
+          <a href="/camera-hanh-trinh-hanh-dong">
+           <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/f4/2a/f42aa8a01e29d247b177a997c808c990.png" width="25px"/>
+           <h3>
+            Camera hành trình / hành động
+           </h3>
+           <span class="label-new menuitem_label">
+            Hot
+           </span>
+          </a>
+          <a href="/camera-giam-sat-camera-nang-luong-mat-troi">
+           <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Common/5b/46/5b46309f2e80ca497b76f239ccf18829.png" width="25px"/>
+           <h3>
+            Camera Năng Lượng Mặt Trời
+           </h3>
+          </a>
+          <a href="/camera-giam-sat-camera-4g">
+           <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Common/18/9f/189f4355b6af9e13a9a6d8a05e862ce5.png" width="25px"/>
+           <h3>
+            Camera 4G
+           </h3>
+          </a>
+          <!-- Dynamic Items -->
+          <th:block th:if="${accessoryGroups != null and accessoryGroups.containsKey('Camera')}">
+             <a th:each="cat : ${accessoryGroups.get('Camera')}" th:href="@{/phu-kien/group/{id}(id=${cat.id})}">
+              <img alt="thumb menu" class="lazy-menu" 
+                   th:src="@{'/images/' + ${cat.image}}" 
+                   th:if="${cat.image != null}"
+                   width="25px"/>
+               <img alt="thumb menu" class="lazy-menu" 
+                   src="https://cdnv2.tgdd.vn/mwg-static/common/Common/99/61/9961578164909f8a9ee7678dc95feeb0.png" 
+                   th:unless="${cat.image != null}"
+                   width="25px"/>
+              <h3 th:text="${cat.name}">Category Name</h3>
+             </a>
+          </th:block>
+         </div>
+         <div class="item-child">
+          <strong>
+           Phụ kiện gaming
+          </strong>
+          <a href="/chuot-may-tinh-chuot-gaming">
+           <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/4d/c5/4dc5692050284aa3119430c8b77a1a41.png" width="25px"/>
+           <h3>
+            Chuột gaming
+           </h3>
+          </a>
+          <a href="/ban-phim-gaming">
+           <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/7c/f2/7cf2df3939fd6d8966c1965cc781d02b.png" width="25px"/>
+           <h3>
+            Bàn phím gaming
+           </h3>
+          </a>
+          <a href="/tai-nghe-gaming">
+           <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/25/71/2571e5bc85393230a9d8c793c0fb6ad3.png" width="25px"/>
+           <h3>
+            Tai nghe gaming
+           </h3>
+          </a>
+          <a href="/mieng-lot-chuot">
+           <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/49/70/497053f8d25c1602c5c79faf15ac2049.png" width="25px"/>
+           <h3>
+            Miếng lót chuột
+           </h3>
+          </a>
+          <a href="/may-choi-game-cam-tay-tay-cam-choi-game">
+           <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/0c/9e/0c9e064d8ec9452a931d021dfee96c79.png" width="25px"/>
+           <h3>
+            Tay cầm chơi game
+           </h3>
+          </a>
+          <!-- Dynamic Items -->
+          <th:block th:if="${accessoryGroups != null and accessoryGroups.containsKey('Phụ kiện gaming')}">
+             <a th:each="cat : ${accessoryGroups.get('Phụ kiện gaming')}" th:href="@{/phu-kien/group/{id}(id=${cat.id})}">
+              <img alt="thumb menu" class="lazy-menu" 
+                   th:src="@{'/images/' + ${cat.image}}" 
+                   th:if="${cat.image != null}"
+                   width="25px"/>
+               <img alt="thumb menu" class="lazy-menu" 
+                   src="https://cdnv2.tgdd.vn/mwg-static/common/Common/99/61/9961578164909f8a9ee7678dc95feeb0.png" 
+                   th:unless="${cat.image != null}"
+                   width="25px"/>
+              <h3 th:text="${cat.name}">Category Name</h3>
+             </a>
+          </th:block>
+         </div>
+         <div class="item-child">
+          <strong>
+           Thiết bị lưu trữ
+          </strong>
+          <a href="/o-cung-di-dong">
+           <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Common/c1/4e/c14eb68c77b7402be257c972a8a9625b.png" width="25px"/>
+           <h3>
+            Ổ cứng di động
+           </h3>
+          </a>
+          <a href="/the-nho-dien-thoai">
+           <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/0b/e8/0be891a66b3f2fdf30a3a18070d1453a.png" width="25px"/>
+           <h3>
+            Thẻ nhớ
+           </h3>
+          </a>
+          <a href="/usb">
+           <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/34/b6/34b670e9f0f45c2d0290f41c5e747c28.png" width="25px"/>
+           <h3>
+            USB
+           </h3>
+          </a>
+          <!-- Dynamic Items -->
+          <th:block th:if="${accessoryGroups != null and accessoryGroups.containsKey('Thiết bị lưu trữ')}">
+             <a th:each="cat : ${accessoryGroups.get('Thiết bị lưu trữ')}" th:href="@{/phu-kien/group/{id}(id=${cat.id})}">
+              <img alt="thumb menu" class="lazy-menu" 
+                   th:src="@{'/images/' + ${cat.image}}" 
+                   th:if="${cat.image != null}"
+                   width="25px"/>
+               <img alt="thumb menu" class="lazy-menu" 
+                   src="https://cdnv2.tgdd.vn/mwg-static/common/Common/99/61/9961578164909f8a9ee7678dc95feeb0.png" 
+                   th:unless="${cat.image != null}"
+                   width="25px"/>
+              <h3 th:text="${cat.name}">Category Name</h3>
+             </a>
+          </th:block>
+         </div>
+         <div class="item-child">
+          <strong>
+           Phụ kiện khác
+          </strong>
+          <a href="/may-chieu">
+           <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Common/32/2f/322fcac70beaf1bb7c5925f0dc8663ac.png" width="25px"/>
+           <h3>
+            Máy chiếu
+           </h3>
+          </a>
+          <a href="/gay-tu-suong">
+           <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Common/90/1a/901ad6c88ccafc404df1fdca08ac6ceb.png" width="25px"/>
+           <h3>
+            Gimbal
+           </h3>
+           <span class="label-new menuitem_label">
+            Hot
+           </span>
+          </a>
+          <a href="/phu-kien-oto">
+           <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/9c/8e/9c8e5c73e245a377862049b483cb3b21.png" width="25px"/>
+           <h3>
+            Phụ kiện ô tô
+           </h3>
+          </a>
+          <a href="/may-chup-anh-lay-lien">
+           <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/58/96/5896ea953c2a15fd8bebab2f35fdb47f.png" width="25px"/>
+           <h3>
+            Máy chụp ảnh lấy liền
+           </h3>
+           <span class="label-new menuitem_label">
+            Mới
+           </span>
+          </a>
+          <a href="/flycam">
+           <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Common/00/34/00347116e3b25ffa8e81d216607ada64.png" width="25px"/>
+           <h3>
+            Flycam
+           </h3>
+           <span class="label-new menuitem_label">
+            Hot
+           </span>
+          </a>
+          <a href="/pin">
+           <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/d9/89/d9895ecb4c3fe80fa6a5788548c0d40d.png" width="25px"/>
+           <h3>
+            Pin tiểu
+           </h3>
+          </a>
+          <a href="/quat-mini">
+           <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/07/ab/07ab4544063dddcba20bf16c8066745d.png" width="25px"/>
+           <h3>
+            Quạt mini
+           </h3>
+          </a>
+          <a href="/quat-suoi">
+           <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/5b/81/5b815a1ca0cf9792245e3d8b03e05f6d.png" width="25px"/>
+           <h3>
+            Quạt sưởi
+           </h3>
+           <span class="label-new menuitem_label">
+            Mới
+           </span>
+          </a>
+          <a href="/den-dien-den-sac-den-nang-luong-mat-troi">
+           <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/cf/ec/cfec82e82109dd1f4f889a5df9aaad38.png" width="25px"/>
+           <h3>
+            Đèn năng lượng mặt trời
+           </h3>
+           <span class="label-new menuitem_label">
+            Mới
+           </span>
+          </a>
+          <a href="/day-dong-ho">
+           <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/b5/a5/b5a531c9008b87379f8f2cae7c37cd1c.png" width="25px"/>
+           <h3>
+            Dây đeo đồng hồ
+           </h3>
+          </a>
+          <!-- Dynamic Items -->
+          <th:block th:if="${accessoryGroups != null and accessoryGroups.containsKey('Phụ kiện khác')}">
+             <a th:each="cat : ${accessoryGroups.get('Phụ kiện khác')}" th:href="@{/phu-kien/group/{id}(id=${cat.id})}">
+              <img alt="thumb menu" class="lazy-menu" 
+                   th:src="@{'/images/' + ${cat.image}}" 
+                   th:if="${cat.image != null}"
+                   width="25px"/>
+               <img alt="thumb menu" class="lazy-menu" 
+                   src="https://cdnv2.tgdd.vn/mwg-static/common/Common/99/61/9961578164909f8a9ee7678dc95feeb0.png" 
+                   th:unless="${cat.image != null}"
+                   width="25px"/>
+              <h3 th:text="${cat.name}">Category Name</h3>
+             </a>
+          </th:block>
+         </div>
+         <div class="item-child">
+          <strong>
+           Thương hiệu hàng đầu
+          </strong>
+          <a href="/phu-kien/apple">
+           <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/6a/6a/6a6a116227ceaf2f407f5573f44069ec.png" width="25px"/>
+           <h3>
+            Apple
+           </h3>
+          </a>
+          <a href="/phu-kien/samsung">
+           <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/ea/1d/ea1d0470faaea58604610926a4f45fcb.png" width="25px"/>
+           <h3>
+            Samsung
+           </h3>
+          </a>
+          <a href="/phu-kien/imou">
+           <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/ee/a1/eea14df76a63a0f6b9f3267143856602.png" width="25px"/>
+           <h3>
+            Imou
+           </h3>
+          </a>
+          <a href="/phu-kien/baseus">
+           <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/0a/bd/0abddded6e3650bcd1859c511fcc2747.png" width="25px"/>
+           <h3>
+            Baseus
+           </h3>
+          </a>
+          <a href="/phu-kien/jbl">
+           <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/be/88/be887406c072668c452a41be86574976.png" width="25px"/>
+           <h3>
+            JBL
+           </h3>
+          </a>
+          <a href="/phu-kien/anker">
+           <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/67/bd/67bd9cf55ca10673bf3df7605e295bb4.png" width="25px"/>
+           <h3>
+            Anker
+           </h3>
+          </a>
+          <a href="/phu-kien/xmobile">
+           <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/c2/26/c22643c4c1ee6d06a78a4aebea060e37.png" width="25px"/>
+           <h3>
+            Xmobile
+           </h3>
+          </a>
+          <!-- Dynamic Items -->
+          <th:block th:if="${accessoryGroups != null and accessoryGroups.containsKey('Thương hiệu hàng đầu')}">
+             <a th:each="cat : ${accessoryGroups.get('Thương hiệu hàng đầu')}" th:href="@{/phu-kien/group/{id}(id=${cat.id})}">
+              <img alt="thumb menu" class="lazy-menu" 
+                   th:src="@{'/images/' + ${cat.image}}" 
+                   th:if="${cat.image != null}"
+                   width="25px"/>
+               <img alt="thumb menu" class="lazy-menu" 
+                   src="https://cdnv2.tgdd.vn/mwg-static/common/Common/99/61/9961578164909f8a9ee7678dc95feeb0.png" 
+                   th:unless="${cat.image != null}"
+                   width="25px"/>
+              <h3 th:text="${cat.name}">Category Name</h3>
+             </a>
+          </th:block>
+         </div>
+        </div>
+      </li>
+      <li class="">
+       <a href="/dong-ho-thong-minh-ldp">
+        <i>
+         <img alt="icon Smartwatch" src="https://cdn.tgdd.vn/content/smartwatch-24x24.png"/>
+        </i>
+        <span class="">
+         Smartwatch
+        </span>
+       </a>
+      </li>
+      <li class="">
+       <a href="/dong-ho">
+        <i>
+         <img alt="icon Đồng hồ" src="https://cdn.tgdd.vn/content/watch-24x24.png"/>
+        </i>
+        <span class="">
+         Đồng hồ
+        </span>
+       </a>
+      </li>
+      <li class="">
+       <a href="/may-tinh-bang">
+        <i>
+         <img alt="icon Tablet" src="https://cdn.tgdd.vn/content/tablet-24x24.png"/>
+        </i>
+        <span class="">
+         Tablet
+        </span>
+       </a>
+      </li>
+      <li class="has-list">
+       <a href="/may-doi-tra">
+        <i>
+         <img alt="icon Máy cũ, Thu cũ" src="https://cdn.tgdd.vn/content/may-cu-24x24.png"/>
+        </i>
+        <span class="has-child">
+         Máy cũ, Thu cũ
+        </span>
+       </a>
+       <div class="navmwg">
+        <div class="item-child">
+         <strong>
+          Máy cũ, Thu cũ
+         </strong>
+         <a href="/may-doi-tra">
+          <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/47/1b/471b8073fdb15619b6c958e5316e7f61.png" width="25px"/>
+          <h3>
+           Máy cũ giá tốt
+          </h3>
+         </a>
+         <a href="/thu-cu-doi-moi">
+          <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/4e/b2/4eb2cac00f6019e50875c3d1d4f74d6b.png" width="25px"/>
+          <h3>
+           Thu cũ đổi mới
+          </h3>
+         </a>
+        </div>
+       </div>
+      </li>
+      <li class="has-list">
+       <a href="/pc-may-in">
+        <i>
+         <img alt="icon Màn hình, Máy in" src="https://cdn.tgdd.vn/content/PC-24x24.png"/>
+        </i>
+        <span class="has-child">
+         Màn hình, Máy in
+        </span>
+       </a>
+       <div class="navmwg">
+        <div class="item-child">
+         <strong>
+          PC, Màn hình
+         </strong>
+         <a href="/may-tinh-de-ban">
+          <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/5c/20/5c20902d35f326dc8947e3a6b2adc178.png" width="25px"/>
+          <h3>
+           Máy tính để bàn
+          </h3>
+         </a>
+         <a href="/man-hinh-may-tinh">
+          <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/b6/76/b676088f8fa091112be65b0b4e8bb786.png" width="25px"/>
+          <h3>
+           Màn hình máy tính
+          </h3>
+         </a>
+         <a href="/gia-treo-man-hinh">
+          <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/89/ab/89abcd01f43ef18e354c11d4e58d026e.png" width="25px"/>
+          <h3>
+           Giá treo màn hình
+          </h3>
+         </a>
+         <a href="/may-choi-game-cam-tay">
+          <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/6b/08/6b08326eb6783191ab1b32080618a663.png" width="25px"/>
+          <h3>
+           Máy chơi game
+          </h3>
+         </a>
+         <a href="/bo-luu-dien">
+          <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Common/d9/00/d900a20aec787d7c0fcea0e74d076529.png" width="25px"/>
+          <h3>
+           Bộ lưu điện
+          </h3>
+         </a>
+         <a href="/thiet-bi-ma-vach">
+          <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Common/ce/8d/ce8d96a261ef112958d47f85d6de4816.png" width="25px"/>
+          <h3>
+           Máy quét mã vạch
+          </h3>
+          <span class="label-new menuitem_label">
+           Mới
+          </span>
+         </a>
+         <a href="/phan-mem">
+          <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/bb/07/bb07512d2429a1b38cedd20b750b734c.png" width="25px"/>
+          <h3>
+           Phần mềm
+          </h3>
+         </a>
+        </div>
+        <div class="item-child">
+         <strong>
+          Máy in, Mực in
+         </strong>
+         <a href="/muc-in">
+          <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/38/76/3876a43c46810299826ada7874b1cf6b.png" width="25px"/>
+          <h3>
+           Mực in
+          </h3>
+         </a>
+         <a href="/may-in">
+          <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/24/b3/24b303278d3d03de8b3fa3a31c2a1820.png" width="25px"/>
+          <h3>
+           Máy in
+          </h3>
+         </a>
+        </div>
+       </div>
+      </li>
+      <li class="has-list">
+       <a href="/sim-so-dep">
+        <i>
+         <img alt="icon Sim, Thẻ cào" src="https://cdn.tgdd.vn/content/sim-24x24.png"/>
+        </i>
+        <span class="has-child">
+         Sim, Thẻ cào
+        </span>
+       </a>
+       <div class="navmwg limit-width">
+        <div class="item-child no-child-final">
+         <a href="/sim-so-dep">
+          <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/54/96/54965e9976059f689c8905bfa5696b61.png" width="25px"/>
+          <h3>
+           Sim, thẻ cào
+          </h3>
+         </a>
+        </div>
+        <div class="item-child no-child-final">
+         <a href="/phan-mem-esim-du-lich">
+          <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/5a/48/5a48d18da9b8282909939cfbd156ef1a.png" width="25px"/>
+          <h3>
+           eSim du lịch
+          </h3>
+         </a>
+        </div>
+       </div>
+      </li>
+      <li class="has-list">
+       <a href="/tien-ich/thanh-toan-tra-gop">
+        <i>
+         <img alt="icon Dịch vụ tiện ích" src="https://cdn.tgdd.vn/content/tien-ich-24x24.png"/>
+        </i>
+        <span class="has-child">
+         Dịch vụ tiện ích
+        </span>
+       </a>
+       <div class="navmwg">
+        <div class="item-child">
+         <strong>
+          Thanh toán hóa đơn
+         </strong>
+         <a href="/tien-ich/thanh-toan-tra-gop">
+          <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/61/b6/61b6e80c07684c4846aeff658fdba88a.png" width="25px"/>
+          <h3>
+           Đóng tiền trả góp
+          </h3>
+         </a>
+         <a href="/tien-ich/thanh-toan-tien-dien">
+          <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/8e/96/8e9685acf415892e991723bd885a7696.png" width="25px"/>
+          <h3>
+           Đóng tiền điện
+          </h3>
+         </a>
+         <a href="/tien-ich/thanh-toan-tien-nuoc">
+          <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/43/fb/43fb3b248d0417ac1936c21ba9c03aef.png" width="25px"/>
+          <h3>
+           Đóng tiền nước
+          </h3>
+         </a>
+         <a href="/tien-ich/thanh-toan-internet-fpt">
+          <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/09/93/099365b9fef8ff95bd19d85d84f528bc.png" width="25px"/>
+          <h3>
+           Đóng tiền NET FPT
+          </h3>
+         </a>
+         <a href="/tien-ich/thanh-toan-internet-vnpt">
+          <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/d0/6c/d06c8a333e6bb746786858b56d8881cd.png" width="25px"/>
+          <h3>
+           Đóng tiền net, cáp VNPT
+          </h3>
+         </a>
+         <a href="/tien-ich/thanh-toan-ve-tau-xe">
+          <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Common/9c/79/9c79d46ccb9d986fccb55182de2f1c4c.png" width="25px"/>
+          <h3>
+           Thu vé tàu, xe, máy bay
+          </h3>
+         </a>
+        </div>
+        <div class="item-child">
+         <strong>
+          Bảo hành - Bảo hiểm
+         </strong>
+         <a href="/tien-ich/bao-hiem-o-to-xe-may">
+          <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/38/7a/387aa99478d8e608e234bb979b8835f9.png" width="25px"/>
+          <h3>
+           Bảo hiểm xe máy - Ô tô
+          </h3>
+         </a>
+         <a href="/tin-tuc/mua-bhyt-va-bhxh-tu-nguyen-den-ngay-tgdd-1569486">
+          <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Common/35/21/3521d9122915926b55c27bf8a44f80bd.png" width="25px"/>
+          <h3>
+           Đóng BHYT- BHXH
+          </h3>
+         </a>
+         <a href="/tin-tuc/vay-tien-mat-tren-app-qua-tang-vip-han-muc-den-50-trieu-1587743">
+          <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/31/38/313842967f3eb51dca294a6af3d36e2e.png" width="25px"/>
+          <h3>
+           Vay tiền mặt CAKE
+          </h3>
+         </a>
+         <a href="/tin-tuc/vay-tieu-dung-qua-app-ngan-hang-cathay-united-bank-1570518">
+          <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/f9/a7/f9a7165adf02fa6ab3549395dfae0812.png" width="25px"/>
+          <h3>
+           Vay tiền mặt CATHAY
+          </h3>
+         </a>
+         <a href="/tin-tuc/tat-tan-tat-ve-chinh-sach-bao-hiem-roi-vo-bao-hanh-mo-rong-bao-hanh-1-doi-1-tai-tgdd-1567763#hmenuid1:~:text=%C4%91%C3%A3i%20%C4%91%E1%BA%B7c%20bi%E1%BB%87t!-,B%E1%BA%A3o%20hi%E1%BB%83m%20r%C6%A1i%20v%E1%BB%A1,-1.%20S%E1%BA%A3n%20ph%E1%BA%A9m">
+          <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/50/35/5035a1e6cb76425d7cd748f81481b567.png" width="25px"/>
+          <h3>
+           Bảo hành rơi vỡ
+          </h3>
+         </a>
+         <a href="/tin-tuc/tat-tan-tat-ve-chinh-sach-bao-hiem-roi-vo-bao-hanh-mo-rong-bao-hanh-1-doi-1-tai-tgdd-1567763#hmenuid1:~:text=7%20%26%20ch%E1%BB%A7%20nh%E1%BA%ADt).-,B%E1%BA%A3o%20h%C3%A0nh%20m%E1%BB%9F%20r%E1%BB%99ng,-1.%20S%E1%BA%A3n%20ph%E1%BA%A9m">
+          <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/cc/53/cc53c60cef74387bb822863b59f20f53.png" width="25px"/>
+          <h3>
+           Bảo hành mở rộng
+          </h3>
+         </a>
+         <a href="/tin-tuc/tat-tan-tat-ve-chinh-sach-bao-hiem-roi-vo-bao-hanh-mo-rong-bao-hanh-1-doi-1-tai-tgdd-1567763#hmenuid1:~:text=7%20%26%20ch%E1%BB%A7%20nh%E1%BA%ADt).-,B%E1%BA%A3o%20h%C3%A0nh%201%20%C4%91%E1%BB%95i%201,-1.%20S%E1%BA%A3n%20ph%E1%BA%A9m">
+          <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/31/4f/314fcd2f5d051e956671fc69d86547ed.png" width="25px"/>
+          <h3>
+           Bảo hành 1 đổi 1
+          </h3>
+         </a>
+        </div>
+        <div class="item-child">
+         <strong>
+          Tiện ích viễn thông
+         </strong>
+         <a href="/tien-ich/goi-cuoc-data">
+          <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/34/92/349219728cb261aa4355e65b8eb600f8.png" width="25px"/>
+          <h3>
+           Mua gói data 3G, 4G
+          </h3>
+         </a>
+         <a href="/tien-ich/nap-tien-dien-thoai">
+          <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/f5/c7/f5c7e0f1d65e60f1b832eddcbc8dc2ad.png" width="25px"/>
+          <h3>
+           Nạp tiền trả trước
+          </h3>
+         </a>
+         <a href="/tien-ich/nap-tien-dien-thoai-tra-sau">
+          <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/fe/34/fe34312d302d489162e7bae030515363.png" width="25px"/>
+          <h3>
+           Nạp tiền trả sau
+          </h3>
+         </a>
+         <a href="/tien-ich/the-cao-game">
+          <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/b2/13/b2135863df0735405d466c06222b45ab.png" width="25px"/>
+          <h3>
+           Thẻ cào game
+          </h3>
+         </a>
+         <a href="/tien-ich/the-cao-dien-thoai">
+          <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/d1/4b/d14bc733f4e33f0299e0041668493f1d.png" width="25px"/>
+          <h3>
+           Thẻ cào điện thoại
+          </h3>
+         </a>
+        </div>
+        <div class="item-child">
+         <strong>
+          Tiện ích khác
+         </strong>
+         <a href="/dat-ve-may-bay">
+          <img alt="thumb menu" class="lazy-menu" data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Common/00/72/0072d5344481e8f27a3f7dc0d3037a04.png" width="25px"/>
+          <h3>
+           Đặt vé máy bay
+          </h3>
+         </a>
+        </div>
+       </div>
+      </li>
+     </ul>
+    </div>
+   </div>
+  </header>
+  <div class="header-overlay">
+   <div>
+    <a href="javascript:;">
+     X
+    </a>
+   </div>
+  </div>
+  <div class="header-mask">
+  </div>
+  <div class="popupPMH">
+  </div>
+  <div class="locationbox__overlay">
+  </div>
+  <div class="locationbox-v2 v2024 has-suggest-address v2025">
+   <div class="locationbox__item locationbox__item--right">
+    <div class="top-location">
+     <b>
+      Chọn địa chỉ nhận hàng
+     </b>
+     <p class="full-location">
+      <span class="choose-text hide">
+       Khu vực đã chọn
+      </span>
+      <span class="fulladdress-v2 hide">
+      </span>
+      <a class="resetLocation hide" href="javascript:;" onclick="changeLocation()">
+       Thiết lập lại
+      </a>
+     </p>
+     <a class="cls-location" href="javascript:;" onclick="closeLocation()">
+      <i class="close-symbol">
+      </i>
+     </a>
+     <div class="parentBack">
+      <a class="cls-back" href="javascript:;">
+      </a>
+     </div>
+    </div>
+    <div class="location-select">
+     <div class="location-milestone hide">
+      <i class="step-province">
+      </i>
+      <i class="row-select">
+      </i>
+      <i class="step-ward">
+      </i>
+     </div>
+     <div class="lst-tab hide location-v4">
+      <a class="active" data-list="#lst-prov" href="javascript:;" onclick="changeLocationTab($(this))">
+       <div class="title-prov">
+        Chọn Tỉnh/Thành
+       </div>
+       <span class="txt-prov-old">
+        Vui lòng chọn Tỉnh/Thành bên dưới
+       </span>
+      </a>
+      <a class="disable" data-list="#lst-ward" href="javascript:;" onclick="changeLocationTab($(this))">
+       <div class="title-ward">
+        Chọn Phường/Xã
+       </div>
+       <span class="txt-ward-old hide">
+        Vui lòng chọn Phường/Xã bên dưới
+       </span>
+      </a>
+     </div>
+    </div>
+    <div class="location-search hide">
+     <i class="icon-search">
+     </i>
+     <input id="locationSearch" name="locationSearch" onkeyup="suggestLocation(event);" placeholder="Tìm nhanh tỉnh thành, phường xã">
+      <a class="clear-searchbox" href="javascript:;" onclick="clearSearchBox()">
+       <span class="box-relative">
+        <i class="close-itemv3">
+        </i>
+       </span>
+      </a>
+     </input>
+    </div>
+    <strong class="choose-province__diffence hide">
+     <span>
+      Thay đổi địa chỉ khác
+     </span>
+    </strong>
+    <div class="location-suggestaddress">
+     <i class="icon-search">
+     </i>
+     <input id="locationSuggestAddress" name="locationSuggestAddress" onkeyup="suggestAddress(event);" placeholder="Nhập địa chỉ (Tòa nhà, Số nhà, Tên đường,...) để gợi ý"/>
+     <a class="clear-suggestaddress" href="javascript:;" onclick="clearSuggestAddress()">
+      <span class="box-relative">
+       <i class="close-itemv3">
+       </i>
+      </span>
+     </a>
+    </div>
+   </div>
+   <div class="listing-location">
+    <div id="suggest-location">
+    </div>
+    <div id="suggest-address" style="display:block;">
+     <div class="choose-province">
+      <span>
+       Hoặc
+      </span>
+     </div>
+     <a class="suggest-address-notfound" href="javascript:;">
+      Chọn địa chỉ
+      <span>
+       Nhập địa chỉ theo Tỉnh/TP, Phường/Xã
+      </span>
+     </a>
+     <ul class="suggest-location">
+     </ul>
+     <input name="suggest-address-ss" type="hidden" value=""/>
+    </div>
+    <img class="img-location" src="https://cdnv2.tgdd.vn/mwg-static/common/sample/bro638962249653176064.png"/>
+    <div class="search-not-found hide">
+     <img alt="not found" class="img-not-found" src="https://cdnv2.tgdd.vn/mwg-static/common/sample/no%20result638962242315596375.png"/>
+     <h3>
+      Không tìm thấy kết quả phù hợp
+     </h3>
+     <span>
+      Hãy thử lại với từ khoá khác
+     </span>
+    </div>
+    <div class="lst-location hide" id="lst-prov">
+     <div class="listing-locale">
+      <ul>
+       <li>
+        <a class="province-name" data-value="1027" href="javascript:;" onclick="changePoupProvinceV4(1027, this)">
+         Thành phố Hồ Chí Minh
+         <span class="province-name-old">
+          Hồ Chí Minh, Bình Dương,
+                                    Bà Rịa - Vũng Tàu
+         </span>
+        </a>
+       </li>
+       <li>
+        <a class="province-name" data-value="1000" href="javascript:;" onclick="changePoupProvinceV4(1000, this)">
+         Thành phố Hà Nội
+         <span class="province-name-old">
+         </span>
+        </a>
+       </li>
+       <li>
+        <a class="province-name" data-value="1020" href="javascript:;" onclick="changePoupProvinceV4(1020, this)">
+         Thành phố Đà Nẵng
+         <span class="province-name-old">
+          Quảng Nam, Đà Nẵng
+         </span>
+        </a>
+       </li>
+       <li>
+        <a class="province-name" data-value="1031" href="javascript:;" onclick="changePoupProvinceV4(1031, this)">
+         Tỉnh An Giang
+         <span class="province-name-old">
+          An Giang, Kiên Giang
+         </span>
+        </a>
+       </li>
+       <li>
+        <a class="province-name" data-value="1010" href="javascript:;" onclick="changePoupProvinceV4(1010, this)">
+         Tỉnh Bắc Ninh
+         <span class="province-name-old">
+          Bắc Giang, Bắc Ninh
+         </span>
+        </a>
+       </li>
+       <li>
+        <a class="province-name" data-value="1033" href="javascript:;" onclick="changePoupProvinceV4(1033, this)">
+         Tỉnh Cà Mau
+         <span class="province-name-old">
+          Bạc Liêu, Cà Mau
+         </span>
+        </a>
+       </li>
+       <li>
+        <a class="province-name" data-value="1032" href="javascript:;" onclick="changePoupProvinceV4(1032, this)">
+         Thành phố Cần Thơ
+         <span class="province-name-old">
+          Sóc Trăng, Cần Thơ, Hậu
+                                    Giang
+         </span>
+        </a>
+       </li>
+       <li>
+        <a class="province-name" data-value="1001" href="javascript:;" onclick="changePoupProvinceV4(1001, this)">
+         Tỉnh Cao Bằng
+         <span class="province-name-old">
+         </span>
+        </a>
+       </li>
+       <li>
+        <a class="province-name" data-value="1024" href="javascript:;" onclick="changePoupProvinceV4(1024, this)">
+         Tỉnh Đắk Lắk
+         <span class="province-name-old">
+          Đắk Lắk, Phú Yên
+         </span>
+        </a>
+       </li>
+       <li>
+        <a class="province-name" data-value="1003" href="javascript:;" onclick="changePoupProvinceV4(1003, this)">
+         Tỉnh Điện Biên
+         <span class="province-name-old">
+         </span>
+        </a>
+       </li>
+       <li>
+        <a class="province-name" data-value="1026" href="javascript:;" onclick="changePoupProvinceV4(1026, this)">
+         Tỉnh Đồng Nai
+         <span class="province-name-old">
+          Bình Phước, Đồng
+                                    Nai
+         </span>
+        </a>
+       </li>
+       <li>
+        <a class="province-name" data-value="1029" href="javascript:;" onclick="changePoupProvinceV4(1029, this)">
+         Tỉnh Đồng Tháp
+         <span class="province-name-old">
+          Tiền Giang, Đồng Tháp
+         </span>
+        </a>
+       </li>
+       <li>
+        <a class="province-name" data-value="1022" href="javascript:;" onclick="changePoupProvinceV4(1022, this)">
+         Tỉnh Gia Lai
+         <span class="province-name-old">
+          Gia Lai, Bình Định
+         </span>
+        </a>
+       </li>
+       <li>
+        <a class="province-name" data-value="1017" href="javascript:;" onclick="changePoupProvinceV4(1017, this)">
+         Tỉnh Hà Tĩnh
+         <span class="province-name-old">
+         </span>
+        </a>
+       </li>
+       <li>
+        <a class="province-name" data-value="1012" href="javascript:;" onclick="changePoupProvinceV4(1012, this)">
+         Thành phố Hải Phòng
+         <span class="province-name-old">
+          Hải Dương, Hải
+                                    Phòng
+         </span>
+        </a>
+       </li>
+       <li>
+        <a class="province-name" data-value="1019" href="javascript:;" onclick="changePoupProvinceV4(1019, this)">
+         Thành phố Huế
+         <span class="province-name-old">
+         </span>
+        </a>
+       </li>
+       <li>
+        <a class="province-name" data-value="1013" href="javascript:;" onclick="changePoupProvinceV4(1013, this)">
+         Tỉnh Hưng Yên
+         <span class="province-name-old">
+          Thái Bình, Hưng Yên
+         </span>
+        </a>
+       </li>
+       <li>
+        <a class="province-name" data-value="1023" href="javascript:;" onclick="changePoupProvinceV4(1023, this)">
+         Tỉnh Khánh Hòa
+         <span class="province-name-old">
+          Khánh Hòa, Ninh Thuận
+         </span>
+        </a>
+       </li>
+       <li>
+        <a class="province-name" data-value="1004" href="javascript:;" onclick="changePoupProvinceV4(1004, this)">
+         Tỉnh Lai Châu
+         <span class="province-name-old">
+         </span>
+        </a>
+       </li>
+       <li>
+        <a class="province-name" data-value="1025" href="javascript:;" onclick="changePoupProvinceV4(1025, this)">
+         Tỉnh Lâm Đồng
+         <span class="province-name-old">
+          Lâm Đồng, Đắk Nông,
+                                    Bình Thuận
+         </span>
+        </a>
+       </li>
+       <li>
+        <a class="province-name" data-value="1008" href="javascript:;" onclick="changePoupProvinceV4(1008, this)">
+         Tỉnh Lạng Sơn
+         <span class="province-name-old">
+         </span>
+        </a>
+       </li>
+       <li>
+        <a class="province-name" data-value="1006" href="javascript:;" onclick="changePoupProvinceV4(1006, this)">
+         Tỉnh Lào Cai
+         <span class="province-name-old">
+          Lào Cai, Yên Bái
+         </span>
+        </a>
+       </li>
+       <li>
+        <a class="province-name" data-value="1016" href="javascript:;" onclick="changePoupProvinceV4(1016, this)">
+         Tỉnh Nghệ An
+         <span class="province-name-old">
+         </span>
+        </a>
+       </li>
+       <li>
+        <a class="province-name" data-value="1014" href="javascript:;" onclick="changePoupProvinceV4(1014, this)">
+         Tỉnh Ninh Bình
+         <span class="province-name-old">
+          Nam Định, Ninh Bình, Hà
+                                    Nam
+         </span>
+        </a>
+       </li>
+       <li>
+        <a class="province-name" data-value="1011" href="javascript:;" onclick="changePoupProvinceV4(1011, this)">
+         Tỉnh Phú Thọ
+         <span class="province-name-old">
+          Hòa Bình, Vĩnh Phúc, Phú
+                                    Thọ
+         </span>
+        </a>
+       </li>
+       <li>
+        <a class="province-name" data-value="1021" href="javascript:;" onclick="changePoupProvinceV4(1021, this)">
+         Tỉnh Quảng Ngãi
+         <span class="province-name-old">
+          Quảng Ngãi, Kon Tum
+         </span>
+        </a>
+       </li>
+       <li>
+        <a class="province-name" data-value="1009" href="javascript:;" onclick="changePoupProvinceV4(1009, this)">
+         Tỉnh Quảng Ninh
+         <span class="province-name-old">
+         </span>
+        </a>
+       </li>
+       <li>
+        <a class="province-name" data-value="1018" href="javascript:;" onclick="changePoupProvinceV4(1018, this)">
+         Tỉnh Quảng Trị
+         <span class="province-name-old">
+          Quảng Bình, Quảng Trị
+         </span>
+        </a>
+       </li>
+       <li>
+        <a class="province-name" data-value="1005" href="javascript:;" onclick="changePoupProvinceV4(1005, this)">
+         Tỉnh Sơn La
+         <span class="province-name-old">
+         </span>
+        </a>
+       </li>
+       <li>
+        <a class="province-name" data-value="1028" href="javascript:;" onclick="changePoupProvinceV4(1028, this)">
+         Tỉnh Tây Ninh
+         <span class="province-name-old">
+          Long An, Tây Ninh
+         </span>
+        </a>
+       </li>
+       <li>
+        <a class="province-name" data-value="1007" href="javascript:;" onclick="changePoupProvinceV4(1007, this)">
+         Tỉnh Thái Nguyên
+         <span class="province-name-old">
+          Thái Nguyên, Bắc Kạn
+         </span>
+        </a>
+       </li>
+       <li>
+        <a class="province-name" data-value="1015" href="javascript:;" onclick="changePoupProvinceV4(1015, this)">
+         Tỉnh Thanh Hóa
+         <span class="province-name-old">
+         </span>
+        </a>
+       </li>
+       <li>
+        <a class="province-name" data-value="1002" href="javascript:;" onclick="changePoupProvinceV4(1002, this)">
+         Tỉnh Tuyên Quang
+         <span class="province-name-old">
+          Hà Giang, Tuyên Quang
+         </span>
+        </a>
+       </li>
+       <li>
+        <a class="province-name" data-value="1030" href="javascript:;" onclick="changePoupProvinceV4(1030, this)">
+         Tỉnh Vĩnh Long
+         <span class="province-name-old">
+          Vĩnh Long, Trà Vinh, Bến Tre
+         </span>
+        </a>
+       </li>
+      </ul>
+     </div>
+     <a class="suggest-address-back" href="javascript:;">
+      Nhập bằng gợi ý địa chỉ
+     </a>
+    </div>
+    <div class="lst-location hide" id="lst-ward">
+    </div>
+    <div class="lst-location hide" id="lst-address">
+     <span>
+      Số nhà, tên đường
+     </span>
+     <input autocomplete="off" id="hdLocationAddress" maxlength="255" name="hdLocationAddress" onkeyup="getLocationAddress(true)" placeholder="Nhập số nhà, tên đường" type="text" value="">
+      <span class="addressErr">
+       Vui lòng cho Thế Giới Di Động biết số nhà, tên đường
+                    để thuận tiện giao hàng cho quý khách.
+      </span>
+      <label>
+       Vui lòng nhập địa chỉ số nhà, tên đường để giao hàng.
+      </label>
+     </input>
+    </div>
+    <div class="locationDefault hide">
+     <div>
+      Đặt làm địa chỉ mặc định
+     </div>
+     <div>
+      <label class="switch">
+       <input id="chkLocationDefault" type="checkbox"/>
+       <span class="slider">
+       </span>
+      </label>
+     </div>
+    </div>
+   </div>
+   <div class="location-confirm hide">
+    <a href="javascript:;" onclick="locationConfirmV4()">
+     Xác nhận địa chỉ
+    </a>
+   </div>
+   <input id="hdLocationAddressId" type="hidden" value="-1"/>
+   <input id="hdLocationProvinceId" type="hidden" value="0"/>
+   <input id="hdLocationFullAddress" type="hidden" value=""/>
+   <input id="hdLocationWardId" type="hidden" value="0"/>
+   <input id="hdLocationDefault" type="hidden" value="false"/>
+   <b data-provinceid="0" id="h-provincename" style="display:none!important">
+   </b>
+   <div class="locationbox__address">
+    <a href="javascript:;" onclick="closeLocation()">
+     <i class="close-symbol">
+     </i>
+    </a>
+    <b>
+     Thông tin giao hàng
+    </b>
+    <ul>
+    </ul>
+    <a class="btn-add" href="javascript:;">
+     Thêm thông tin địa chỉ giao hàng mới
+    </a>
+    <a class="btn-confirm" href="javascript:;" onclick="locationConfirmV4()">
+     Xác nhận
+    </a>
+    <div class="la-delete">
+     <div>
+      <img src="//cdnv2.tgdd.vn/webmwg/2024/ContentMwg/images/icon-warning-red.png"/>
+      <b>
+       Xóa địa chỉ
+      </b>
+      <span>
+       Bạn có chắc chắn muốn xóa địa chỉ này không?
+      </span>
+      <a class="btn-delete-cancel" href="javascript:;">
+       Hủy
+      </a>
+      <a class="btn-delete-confirm" href="javascript:;" onclick="deleteAddress()">
+       Xóa
+      </a>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="locationbox__popup new-popup hide" id="lc_pop--sugg">
+   <div class="locationbox__popup--cnt locationbox__popup--suggestion new-locale">
+    <div class="flex-block">
+     <i class="icon-location">
+     </i>
+     <p>
+      Hãy chọn
+      <b>
+       địa chỉ cụ thể
+      </b>
+      để chúng tôi cung cấp
+      <b>
+       chính xác
+      </b>
+      giá và khuyến mãi
+     </p>
+    </div>
+    <div class="btn-block">
+     <a class="btn-location" href="javascript:;" onclick="OpenLocation()">
+      <b>
+       Chọn địa chỉ
+      </b>
+     </a>
+     <a class="btn-location gray" href="javascript:;" onclick="SkipLocation()">
+      <b>
+       Đóng
+      </b>
+     </a>
+    </div>
+   </div>
+  </div>
+  <input data-location-twolevel="True" type="hidden">
+
+<div layout:fragment="content"></div>
+   <div id="showPromoteBHX">
+   </div>
+   <div id="dldingtext">
+    Bạn vui lòng chờ trong giây lát...
+   </div>
+   <footer class="footer v2024">
+    <section class="clearfix footer__top">
+     <div class="footer__col">
+      <div class="f-listtel">
+       <p class="f-listtel__title">
+        <strong>
+         Tổng đài hỗ trợ
+        </strong>
+       </p>
+       <p class="f-listtel__content">
+        <span>
+         Gọi mua:
+        </span>
+        <a href="tel:1900232460">
+         1900 232 460
+        </a>
+        (8:00 - 21:30)
+       </p>
+       <p class="f-listtel__content">
+        <span>
+         Khiếu nại:
+        </span>
+        <a href="tel:18001062">
+         1800.1062
+        </a>
+        (8:00 - 21:30)
+       </p>
+       <p class="f-listtel__content">
+        <span>
+         Bảo hành:
+        </span>
+        <a href="tel:1900232464">
+         1900 232 464
+        </a>
+        (8:00 - 21:00)
+       </p>
+      </div>
+     </div>
+     <div class="footer__col">
+      <div class="f-listtel">
+       <p class="f-listtel__title">
+        <strong>
+         Về công ty
+        </strong>
+       </p>
+      </div>
+      <ul class="f-listmenu">
+       <li>
+        <a href="https://mwg.vn" rel="nofollow">
+         Giới thiệu công ty (MWG.vn)
+        </a>
+       </li>
+       <li>
+        <a href="https://vieclam.thegioididong.com" rel="nofollow">
+         Tuyển dụng
+        </a>
+       </li>
+       <li>
+        <a href="/lien-he" rel="nofollow">
+         Gửi góp ý, khiếu nại
+        </a>
+       </li>
+       <li>
+        <a href="/he-thong-sieu-thi-the-gioi-di-dong" rel="nofollow">
+         Tìm siêu thị (2.956 shop)
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div class="footer__col">
+      <div class="f-listtel">
+       <p class="f-listtel__title">
+        <strong>
+         Thông tin khác
+        </strong>
+       </p>
+      </div>
+      <ul class="f-listmenu">
+       <li>
+        <a href="/tin-tuc/tat-tan-tat-ve-chuong-trinh-uu-dai-app-qua-tang-vip-link-tai-va-cach-su-dung-1481677#gioithieu" rel="nofollow">
+         Tích
+                            điểm Quà tặng VIP
+        </a>
+       </li>
+       <li>
+        <a href="/lich-su-mua-hang" rel="nofollow">
+         Lịch sử mua hàng
+        </a>
+       </li>
+       <li>
+        <a href="https://www.dienmayxanh.com/ctv-ban-hang?itm_source=tgdd&amp;itm_medium=footer&amp;itm_campaign=ctv-ban-hang" rel="nofollow" target="_blank">
+         Đăng ký bán hàng CTV chiết khấu cao
+        </a>
+       </li>
+       <li>
+        <a href="/tra-gop" rel="nofollow">
+         Tìm hiểu về mua trả chậm
+        </a>
+       </li>
+       <li>
+        <a href="/bao-hanh" rel="nofollow">
+         Chính sách bảo hành
+        </a>
+       </li>
+       <li>
+        <a class="arrow showtaga" href="javascript:;">
+         Xem thêm
+        </a>
+       </li>
+       <li class="hidden fmn">
+        <a href="/chinh-sach-bao-hanh-san-pham" rel="nofollow">
+         Chính sách đổi trả
+        </a>
+       </li>
+       <li class="hidden fmn">
+        <a href="/giao-hang" rel="nofollow">
+         Giao hàng &amp; Thanh toán
+        </a>
+       </li>
+       <li class="hidden fmn">
+        <a href="/huong-dan-mua-hang" rel="nofollow">
+         Hướng dẫn mua online
+        </a>
+       </li>
+       <li class="hidden fmn">
+        <a href="/b2b" rel="nofollow">
+         Bán hàng doanh nghiệp
+        </a>
+       </li>
+       <li class="hidden fmn">
+        <a href="/phieu-mua-hang" rel="nofollow">
+         Phiếu mua hàng
+        </a>
+       </li>
+       <li class="hidden fmn">
+        <a href="https://hddt.thegioididong.com" rel="nofollow">
+         In hóa đơn điện
+                            tử
+        </a>
+       </li>
+       <li class="hidden fmn">
+        <a href="/tos" rel="nofollow">
+         Quy chế hoạt động
+        </a>
+       </li>
+       <li class="hidden fmn">
+        <a href="/chinh-sach-xu-ly-du-lieu-ca-nhan" rel="nofollow">
+         Chính sách xử lý
+                            dữ liệu cá nhân
+        </a>
+       </li>
+       <li class="hidden fmn">
+        <a href="/noi-quy-cua-hang" rel="nofollow">
+         Nội quy cửa hàng
+        </a>
+       </li>
+       <li class="hidden fmn">
+        <a href="/chat-luong-phuc-vu" rel="nofollow">
+         Chất lượng phục vụ
+        </a>
+       </li>
+       <li class="hidden fmn">
+        <a href="/tin-tuc/can-trong-voi-nhung-sieu-thi-thegioididong-khong-chinh-chu--683321" rel="nofollow">
+         Cảnh báo
+                            giả mạo
+        </a>
+       </li>
+       <li class="hidden fmn">
+        <a href="/chinh-sach-khui-hop-apple" rel="nofollow">
+         Chính sách khui hộp sản
+                            phẩm Apple
+        </a>
+       </li>
+       <li class="hidden fmn">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeFq-zgAusY-WWdqsVWp6Cys7ZFRx0KVYgAKFQ37KAvwXtOig/viewform" rel="nofollow" target="_blank">
+         Hợp tác bán hàng
+        </a>
+       </li>
+       <li class="hidden fmn">
+        <a href="/hoi-dap">
+         Mạng xã hội thegioididong.com
+        </a>
+       </li>
+       <li class="hidden fmn">
+        <a class="arrow hidetaga" href="javascript:;" rel="nofollow">
+         Thu gọn
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div class="footer__col">
+      <div class="f-website">
+       <div class="footer__logo">
+        <p class="footer__logo-hd">
+         Website cùng tập đoàn
+        </p>
+        <ul class="footer__logo-list">
+         <li>
+          <a aria-label="logo topzone" href="https://www.topzone.vn/" target="_blank" title="Chuỗi cửa hàng cao cấp Apple">
+           <i class="iconlogo-topzone">
+           </i>
+          </a>
+         </li>
+         <li>
+          <a aria-label="logo dienmayxanh" href="https://www.dienmayxanh.com/" target="_blank">
+           <i class="iconlogo-dienmayxanh">
+           </i>
+          </a>
+         </li>
+         <li>
+          <a aria-label="logo bachhoaxanh" href="https://www.bachhoaxanh.com/" target="_blank">
+           <i class="iconlogo-bachhoaxanh">
+           </i>
+          </a>
+         </li>
+         <li>
+          <a aria-label="logo ankhang" href="https://www.nhathuocankhang.com/" target="_blank" title="Chuỗi nhà thuốc chuẩn GPP">
+           <i class="iconlogo-ankhang">
+           </i>
+          </a>
+         </li>
+         <li>
+          <a aria-label="logo avakids" href="https://www.avakids.com/" target="_blank" title="Chuỗi cửa hàng mẹ và bé">
+           <i class="iconlogo-kids">
+           </i>
+          </a>
+         </li>
+         <li>
+          <a aria-label="logo vieclam" href="https://vieclam.thegioididong.com/" target="_blank" title="Trang tuyển dụng của tập đoàn Thế Giới Di Động">
+           <i class="iconlogo-vieclam">
+           </i>
+          </a>
+         </li>
+         <li>
+          <a aria-label="logo erablue" href="https://www.erablue.id/" target="_blank" title="Toko Erablue Elektronik">
+           <i class="iconlogo-erablue">
+           </i>
+          </a>
+         </li>
+         <li class="logo-thodmx">
+          <a aria-label="logo thodienmayxanh" href="https://www.thodienmayxanh.com" target="_blank" title="Dịch vụ vệ sinh, bảo dưỡng, lắp đặt máy lạnh, máy lọc nước, tủ đứng">
+           <img class="lazyload" height="24" src="//cdnv2.tgdd.vn/webmwg/2024/ContentMwg/images/logo_thodmx-dtv2.png" width="80"/>
+          </a>
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="f-social">
+       <a class="link-fb" href="https://www.facebook.com/thegioididongcom" rel="nofollow">
+        <i class="icon-facebook">
+        </i>
+        3886.8k Fan
+       </a>
+       <a class="link-ytb" href="https://www.youtube.com/user/TGDDVideoReviews" rel="nofollow">
+        <i class="icon-youtube">
+        </i>
+        875k Đăng ký
+       </a>
+       <a class="imgzalo" href="https://zalo.me/936590283559458736" rel="nofollow" target="_blank">
+        <img alt="zalo" class="lazy lazyload" data-original="https://cdnv2.tgdd.vn/webmwg/2024/ContentMwg/images/icon_zalo.png" data-src="https://cdnv2.tgdd.vn/webmwg/2024/ContentMwg/images/icon_zalo.png" height="18" loading="lazy" width="18"/>
+        Zalo TGDĐ
+       </a>
+      </div>
+      <div class="f-certify">
+       <a aria-label="logo congthuong" href="http://online.gov.vn/Home/WebDetails/20090" rel="nofollow" target="_blank">
+        <i class="icon-congthuong">
+        </i>
+       </a>
+       <a aria-label="logo khieunai" href="/tos#giai-quyet-khieu-nai" rel="nofollow" target="_blank">
+        <i class="icon-khieunai">
+        </i>
+       </a>
+       <a aria-label="logo protected" class="dmca-badge" href="https://www.dmca.com/Protection/Status.aspx?ID=5b62e759-2a0c-4d86-b972-af903bfbc89d" rel="nofollow" target="_blank">
+        <i class="icon-protected">
+        </i>
+       </a>
+      </div>
+     </div>
+    </section>
+    <div class="copyright">
+     <section>
+      <p>
+       © 2018. Công Ty Cổ Phần Đầu Tư Điện Máy Xanh. GPDKKD: 0303217354 do sở KH &amp; ĐT TP.HCM cấp ngày
+                    02/01/2007. GPMXH: 21/GP-BTTTT do Bộ Thông Tin và Truyền Thông cấp ngày 11/01/2021.
+       <br/>
+       Địa chỉ: 128 Trần Quang Khải, P.Tân Định, TP. Hồ Chí Minh. Địa chỉ liên hệ và gửi chứng từ: Lô
+                    T2-1.2, Đường D1, P.Tăng Nhơn Phú, TP.Hồ Chí Minh. Điện thoại: 028 38125960. Email:
+                    hotrotmdt@thegioididong.com.
+                    Chịu trách nhiệm nội dung: Huỳnh Văn Tốt. Đại diện ủy quyền giải quyết các vấn đề liên quan bảo vệ
+                    quyền lợi người tiêu dùng: Huỳnh Văn Tốt. Email: hotrotmdt@thegioididong.com.
+       <a href="/thoa-thuan-su-dung-trang-mxh" rel="nofollow">
+        Xem chính sách sử dụng
+       </a>
+      </p>
+     </section>
+    </div>
+   </footer>
+   <script src="//cdn.tgdd.vn/mwgcart/mwgcore/js/bundle/globalTGDD_V2.min.v202602020750.js" type="text/javascript">
+   </script>
+   <script async="async" defer="defer" src="//cdn.tgdd.vn/mwgcart/mwgcore/js/bundle/homev3/homeTGDD.min.v202601290540.js" type="text/javascript">
+   </script>
+   <script async="async" defer="defer" src="//cdn.tgdd.vn/mwgcart/mwgcore/js/bundle/homeGTM_V2.min.v202511200210.js" type="text/javascript">
+   </script>
+   <div class="copy-toast-detail hide" id="copy-toast-detail">
+    <span class="icon">
+     !
+    </span>
+    <span class="text">
+     Sao chép thành công!
+    </span>
+   </div>
+  </input>
+ </body>
+</html>

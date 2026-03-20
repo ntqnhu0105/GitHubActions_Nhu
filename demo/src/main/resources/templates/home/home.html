@@ -1,0 +1,3297 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout}">
+<head>
+    <title>Thế Giới Di Động</title>
+</head>
+<body>
+    <div layout:fragment="content">
+   <div class="body-home">
+    <div class="popup-banner">
+     <div class="only-banner">
+      <div class="icon-close-popup">
+      </div>
+      <a data-cate="0" data-place="8002" href="https://www.thegioididong.com/#ngay-dep" onclick="jQuery.ajax({ url: '/bannertracking?bid=104509&amp;r='+ (new Date).getTime(), async: true, cache: false });">
+       <img alt="PMH KH MỚI 10% 500K" height="720" src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Banner/25/cf/25cf17937d377b08672addd43f08c8de.png" style="cursor:pointer" width="640"/>
+      </a>
+     </div>
+    </div>
+    <canvas class="canvaslunar" id="canvas">
+    </canvas>
+    <img class="label-left" height="400" src="//cdnv2.tgdd.vn/webmwg/2024/ContentMwg/images/lunar_new_year/2026/TGDD/label-left.png" width="360"/>
+    <img class="label-right" height="400" src="//cdnv2.tgdd.vn/webmwg/2024/ContentMwg/images/lunar_new_year/2026/TGDD/label-right.png" width="360"/>
+    <div class="festival-left">
+     <div data-banner="108797">
+      <a aria-label="slide" data-cate="0" data-place="8333" href="https://www.thegioididong.com/khuyen-mai-soc-smartphone-cao-cap" onclick="jQuery.ajax({ url: '/bannertracking?bid=108797&amp;r='+ (new Date).getTime(), async: true, cache: false });">
+       <img alt="Site sticky banner trái" class="lazyload" data-src="//cdnv2.tgdd.vn/mwg-static/tgdd/Banner/57/ce/57ce7cd2a7a892afd7f0e1826f9549fd.png" loading="lazy"/>
+      </a>
+     </div>
+    </div>
+    <div class="festival-right">
+     <div data-banner="109041">
+      <a aria-label="slide" data-cate="0" data-place="8349" href="https://www.thegioididong.com/chuong-trinh-tra-cham-ict" onclick="jQuery.ajax({ url: '/bannertracking?bid=109041&amp;r='+ (new Date).getTime(), async: true, cache: false });">
+       <img alt="Site sticky banner phải" class="lazyload" data-src="//cdnv2.tgdd.vn/mwg-static/tgdd/Banner/d8/ab/d8ab342d5f6f12580593ebc2adb9b663.png" loading="lazy"/>
+      </a>
+     </div>
+    </div>
+    <!-- big banner -->
+    <!--End-->
+    <div class="main-container">
+     <!--thông báo/ đánh giá đơn hàng-->
+     <section class="ratingOrder-status">
+     </section>
+     <!--Sản phẩm đã xem -->
+     <section class="home-viewed-products viewed-historyv3">
+     </section>
+     <div class="hot-promotion homeproducts-block">
+      <h3>
+       Khuyến mãi online
+      </h3>
+      <ul class="products-tabs col9">
+       <li class="active-tab fs-new-item" data-groupid="-1" data-id="flashsale" data-is-flashsale-tab="true">
+        <a class="fs-new-item-title" href="javascript:;">
+         <img alt="FlashSale" class="lazyload" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Campaign/7f/ef/7fef8b061259beac62885a6d7e1ede9c.png">
+         </img>
+        </a>
+       </li>
+       <li class="fs-new-item" data-groupid="10962" data-id="flashsaleCross">
+        <a class="fs-new-item-title" href="javascript:;">
+         <img alt="Flashsale" class="lazyload" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Campaign/62/87/62879b9cbcf5e19cd9b7be6add6623b1.png">
+         </img>
+        </a>
+       </li>
+       <li class="fs-new-item" data-groupid="9788" data-id="kmo">
+        <a class="fs-new-item-title" href="javascript:;">
+         <img alt="Online Only" class="lazyload" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Campaign/7a/e0/7ae0723d3d978fd4c8a2c77f3bf4bd3a.png">
+         </img>
+        </a>
+       </li>
+       <li class="fs-new-item" data-groupid="9776" data-id="kmo">
+        <a class="fs-new-item-title" href="javascript:;">
+         <span class="allimg">
+          Điện Thoại
+         </span>
+        </a>
+       </li>
+       <li class="fs-new-item" data-groupid="9845" data-id="kmo">
+        <a class="fs-new-item-title" href="javascript:;">
+         <span class="allimg">
+          Apple
+         </span>
+        </a>
+       </li>
+       <li class="fs-new-item" data-groupid="9777" data-id="kmo">
+        <a class="fs-new-item-title" href="javascript:;">
+         <span class="allimg">
+          Laptop
+         </span>
+        </a>
+       </li>
+       <li class="fs-new-item" data-groupid="9778" data-id="kmo">
+        <a class="fs-new-item-title" href="javascript:;">
+         <span class="allimg">
+          Phụ Kiện
+         </span>
+        </a>
+       </li>
+       <li class="fs-new-item" data-groupid="9846" data-id="kmo">
+        <a class="fs-new-item-title" href="javascript:;">
+         <span class="allimg">
+          Đồng Hồ
+         </span>
+        </a>
+       </li>
+       <li class="fs-new-item" data-groupid="10528" data-id="PC">
+        <a class="fs-new-item-title" href="javascript:;">
+         <span class="allimg">
+          PC, Máy in
+         </span>
+        </a>
+       </li>
+      </ul>
+      <div class="block-products relative has-flashsale">
+       <div class="preloader">
+        <div class="loaderweb">
+        </div>
+       </div>
+       <div class="box-common__content" data-groupid="-1" data-is-flashsale-tab="true">
+        <div class="flashsale-block theme-fs" id="flashsale">
+         <div class="stage-two">
+          <div class="load">
+          </div>
+         </div>
+         <div class="timeline-title" data-programid="102">
+          <div class="listing-timeline col5 full">
+           <a class="active endtime" data-begin="2/7/2026 12:00:00 PM" data-countdown="2/7/2026 2:59:00 PM" data-ishappening="True" data-productlist="341797,329329,334404,331493,331483,331494,340486,359118,327554,327958,315212,287010,333148,339179,358224,331495,335275,331231,339688,328648,337128,309742,199229,215844,336619,323544,320730,317623,339235,332236,327097,334806,359914,234490,238392,208479,335234,336623,332938,329959,338318,335579,359119,313978,331136,359236,238397,278437" href="javascript:;">
+            <span class="title-end">
+             Chỉ còn:
+             <br/>
+            </span>
+            <span class="countdown-timer calling">
+             <label id="hour">
+              00
+             </label>
+             <label id="minute">
+              00
+             </label>
+             <label id="second">
+              00
+             </label>
+            </span>
+           </a>
+           <!-- #region name -->
+           <!-- #endregion -->
+           <a class="new" data-productlist="341802,336623,328452,331493,331483,331494,341621,359118,360084,319700,337614,206144,332938,329959,335955,331495,335275,331231,339237,328648,329586,335787,340720,244569,343065,328454,337714,317623,334797,323544,327409,334799,310641,342568,279660,199201,319665,343066,337713,359086,358132,343061,359119,340481,337870,342922,307284,278404" href="javascript:;">
+            <span>
+             Sắp diễn ra
+            </span>
+            <span>
+             15:00
+            </span>
+           </a>
+           <a class="new" data-productlist="335955,343067,333574,331493,331483,331494,341622,359118,330709,328744,322239,200926,333148,339179,311063,331495,335275,331231,339684,328648,329882,337135,293968,210269,335307,332934,320730,317623,330579,335234,338208,338321,286272,342566,296123,201661,331207,335579,332938,329959,342758,339177,359119,340481,331863,342376,309875,292798" href="javascript:;">
+            <span>
+             Sắp diễn ra
+            </span>
+            <span>
+             18:00
+            </span>
+           </a>
+           <a class="new" data-productlist="335955,343067,333574,331493,331483,331494,341622,359118,330709,328744,322239,200926,333148,339179,311063,331495,335275,331231,339684,328648,329882,337135,293968,210269,335307,332934,320730,317623,330579,335234,338208,338321,286272,342566,296123,201661,331207,335579,332938,329959,342758,339177,359119,340481,331863,342376,309875,292798" href="javascript:;">
+            <span>
+             Sắp diễn ra
+            </span>
+            <span>
+             21:30
+            </span>
+           </a>
+           <a class="new" data-productlist="334932,332234,339177,331493,331483,331494,338318,359118,331195,329596,333705,333700,332938,329959,341802,331482,331495,335275,323920,328648,359235,338173,200881,231875,335579,332934,320730,329706,331231,230979,341861,326831,351682,361743,279670,322238,335955,336619,328452,325329,334800,328745,359119,339684,336323,332411,231797,320559" href="javascript:;">
+            <span>
+             Ngày mai
+            </span>
+            <span>
+             00:00
+            </span>
+           </a>
+          </div>
+         </div>
+         <div class="box-scroll">
+          <div class="listproduct slider-flashsale has-slick" data-colomn="" data-size="20">
+            <div class="item" th:each="product : ${flashSaleProducts}" th:data-id="${product.id}" style="width: 100%; display: inline-block;">
+             <a class="remain_quantity main-contain" th:href="@{/products/detail/{id}(id=${product.id})}" data-box="BoxHomeFlashsale" data-brand="" data-cache="True" data-cate="" data-color="" data-crm="" th:data-id="${product.id}" th:data-name="${product.name}" data-pos="0" data-premium="False" th:data-price="${product.price}" data-pro="1027" data-productstatus="" data-promotiontype="" data-s="TwoPriceDetailCMS" data-site="1">
+              <div class="item-img">
+               <img th:if="${product.image != null and !product.image.isEmpty()}" th:alt="${product.name}" class="lazyload" th:src="@{'/images/' + ${product.image}}" height="207" width="207"/>
+              <img th:unless="${product.image != null and !product.image.isEmpty()}" th:alt="${product.name}" class="lazyload" src="https://placehold.co/207x207?text=No+Image" height="207" width="207"/>
+              </div>
+              <h3 th:text="${product.name}">
+               Product Name
+              </h3>
+              <strong class="price" th:text="${#numbers.formatDecimal(product.price, 0, 'POINT', 0, 'COMMA')} + '₫'">
+               Price
+               <span class="price-and-discount">
+                <label class="price-old black">
+                 <span th:text="${#numbers.formatDecimal(product.price * 1.1, 0, 'POINT', 0, 'COMMA')} + '₫'">Old Price</span>
+                </label>
+                <small>
+                 -10%
+                </small>
+               </span>
+              </strong>
+              <div class="fs-contain">
+               <img alt="icon flashsale" height="15" src="//cdnv2.tgdd.vn/webmwg/2024/ContentMwg/images/homev2/flash-sale.png" width="15"/>
+                <span class="rq_count fscount">
+                 <i class="fs-iconfire" style="width:75%;">
+                 </i>
+                 <b>
+                  Còn 15/20 suất
+                 </b>
+                </span>
+              </div>
+             </a>
+             <div class="btn-buy">
+              <a class="see-detail hide" th:href="@{/products/detail/{id}(id=${product.id})}">
+               Xem chi tiết
+              </a>
+              <a class="buy-now" th:href="@{/cart/add(productId=${product.id})}">
+               Mua ngay
+              </a>
+             </div>
+            </div>
+          </div>
+          <a class="readmore-btn fl-btn" href="https://www.thegioididong.com/flashsale">
+           <span>
+            Xem
+                                        thêm sản phẩm
+           </span>
+          </a>
+         </div>
+        </div>
+       </div>
+       <div class="box-common__content cross-border hidden-carousel" data-groupid="-2" data-is-flashsale-cross-tab="true">
+        <div class="flashsale-block theme-fs" id="flashsaleCross">
+         <div class="stage-two">
+          <div class="load">
+          </div>
+         </div>
+         <div class="timeline-title" data-programid="125">
+          <div class="listing-timeline col2 full">
+           <a class="active endtime" data-begin="2/7/2026 12:00:00 AM" data-countdown="2/7/2026 11:59:00 PM" data-ishappening="True" data-productlist="360026,361089,360829,360812,360042,360707,360825,361281,360035,360751,360817,361227,360045,361259,360871,360818,360044,360736,360836,361345,360727,361087,360850,361243,360034,361091,361151,361189,360300,360879,361115,360792,360354,360881,361239,361143,360032,360873,361145,361246,360378,360890,361226,360835,360666,361099,361365,361378" href="javascript:;">
+            <span class="title-end">
+             Chỉ còn:
+             <br/>
+            </span>
+            <span class="countdown-timer calling">
+             <label id="hourCross">
+              00
+             </label>
+             <label id="minuteCross">
+              00
+             </label>
+             <label id="secondCross">
+              00
+             </label>
+            </span>
+           </a>
+           <!-- #endregion -->
+           <a class="new" data-productlist="360336,361088,360871,361281,360042,360707,360829,360812,360039,360751,360825,360818,360045,361257,360817,361227,360323,360736,360850,361243,360727,361087,360836,361345,360034,361090,361115,360792,360043,360879,361151,361189,360029,360882,361145,361246,360032,360874,361239,361143,360378,360890,361365,361378,360665,361097,361226,360835" href="javascript:;">
+            <span>
+             Sắp diễn ra
+            </span>
+            <span>
+             00:00
+            </span>
+           </a>
+          </div>
+         </div>
+         <div class="box-scroll">
+          <div class="listproduct slider-flashsale has-slick" data-colomn="" data-size="20">
+           <div class="item" data-id="360026" data-pos="1">
+            <a class="remain_quantity main-contain" data-box="BoxHomeFlashsale" data-brand="Earfun" data-cache="True" data-cate="Tai nghe" data-color="Tím" data-crm="3522097" data-id="360026" data-name="Tai nghe Bluetooth True Wireless Earfun Air Life - Tím" data-pos="0" data-premium="False" data-price="340000.0" data-pro="1027" data-productstatus="" data-promotiontype="" data-s="TwoPriceDetailOLOLCMS" data-site="1" href="/tai-nghe/tai-nghe-blutetooth-true-wireless-earfun-air-life-tim?utm_flashsale=1">
+             <div class="item-img">
+              <img alt="Tai nghe TWS Earfun Air Life - Tím" class="lazyload" data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/54/360026/tai-nghe-blutetooth-true-wireless-earfun-air-life-tim-thumb-639013071154935809-600x600.jpg" height="207" width="207"/>
+             </div>
+             <h3>
+              Tai nghe TWS Earfun Air Life - Tím
+             </h3>
+             <strong class="price">
+              340.000₫
+              <span class="price-and-discount">
+               <label class="price-old black">
+                590.000₫
+               </label>
+               <small>
+                -42%
+               </small>
+              </span>
+             </strong>
+             <div class="fs-contain">
+              <img alt="icon flashsale" height="15" src="//cdnv2.tgdd.vn/webmwg/2024/ContentMwg/images/homev2/flash-sale.png" width="15">
+               <span class="rq_count fscount">
+                <i class="fs-iconfire" style="width:100%;">
+                </i>
+                <b>
+                 Còn 10/10 suất
+                </b>
+               </span>
+              </img>
+             </div>
+            </a>
+            <div class="btn-buy">
+             <a class="see-detail hide" href="/tai-nghe/tai-nghe-blutetooth-true-wireless-earfun-air-life-tim?utm_flashsale=1">
+              Xem chi tiết
+             </a>
+             <a class="buy-now" href="/cart/them-vao-gio-hang?productId=360026&amp;productCode=0163346000745&amp;productType=6">
+              Mua ngay
+             </a>
+            </div>
+           </div>
+           <div class="item" data-id="361089" data-pos="2">
+            <a class="remain_quantity main-contain" data-box="BoxHomeFlashsale" data-brand="AUKEY" data-cache="True" data-cate="Sạc dự phòng" data-color="Bạc" data-crm="3521845" data-id="361089" data-name="Pin sạc dự phòng Polymer 10000mAh Type C PD QC 3.0 15W Aukey PB-Y46 - Xám Bạc" data-pos="0" data-premium="False" data-price="290000.0" data-pro="1027" data-productstatus="" data-promotiontype="" data-s="TwoPriceDetailOLOLCMS" data-site="1" href="/sac-dtdd/pin-sac-du-phong-polymer-10000mah-type-c-pd-qc-30-15w-aukey-pb-y46-xam-bac?utm_flashsale=1">
+             <div class="item-img">
+              <img alt="Aukey 15W PB-Y46 - Xám Bạc" class="lazyload" data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/57/361089/pin-sac-du-phong-polymer-10000mah-type-c-pd-qc-30-15w-aukey-pb-y46-xam-bac-thumb-639022206744862283-600x600.jpg" height="207" width="207"/>
+             </div>
+             <h3>
+              Aukey 15W PB-Y46 - Xám Bạc
+             </h3>
+             <strong class="price">
+              290.000₫
+              <span class="price-and-discount">
+               <label class="price-old black">
+                500.000₫
+               </label>
+               <small>
+                -42%
+               </small>
+              </span>
+             </strong>
+             <div class="fs-contain">
+              <img alt="icon flashsale" height="15" src="//cdnv2.tgdd.vn/webmwg/2024/ContentMwg/images/homev2/flash-sale.png" width="15">
+               <span class="rq_count fscount">
+                <i class="fs-iconfire" style="width:100%;">
+                </i>
+                <b>
+                 Còn 10/10 suất
+                </b>
+               </span>
+              </img>
+             </div>
+            </a>
+            <div class="btn-buy">
+             <a class="see-detail hide" href="/sac-dtdd/pin-sac-du-phong-polymer-10000mah-type-c-pd-qc-30-15w-aukey-pb-y46-xam-bac?utm_flashsale=1">
+              Xem chi tiết
+             </a>
+             <a class="buy-now" href="/cart/them-vao-gio-hang?productId=361089&amp;productCode=0160012000692&amp;productType=6">
+              Mua ngay
+             </a>
+            </div>
+           </div>
+           <div class="item" data-id="360829" data-pos="3">
+            <a class="remain_quantity main-contain" data-box="BoxHomeFlashsale" data-brand="Tucano" data-cache="True" data-cate="Balo, túi chống sốc" data-color="Xanh Đậm" data-crm="3460764" data-id="360829" data-name="Balo Laptop 15.6 inch TUCANO Loop Eco" data-pos="0" data-premium="False" data-price="1080000.0" data-pro="1027" data-productstatus="" data-promotiontype="" data-s="TwoPriceDetailOLOLCMS" data-site="1" href="/tui-chong-soc/balo-laptop-156-inch-tucano-loop-eco?utm_flashsale=1">
+             <div class="item-img">
+              <img alt="Balo Laptop 15.6 inch TUCANO Loop Eco" class="lazyload" data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/7923/360829/balo-laptop-156-inch-tucano-loop-eco-thumb-639023799689988274-600x600.jpg" height="207" width="207"/>
+             </div>
+             <h3>
+              Balo Laptop 15.6 inch TUCANO Loop Eco
+             </h3>
+             <strong class="price">
+              1.080.000₫
+              <span class="price-and-discount">
+               <label class="price-old black">
+                1.200.000₫
+               </label>
+               <small>
+                -10%
+               </small>
+              </span>
+             </strong>
+             <div class="fs-contain">
+              <img alt="icon flashsale" height="15" src="//cdnv2.tgdd.vn/webmwg/2024/ContentMwg/images/homev2/flash-sale.png" width="15">
+               <span class="rq_count fscount">
+                <i class="fs-iconfire" style="width:100%;">
+                </i>
+                <b>
+                 Còn 5/5 suất
+                </b>
+               </span>
+              </img>
+             </div>
+            </a>
+            <div class="btn-buy">
+             <a class="see-detail hide" href="/tui-chong-soc/balo-laptop-156-inch-tucano-loop-eco?utm_flashsale=1">
+              Xem chi tiết
+             </a>
+             <a class="buy-now" href="/cart/them-vao-gio-hang?productId=360829&amp;productCode=1845975000242&amp;productType=6">
+              Mua ngay
+             </a>
+            </div>
+           </div>
+           <div class="item" data-id="360812" data-pos="4">
+            <a class="remain_quantity main-contain" data-box="BoxHomeFlashsale" data-brand="Tucano" data-cache="True" data-cate="Balo, túi chống sốc" data-color="Xanh Dương" data-crm="3460777" data-id="360812" data-name="Túi chống sốc Macbook Pro 16 inch TUCANO Melange Second Skin - Xanh" data-pos="0" data-premium="False" data-price="612000.0" data-pro="1027" data-productstatus="" data-promotiontype="" data-s="TwoPriceDetailOLOLCMS" data-site="1" href="/tui-chong-soc/tui-chong-soc-macbook-pro-16-inch-tucano-melange-second-skin-xanh?utm_flashsale=1">
+             <div class="item-img">
+              <img alt="Túi chống sốc Macbook Pro 16 inch TUCANO Melange Second Skin" class="lazyload" data-src="https://cdnv2.tgdd.vn/mwg-static/dmx/Products/Images/7923/360812/tui-chong-soc-macbook-pro-16-inch-tucano-melange-second-skin-xanh-thumb-2-639023432070535374-300x300.jpg" height="207" width="207"/>
+             </div>
+             <h3>
+              Túi chống sốc Macbook Pro 16 inch TUCANO Melange Second Skin
+             </h3>
+             <strong class="price">
+              612.000₫
+              <span class="price-and-discount">
+               <label class="price-old black">
+                680.000₫
+               </label>
+               <small>
+                -10%
+               </small>
+              </span>
+             </strong>
+             <div class="fs-contain">
+              <img alt="icon flashsale" height="15" src="//cdnv2.tgdd.vn/webmwg/2024/ContentMwg/images/homev2/flash-sale.png" width="15">
+               <span class="rq_count fscount">
+                <i class="fs-iconfire" style="width:100%;">
+                </i>
+                <b>
+                 Còn 5/5 suất
+                </b>
+               </span>
+              </img>
+             </div>
+            </a>
+            <div class="btn-buy">
+             <a class="see-detail hide" href="/tui-chong-soc/tui-chong-soc-macbook-pro-16-inch-tucano-melange-second-skin-xanh?utm_flashsale=1">
+              Xem chi tiết
+             </a>
+             <a class="buy-now" href="/cart/them-vao-gio-hang?productId=360812&amp;productCode=1845975000255&amp;productType=6">
+              Mua ngay
+             </a>
+            </div>
+           </div>
+           <div class="item" data-id="360042" data-pos="5">
+            <a class="remain_quantity main-contain" data-box="BoxHomeFlashsale" data-brand="HAVIT" data-cache="True" data-cate="Tai nghe" data-color="Đen" data-crm="3522087" data-id="360042" data-name="Tai nghe Bluetooth True Wireless Havit H2590BT" data-pos="0" data-premium="False" data-price="240000.0" data-pro="1027" data-productstatus="" data-promotiontype="" data-s="TwoPriceDetailOLOLCMS" data-site="1" href="/tai-nghe/tai-nghe-bluetooth-true-wireless-havit-h2590bt?utm_flashsale=1">
+             <div class="item-img">
+              <img alt="Tai nghe TWS Havit H2590BT" class="lazyload" data-src="https://cdnv2.tgdd.vn/mwg-static/dmx/Products/Images/54/360042/tai-nghe-bluetooth-true-wireless-havit-h2590bt-thumb-639013916631509980-600x600.jpg" height="207" width="207"/>
+             </div>
+             <h3>
+              Tai nghe TWS Havit H2590BT
+             </h3>
+             <strong class="price">
+              240.000₫
+              <span class="price-and-discount">
+               <label class="price-old black">
+                350.000₫
+               </label>
+               <small>
+                -31%
+               </small>
+              </span>
+             </strong>
+             <div class="fs-contain">
+              <img alt="icon flashsale" height="15" src="//cdnv2.tgdd.vn/webmwg/2024/ContentMwg/images/homev2/flash-sale.png" width="15">
+               <span class="rq_count fscount">
+                <i class="fs-iconfire" style="width:100%;">
+                </i>
+                <b>
+                 Còn 10/10 suất
+                </b>
+               </span>
+              </img>
+             </div>
+            </a>
+            <div class="btn-buy">
+             <a class="see-detail hide" href="/tai-nghe/tai-nghe-bluetooth-true-wireless-havit-h2590bt?utm_flashsale=1">
+              Xem chi tiết
+             </a>
+             <a class="buy-now" href="/cart/them-vao-gio-hang?productId=360042&amp;productCode=0163346000763&amp;productType=6">
+              Mua ngay
+             </a>
+            </div>
+           </div>
+           <div class="item" data-id="360707" data-pos="6">
+            <a class="remain_quantity main-contain" data-box="BoxHomeFlashsale" data-brand="AUKEY" data-cache="True" data-cate="Adapter sạc" data-color="Đen" data-crm="3521847" data-id="360707" data-name="Sạc nhanh Type-C PD 45W Aukey PA-F4 Omnia" data-pos="0" data-premium="False" data-price="340000.0" data-pro="1027" data-productstatus="" data-promotiontype="" data-s="TwoPriceDetailOLOLCMS" data-site="1" href="/adapter-sac/sac-nhanh-type-c-pd-45w-aukey-pa-f4-omnia?utm_flashsale=1">
+             <div class="item-img">
+              <img alt="Sạc nhanh Type-C PD Aukey PA-F4 Omnia" class="lazyload" data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/9499/360707/sac-nhanh-type-c-pd-45w-aukey-pa-f4-omnia-thumb-639018087760587044-600x600.jpg" height="207" width="207"/>
+             </div>
+             <h3>
+              Sạc nhanh Type-C PD Aukey PA-F4 Omnia
+             </h3>
+             <strong class="price">
+              340.000₫
+              <span class="price-and-discount">
+               <label class="price-old black">
+                600.000₫
+               </label>
+               <small>
+                -43%
+               </small>
+              </span>
+             </strong>
+             <div class="fs-contain">
+              <img alt="icon flashsale" height="15" src="//cdnv2.tgdd.vn/webmwg/2024/ContentMwg/images/homev2/flash-sale.png" width="15">
+               <span class="rq_count fscount">
+                <i class="fs-iconfire" style="width:100%;">
+                </i>
+                <b>
+                 Còn 10/10 suất
+                </b>
+               </span>
+              </img>
+             </div>
+            </a>
+            <div class="btn-buy">
+             <a class="see-detail hide" href="/adapter-sac/sac-nhanh-type-c-pd-45w-aukey-pa-f4-omnia?utm_flashsale=1">
+              Xem chi tiết
+             </a>
+             <a class="buy-now" href="/cart/them-vao-gio-hang?productId=360707&amp;productCode=0160014000701&amp;productType=6">
+              Mua ngay
+             </a>
+            </div>
+           </div>
+           <div class="item" data-id="360825" data-pos="7">
+            <a class="remain_quantity main-contain" data-box="BoxHomeFlashsale" data-brand="Dekey" data-cache="True" data-cate="Cáp sạc" data-color="Đen" data-crm="3516841" data-id="360825" data-name="Cáp sạc nhanh và truyền dữ liệu Type C - Type C 100W 0.9m Dekey Power Pioneer C2588 - Đen" data-pos="0" data-premium="False" data-price="365000.0" data-pro="1027" data-productstatus="" data-promotiontype="" data-s="TwoPriceDetailOLOLCMS" data-site="1" href="/cap-dien-thoai/cap-sac-type-c-type-c-100w-09m-dekey-power-pioneer-c2588-den?utm_flashsale=1">
+             <div class="item-img">
+              <img alt="Cáp sạc nhanh và truyền dữ liệu 0.9m Dekey Power Pioneer C2588" class="lazyload" data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/58/360825/cap-sac-type-c-type-c-100w-09m-dekey-power-pioneer-c2588-den-thumb-639022114213004572-600x600.jpg" height="207" width="207"/>
+             </div>
+             <h3>
+              Cáp sạc nhanh và truyền dữ liệu 0.9m Dekey Power Pioneer C2588
+             </h3>
+             <strong class="price">
+              365.000₫
+              <span class="price-and-discount">
+               <label class="price-old black">
+                430.000₫
+               </label>
+               <small>
+                -15%
+               </small>
+              </span>
+             </strong>
+             <div class="fs-contain">
+              <img alt="icon flashsale" height="15" src="//cdnv2.tgdd.vn/webmwg/2024/ContentMwg/images/homev2/flash-sale.png" width="15">
+               <span class="rq_count fscount">
+                <i class="fs-iconfire" style="width:100%;">
+                </i>
+                <b>
+                 Còn 5/5 suất
+                </b>
+               </span>
+              </img>
+             </div>
+            </a>
+            <div class="btn-buy">
+             <a class="see-detail hide" href="/cap-dien-thoai/cap-sac-type-c-type-c-100w-09m-dekey-power-pioneer-c2588-den?utm_flashsale=1">
+              Xem chi tiết
+             </a>
+             <a class="buy-now" href="/cart/them-vao-gio-hang?productId=360825&amp;productCode=0163345001033&amp;productType=6">
+              Mua ngay
+             </a>
+            </div>
+           </div>
+           <div class="item" data-id="361281" data-pos="8">
+            <a class="remain_quantity main-contain" data-box="BoxHomeFlashsale" data-brand="DEKEY" data-cache="True" data-cate="Miếng dán" data-color="Trắng" data-crm="3460927" data-id="361281" data-name="Miếng dán kính cường lực iPhone 16 Pro/17 DEKEY 3D Deluxe" data-pos="0" data-premium="False" data-price="203000.0" data-pro="1027" data-productstatus="" data-promotiontype="" data-s="TwoPriceDetailOLOLCMS" data-site="1" href="/mieng-dan-man-hinh/mieng-dan-kinh-cuong-luc-iphone-16-pro-17-dekey-3d-deluxe?utm_flashsale=1">
+             <div class="item-img">
+              <img alt="Miếng dán iPhone 16 Pro/17 DEKEY 3D Deluxe" class="lazyload" data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/1363/361281/mieng-dan-kinh-cuong-luc-iphone-16-pro-17-dekey-3d-deluxe-thumb-639043898239120696-600x600.jpg" height="207" width="207"/>
+             </div>
+             <h3>
+              Miếng dán iPhone 16 Pro/17 DEKEY 3D Deluxe
+             </h3>
+             <strong class="price">
+              203.000₫
+              <span class="price-and-discount">
+               <label class="price-old black">
+                238.000₫
+               </label>
+               <small>
+                -14%
+               </small>
+              </span>
+             </strong>
+             <div class="fs-contain">
+              <img alt="icon flashsale" height="15" src="//cdnv2.tgdd.vn/webmwg/2024/ContentMwg/images/homev2/flash-sale.png" width="15">
+               <span class="rq_count fscount">
+                <i class="fs-iconfire" style="width:100%;">
+                </i>
+                <b>
+                 Còn 5/5 suất
+                </b>
+               </span>
+              </img>
+             </div>
+            </a>
+            <div class="btn-buy">
+             <a class="see-detail hide" href="/mieng-dan-man-hinh/mieng-dan-kinh-cuong-luc-iphone-16-pro-17-dekey-3d-deluxe?utm_flashsale=1">
+              Xem chi tiết
+             </a>
+             <a class="buy-now" href="/cart/them-vao-gio-hang?productId=361281&amp;productCode=1844199000293&amp;productType=6">
+              Mua ngay
+             </a>
+            </div>
+           </div>
+           <div class="item" data-id="360035" data-pos="9">
+            <a class="remain_quantity main-contain" data-box="BoxHomeFlashsale" data-brand="KZ" data-cache="True" data-cate="Tai nghe" data-color="Trắng" data-crm="3522095" data-id="360035" data-name="Tai nghe Có dây KZ EDX Lite" data-pos="0" data-premium="False" data-price="190000.0" data-pro="1027" data-productstatus="" data-promotiontype="" data-s="TwoPriceDetailOLOLCMS" data-site="1" href="/tai-nghe/tai-nghe-co-day-kz-edx-lite?utm_flashsale=1">
+             <div class="item-img">
+              <img alt="Tai nghe Dây KZ EDX Lite" class="lazyload" data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/54/360035/tai-nghe-co-day-kz-edx-lite-thumb-639013451463488469-600x600.jpg" height="207" width="207"/>
+             </div>
+             <h3>
+              Tai nghe Dây KZ EDX Lite
+             </h3>
+             <strong class="price">
+              190.000₫
+              <span class="price-and-discount">
+               <label class="price-old black">
+                225.000₫
+               </label>
+               <small>
+                -15%
+               </small>
+              </span>
+             </strong>
+             <div class="fs-contain">
+              <img alt="icon flashsale" height="15" src="//cdnv2.tgdd.vn/webmwg/2024/ContentMwg/images/homev2/flash-sale.png" width="15">
+               <span class="rq_count fscount">
+                <i class="fs-iconfire" style="width:100%;">
+                </i>
+                <b>
+                 Còn 10/10 suất
+                </b>
+               </span>
+              </img>
+             </div>
+            </a>
+            <div class="btn-buy">
+             <a class="see-detail hide" href="/tai-nghe/tai-nghe-co-day-kz-edx-lite?utm_flashsale=1">
+              Xem chi tiết
+             </a>
+             <a class="buy-now" href="/cart/them-vao-gio-hang?productId=360035&amp;productCode=0160015000950&amp;productType=6">
+              Mua ngay
+             </a>
+            </div>
+           </div>
+           <div class="item" data-id="360751" data-pos="10">
+            <a class="remain_quantity main-contain" data-box="BoxHomeFlashsale" data-brand="AUKEY" data-cache="True" data-cate="Cáp sạc" data-color="Đen" data-crm="3521848" data-id="360751" data-name="Cáp sạc nhanh và truyền dữ liệu Type-C - Lightning 27W 1.2m Aukey CB-CL5 - Đen" data-pos="0" data-premium="False" data-price="220000.0" data-pro="1027" data-productstatus="" data-promotiontype="" data-s="TwoPriceDetailOLOLCMS" data-site="1" href="/cap-dien-thoai/cap-sac-nhanh-va-truyen-du-lieu-type-c-lightning-27w-12m-aukey-cb-cl5-den?utm_flashsale=1">
+             <div class="item-img">
+              <img alt="Cáp sạc nhanh và truyền dữ liệu 1.2m Aukey CB-CL5 - Đen" class="lazyload" data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/58/360751/cap-sac-nhanh-va-truyen-du-lieu-type-c-lightning-27w-12m-aukey-cb-cl5-den-thumb-639019874569001776-600x600.jpg" height="207" width="207"/>
+             </div>
+             <h3>
+              Cáp sạc nhanh và truyền dữ liệu 1.2m Aukey CB-CL5 - Đen
+             </h3>
+             <strong class="price">
+              220.000₫
+              <span class="price-and-discount">
+               <label class="price-old black">
+                290.000₫
+               </label>
+               <small>
+                -24%
+               </small>
+              </span>
+             </strong>
+             <div class="fs-contain">
+              <img alt="icon flashsale" height="15" src="//cdnv2.tgdd.vn/webmwg/2024/ContentMwg/images/homev2/flash-sale.png" width="15">
+               <span class="rq_count fscount">
+                <i class="fs-iconfire" style="width:100%;">
+                </i>
+                <b>
+                 Còn 10/10 suất
+                </b>
+               </span>
+              </img>
+             </div>
+            </a>
+            <div class="btn-buy">
+             <a class="see-detail hide" href="/cap-dien-thoai/cap-sac-nhanh-va-truyen-du-lieu-type-c-lightning-27w-12m-aukey-cb-cl5-den?utm_flashsale=1">
+              Xem chi tiết
+             </a>
+             <a class="buy-now" href="/cart/them-vao-gio-hang?productId=360751&amp;productCode=0163345001016&amp;productType=6">
+              Mua ngay
+             </a>
+            </div>
+           </div>
+           <div class="item" data-id="360817" data-pos="11">
+            <a class="remain_quantity main-contain" data-box="BoxHomeFlashsale" data-brand="Tucano" data-cache="True" data-cate="Balo, túi chống sốc" data-color="Đen" data-crm="3460781" data-id="360817" data-name="Túi chống sốc Laptop 14 inch TUCANO Sandy Sleeve - Đen" data-pos="0" data-premium="False" data-price="675000.0" data-pro="1027" data-productstatus="" data-promotiontype="" data-s="TwoPriceDetailOLOLCMS" data-site="1" href="/tui-chong-soc/tui-chong-soc-macbook-pro-13-14-inch-tucano-sandy-sleeve-den?utm_flashsale=1">
+             <div class="item-img">
+              <img alt="Túi chống sốc Laptop 14 inch TUCANO Sandy Sleeve" class="lazyload" data-src="https://cdnv2.tgdd.vn/mwg-static/dmx/Products/Images/7923/360817/tui-chong-soc-laptop-14-inch-tucano-sandy-sleeve-den-thumb-639023457713793928-300x300.jpg" height="207" width="207"/>
+             </div>
+             <h3>
+              Túi chống sốc Laptop 14 inch TUCANO Sandy Sleeve
+             </h3>
+             <strong class="price">
+              675.000₫
+              <span class="price-and-discount">
+               <label class="price-old black">
+                750.000₫
+               </label>
+               <small>
+                -10%
+               </small>
+              </span>
+             </strong>
+             <div class="fs-contain">
+              <img alt="icon flashsale" height="15" src="//cdnv2.tgdd.vn/webmwg/2024/ContentMwg/images/homev2/flash-sale.png" width="15">
+               <span class="rq_count fscount">
+                <i class="fs-iconfire" style="width:100%;">
+                </i>
+                <b>
+                 Còn 5/5 suất
+                </b>
+               </span>
+              </img>
+             </div>
+            </a>
+            <div class="btn-buy">
+             <a class="see-detail hide" href="/tui-chong-soc/tui-chong-soc-macbook-pro-13-14-inch-tucano-sandy-sleeve-den?utm_flashsale=1">
+              Xem chi tiết
+             </a>
+             <a class="buy-now" href="/cart/them-vao-gio-hang?productId=360817&amp;productCode=1845975000259&amp;productType=6">
+              Mua ngay
+             </a>
+            </div>
+           </div>
+           <div class="item" data-id="361227" data-pos="12">
+            <a class="remain_quantity main-contain" data-box="BoxHomeFlashsale" data-brand="Tucano" data-cache="True" data-cate="Balo, túi chống sốc" data-color="" data-crm="3460788" data-id="361227" data-name="Túi xách Laptop 15 inch TUCANO Compatto Eco Shopper - Xanh lá" data-pos="0" data-premium="False" data-price="612000.0" data-pro="1027" data-productstatus="" data-promotiontype="" data-s="TwoPriceDetailOLOLCMS" data-site="1" href="/tui-chong-soc/tui-xach-laptop-15-inch-tucano-compatto-eco-shopper-xanh-la?utm_flashsale=1">
+             <div class="item-img">
+              <img alt="Túi xách Laptop 15 inch TUCANO Compatto Eco Shopper - Xanh lá" class="lazyload" data-src="https://cdnv2.tgdd.vn/mwg-static/dmx/Products/Images/7923/361227/tui-xach-laptop-16-inch-compatto-eco-shopper-xanh-la-thumb-639023404941425885-300x300.jpg" height="207" width="207"/>
+             </div>
+             <h3>
+              Túi xách Laptop 15 inch TUCANO Compatto Eco Shopper - Xanh lá
+             </h3>
+             <strong class="price">
+              612.000₫
+              <span class="price-and-discount">
+               <label class="price-old black">
+                680.000₫
+               </label>
+               <small>
+                -10%
+               </small>
+              </span>
+             </strong>
+             <div class="fs-contain">
+              <img alt="icon flashsale" height="15" src="//cdnv2.tgdd.vn/webmwg/2024/ContentMwg/images/homev2/flash-sale.png" width="15">
+               <span class="rq_count fscount">
+                <i class="fs-iconfire" style="width:100%;">
+                </i>
+                <b>
+                 Còn 5/5 suất
+                </b>
+               </span>
+              </img>
+             </div>
+            </a>
+            <div class="btn-buy">
+             <a class="see-detail hide" href="/tui-chong-soc/tui-xach-laptop-15-inch-tucano-compatto-eco-shopper-xanh-la?utm_flashsale=1">
+              Xem chi tiết
+             </a>
+             <a class="buy-now" href="/cart/them-vao-gio-hang?productId=361227&amp;productCode=1845975000266&amp;productType=6">
+              Mua ngay
+             </a>
+            </div>
+           </div>
+           <div class="item" data-id="360045" data-pos="13">
+            <a class="remain_quantity main-contain" data-box="BoxHomeFlashsale" data-brand="ONEODIO" data-cache="True" data-cate="Tai nghe" data-color="Đen" data-crm="3522093" data-id="360045" data-name="Tai nghe Bluetooth Chụp Tai OneOdio A70 - Đen" data-pos="0" data-premium="False" data-price="890000.0" data-pro="1027" data-productstatus="" data-promotiontype="" data-s="TwoPriceDetailOLOLCMS" data-site="1" href="/tai-nghe/tai-nghe-bluetooth-chup-tai-oneodio-a70-den?utm_flashsale=1">
+             <div class="item-img">
+              <img alt="Tai nghe Chụp Tai OneOdio A70 - Đen" class="lazyload" data-src="https://cdnv2.tgdd.vn/mwg-static/dmx/Products/Images/54/360045/tai-nghe-bluetooth-chup-tai-oneodio-a70-den-thumb-639012370901984265-600x600.jpg" height="207" width="207"/>
+             </div>
+             <h3>
+              Tai nghe Chụp Tai OneOdio A70 - Đen
+             </h3>
+             <strong class="price">
+              890.000₫
+              <span class="price-and-discount">
+               <label class="price-old black">
+                1.590.000₫
+               </label>
+               <small>
+                -44%
+               </small>
+              </span>
+             </strong>
+             <div class="fs-contain">
+              <img alt="icon flashsale" height="15" src="//cdnv2.tgdd.vn/webmwg/2024/ContentMwg/images/homev2/flash-sale.png" width="15">
+               <span class="rq_count fscount">
+                <i class="fs-iconfire" style="width:100%;">
+                </i>
+                <b>
+                 Còn 10/10 suất
+                </b>
+               </span>
+              </img>
+             </div>
+            </a>
+            <div class="btn-buy">
+             <a class="see-detail hide" href="/tai-nghe/tai-nghe-bluetooth-chup-tai-oneodio-a70-den?utm_flashsale=1">
+              Xem chi tiết
+             </a>
+             <a class="buy-now" href="/cart/them-vao-gio-hang?productId=360045&amp;productCode=0160015000963&amp;productType=6">
+              Mua ngay
+             </a>
+            </div>
+           </div>
+           <div class="item" data-id="361259" data-pos="14">
+            <a class="remain_quantity main-contain" data-box="BoxHomeFlashsale" data-brand="AUKEY" data-cache="True" data-cate="Tai nghe" data-color="Xanh Dương" data-crm="3521850" data-id="361259" data-name="Tai nghe Bluetooth True Wireless Aukey EP-M3A - Xanh Dương" data-pos="0" data-premium="False" data-price="240000.0" data-pro="1027" data-productstatus="" data-promotiontype="" data-s="TwoPriceDetailOLOLCMS" data-site="1" href="/tai-nghe/tai-nghe-blutetooth-true-wireless-aukey-ep-m3a-xanh-duong?utm_flashsale=1">
+             <div class="item-img">
+              <img alt="Tai nghe TWS Aukey EP-M3A - Xanh Dương" class="lazyload" data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/54/361259/tai-nghe-blutetooth-true-wireless-aukey-ep-m3a-xanh-duong-thumb-639024614950708067-600x600.jpg" height="207" width="207"/>
+             </div>
+             <h3>
+              Tai nghe TWS Aukey EP-M3A - Xanh Dương
+             </h3>
+             <strong class="price">
+              240.000₫
+              <span class="price-and-discount">
+               <label class="price-old black">
+                490.000₫
+               </label>
+               <small>
+                -51%
+               </small>
+              </span>
+             </strong>
+             <div class="fs-contain">
+              <img alt="icon flashsale" height="15" src="//cdnv2.tgdd.vn/webmwg/2024/ContentMwg/images/homev2/flash-sale.png" width="15">
+               <span class="rq_count fscount">
+                <i class="fs-iconfire" style="width:90%;">
+                </i>
+                <b>
+                 Còn 9/10 suất
+                </b>
+               </span>
+              </img>
+             </div>
+            </a>
+            <div class="btn-buy">
+             <a class="see-detail hide" href="/tai-nghe/tai-nghe-blutetooth-true-wireless-aukey-ep-m3a-xanh-duong?utm_flashsale=1">
+              Xem chi tiết
+             </a>
+             <a class="buy-now" href="/cart/them-vao-gio-hang?productId=361259&amp;productCode=0163346000777&amp;productType=6">
+              Mua ngay
+             </a>
+            </div>
+           </div>
+           <div class="item" data-id="360871" data-pos="15">
+            <a class="remain_quantity main-contain" data-box="BoxHomeFlashsale" data-brand="Dekey" data-cache="True" data-cate="Miếng dán Camera" data-color="Cam" data-crm="3460838" data-id="360871" data-name="Miếng dán camera iPhone 17 Pro/Pro Max DEKEY 3D Camera Lens - Cam" data-pos="0" data-premium="False" data-price="168000.0" data-pro="1027" data-productstatus="" data-promotiontype="" data-s="TwoPriceDetailOLOLCMS" data-site="1" href="/mieng-dan-camera/mieng-dan-camera-iphone-17-pro-promax-dekey-3d-camera-lens-cam?utm_flashsale=1">
+             <div class="item-img">
+              <img alt="Miếng dán camera iPhone 17 Pro/Pro Max DEKEY 3D Camera Lens - Cam" class="lazyload" data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/13118/360871/mieng-dan-camera-iphone-17-pro-promax-dekey-3d-camera-lens-cam-thumb-639043860525465776-600x600.jpg" height="207" width="207"/>
+             </div>
+             <h3>
+              Miếng dán camera iPhone 17 Pro/Pro Max DEKEY 3D Camera Lens - Cam
+             </h3>
+             <strong class="price">
+              168.000₫
+              <span class="price-and-discount">
+               <label class="price-old black">
+                239.000₫
+               </label>
+               <small>
+                -29%
+               </small>
+              </span>
+             </strong>
+             <div class="fs-contain">
+              <img alt="icon flashsale" height="15" src="//cdnv2.tgdd.vn/webmwg/2024/ContentMwg/images/homev2/flash-sale.png" width="15">
+               <span class="rq_count fscount">
+                <i class="fs-iconfire" style="width:80%;">
+                </i>
+                <b>
+                 Còn 4/5 suất
+                </b>
+               </span>
+              </img>
+             </div>
+            </a>
+            <div class="btn-buy">
+             <a class="see-detail hide" href="/mieng-dan-camera/mieng-dan-camera-iphone-17-pro-promax-dekey-3d-camera-lens-cam?utm_flashsale=1">
+              Xem chi tiết
+             </a>
+             <a class="buy-now" href="/cart/them-vao-gio-hang?productId=360871&amp;productCode=1844199000204&amp;productType=6">
+              Mua ngay
+             </a>
+            </div>
+           </div>
+           <div class="item" data-id="360818" data-pos="16">
+            <a class="remain_quantity main-contain" data-box="BoxHomeFlashsale" data-brand="DEKEY" data-cache="True" data-cate="Adapter sạc" data-color="Trắng" data-crm="3516838" data-id="360818" data-name="Sạc nhanh Type-C PD 33W Dekey Power Pioneer A2383 - Trắng" data-pos="0" data-premium="False" data-price="450000.0" data-pro="1027" data-productstatus="" data-promotiontype="" data-s="TwoPriceDetailOLOLCMS" data-site="1" href="/adapter-sac/sac-nhanh-type-c-pd-33w-power-pioneer-a2383-trang?utm_flashsale=1">
+             <div class="item-img">
+              <img alt="Sạc nhanh Dekey Power Pioneer A2383" class="lazyload" data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/9499/360818/sac-nhanh-type-c-pd-33w-power-pioneer-a2383-trang-thumb-639043586450079707-600x600.jpg" height="207" width="207"/>
+             </div>
+             <h3>
+              Sạc nhanh Dekey Power Pioneer A2383
+             </h3>
+             <strong class="price">
+              450.000₫
+              <span class="price-and-discount">
+               <label class="price-old black">
+                530.000₫
+               </label>
+               <small>
+                -15%
+               </small>
+              </span>
+             </strong>
+             <div class="fs-contain">
+              <img alt="icon flashsale" height="15" src="//cdnv2.tgdd.vn/webmwg/2024/ContentMwg/images/homev2/flash-sale.png" width="15">
+               <span class="rq_count fscount">
+                <i class="fs-iconfire" style="width:100%;">
+                </i>
+                <b>
+                 Còn 5/5 suất
+                </b>
+               </span>
+              </img>
+             </div>
+            </a>
+            <div class="btn-buy">
+             <a class="see-detail hide" href="/adapter-sac/sac-nhanh-type-c-pd-33w-power-pioneer-a2383-trang?utm_flashsale=1">
+              Xem chi tiết
+             </a>
+             <a class="buy-now" href="/cart/them-vao-gio-hang?productId=360818&amp;productCode=0160014000721&amp;productType=6">
+              Mua ngay
+             </a>
+            </div>
+           </div>
+           <div class="item" data-id="360044" data-pos="17">
+            <a class="remain_quantity main-contain" data-box="BoxHomeFlashsale" data-brand="ONEODIO" data-cache="True" data-cate="Tai nghe" data-color="Bạc" data-crm="3522103" data-id="360044" data-name="Tai nghe Bluetooth Chụp Tai OneOdio Pro C - Bạc" data-pos="0" data-premium="False" data-price="830000.0" data-pro="1027" data-productstatus="" data-promotiontype="" data-s="TwoPriceDetailOLOLCMS" data-site="1" href="/tai-nghe/tai-nghe-bluetooth-chup-tai-oneodio-pro-c-bac?utm_flashsale=1">
+             <div class="item-img">
+              <img alt="Tai nghe Chụp Tai OneOdio Pro C - Bạc" class="lazyload" data-src="https://cdnv2.tgdd.vn/mwg-static/dmx/Products/Images/54/360044/tai-nghe-bluetooth-chup-tai-oneodio-pro-c-bac-thumb-639011464874355029-600x600.jpg" height="207" width="207"/>
+             </div>
+             <h3>
+              Tai nghe Chụp Tai OneOdio Pro C - Bạc
+             </h3>
+             <strong class="price">
+              830.000₫
+              <span class="price-and-discount">
+               <label class="price-old black">
+                1.490.000₫
+               </label>
+               <small>
+                -44%
+               </small>
+              </span>
+             </strong>
+             <div class="fs-contain">
+              <img alt="icon flashsale" height="15" src="//cdnv2.tgdd.vn/webmwg/2024/ContentMwg/images/homev2/flash-sale.png" width="15">
+               <span class="rq_count fscount">
+                <i class="fs-iconfire" style="width:100%;">
+                </i>
+                <b>
+                 Còn 10/10 suất
+                </b>
+               </span>
+              </img>
+             </div>
+            </a>
+            <div class="btn-buy">
+             <a class="see-detail hide" href="/tai-nghe/tai-nghe-bluetooth-chup-tai-oneodio-pro-c-bac?utm_flashsale=1">
+              Xem chi tiết
+             </a>
+             <a class="buy-now" href="/cart/them-vao-gio-hang?productId=360044&amp;productCode=0163346000767&amp;productType=6">
+              Mua ngay
+             </a>
+            </div>
+           </div>
+           <div class="item" data-id="360736" data-pos="18">
+            <a class="remain_quantity main-contain" data-box="BoxHomeFlashsale" data-brand="AUKEY" data-cache="True" data-cate="Cáp sạc" data-color="Đen" data-crm="3521851" data-id="360736" data-name="Cáp sạc nhanh và truyền dữ liệu Type-C - Type-C 100W 1m Aukey CB-KCC101 - Đen" data-pos="0" data-premium="False" data-price="140000.0" data-pro="1027" data-productstatus="" data-promotiontype="" data-s="TwoPriceDetailOLOLCMS" data-site="1" href="/cap-dien-thoai/cap-sac-nhanh-va-truyen-du-lieu-type-c-type-c-100w-1m-aukey-cb-kcc101-den?utm_flashsale=1">
+             <div class="item-img">
+              <img alt="Cáp sạc nhanh và truyền dữ liệu 1m Aukey CB-KCC101 - Đen" class="lazyload" data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/58/360736/cap-sac-nhanh-va-truyen-du-lieu-type-c-type-c-100w-1m-aukey-cb-kcc101-den-thumb-639019678641208429-600x600.jpg" height="207" width="207"/>
+             </div>
+             <h3>
+              Cáp sạc nhanh và truyền dữ liệu 1m Aukey CB-KCC101 - Đen
+             </h3>
+             <strong class="price">
+              140.000₫
+              <span class="price-and-discount">
+               <label class="price-old black">
+                220.000₫
+               </label>
+               <small>
+                -36%
+               </small>
+              </span>
+             </strong>
+             <div class="fs-contain">
+              <img alt="icon flashsale" height="15" src="//cdnv2.tgdd.vn/webmwg/2024/ContentMwg/images/homev2/flash-sale.png" width="15">
+               <span class="rq_count fscount">
+                <i class="fs-iconfire" style="width:100%;">
+                </i>
+                <b>
+                 Còn 10/10 suất
+                </b>
+               </span>
+              </img>
+             </div>
+            </a>
+            <div class="btn-buy">
+             <a class="see-detail hide" href="/cap-dien-thoai/cap-sac-nhanh-va-truyen-du-lieu-type-c-type-c-100w-1m-aukey-cb-kcc101-den?utm_flashsale=1">
+              Xem chi tiết
+             </a>
+             <a class="buy-now" href="/cart/them-vao-gio-hang?productId=360736&amp;productCode=0163345001002&amp;productType=6">
+              Mua ngay
+             </a>
+            </div>
+           </div>
+           <div class="item" data-id="360836" data-pos="19">
+            <a class="remain_quantity main-contain" data-box="BoxHomeFlashsale" data-brand="Tucano" data-cache="True" data-cate="Balo, túi chống sốc" data-color="Đen" data-crm="3460771" data-id="360836" data-name="Túi chống sốc Macbook Pro 13.3 inch TUCANO Colore Second Skin - Đen" data-pos="0" data-premium="False" data-price="720000.0" data-pro="1027" data-productstatus="" data-promotiontype="" data-s="TwoPriceDetailOLOLCMS" data-site="1" href="/tui-chong-soc/tui-chong-soc-macbook-pro-133-inch-tucano-colore-second-skin-den?utm_flashsale=1">
+             <div class="item-img">
+              <img alt="Túi chống sốc Macbook Pro 13.3 inch TUCANO Colore Second Skin - Đen" class="lazyload" data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/7923/360836/tui-chong-soc-macbook-pro-133-inch-tucano-colore-second-skin-den-thumb-639023817996879584-600x600.jpg" height="207" width="207"/>
+             </div>
+             <h3>
+              Túi chống sốc Macbook Pro 13.3 inch TUCANO Colore Second Skin - Đen
+             </h3>
+             <strong class="price">
+              720.000₫
+              <span class="price-and-discount">
+               <label class="price-old black">
+                800.000₫
+               </label>
+               <small>
+                -10%
+               </small>
+              </span>
+             </strong>
+             <div class="fs-contain">
+              <img alt="icon flashsale" height="15" src="//cdnv2.tgdd.vn/webmwg/2024/ContentMwg/images/homev2/flash-sale.png" width="15">
+               <span class="rq_count fscount">
+                <i class="fs-iconfire" style="width:100%;">
+                </i>
+                <b>
+                 Còn 5/5 suất
+                </b>
+               </span>
+              </img>
+             </div>
+            </a>
+            <div class="btn-buy">
+             <a class="see-detail hide" href="/tui-chong-soc/tui-chong-soc-macbook-pro-133-inch-tucano-colore-second-skin-den?utm_flashsale=1">
+              Xem chi tiết
+             </a>
+             <a class="buy-now" href="/cart/them-vao-gio-hang?productId=360836&amp;productCode=1845975000249&amp;productType=6">
+              Mua ngay
+             </a>
+            </div>
+           </div>
+           <div class="item" data-id="361345" data-pos="20">
+            <a class="remain_quantity main-contain" data-box="BoxHomeFlashsale" data-brand="DEKEY" data-cache="True" data-cate="Miếng dán" data-color="Trắng" data-crm="3460988" data-id="361345" data-name="Miếng dán kính cường lực iPad Air 13 inch DEKEY Premium" data-pos="0" data-premium="False" data-price="343000.0" data-pro="1027" data-productstatus="" data-promotiontype="" data-s="TwoPriceDetailOLOLCMS" data-site="1" href="/mieng-dan-man-hinh/mieng-dan-kinh-cuong-luc-ipad-air-13-inch-dekey-premium?utm_flashsale=1">
+             <div class="item-img">
+              <img alt="Miếng dán iPad Air 13 inch DEKEY Premium" class="lazyload" data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/1363/361345/mieng-dan-kinh-cuong-luc-ipad-air-13-inch-dekey-premium-thumb-639043931137185144-600x600.jpg" height="207" width="207"/>
+             </div>
+             <h3>
+              Miếng dán iPad Air 13 inch DEKEY Premium
+             </h3>
+             <strong class="price">
+              343.000₫
+              <span class="price-and-discount">
+               <label class="price-old black">
+                489.000₫
+               </label>
+               <small>
+                -29%
+               </small>
+              </span>
+             </strong>
+             <div class="fs-contain">
+              <img alt="icon flashsale" height="15" src="//cdnv2.tgdd.vn/webmwg/2024/ContentMwg/images/homev2/flash-sale.png" width="15">
+               <span class="rq_count fscount">
+                <i class="fs-iconfire" style="width:100%;">
+                </i>
+                <b>
+                 Còn 5/5 suất
+                </b>
+               </span>
+              </img>
+             </div>
+            </a>
+            <div class="btn-buy">
+             <a class="see-detail hide" href="/mieng-dan-man-hinh/mieng-dan-kinh-cuong-luc-ipad-air-13-inch-dekey-premium?utm_flashsale=1">
+              Xem chi tiết
+             </a>
+             <a class="buy-now" href="/cart/them-vao-gio-hang?productId=361345&amp;productCode=1844199000355&amp;productType=6">
+              Mua ngay
+             </a>
+            </div>
+           </div>
+           <div class="item" data-id="360727" data-pos="21">
+            <a class="remain_quantity main-contain" data-box="BoxHomeFlashsale" data-brand="HAVIT" data-cache="True" data-cate="Loa" data-color="Đen" data-crm="3522099" data-id="360727" data-name="Loa bluetooth Havit SK842BT" data-pos="0" data-premium="False" data-price="730000.0" data-pro="1027" data-productstatus="" data-promotiontype="" data-s="TwoPriceDetailOLOLCMS" data-site="1" href="/loa-laptop/loa-bluetooth-havit-sk842bt?utm_flashsale=1">
+             <div class="item-img">
+              <img alt="Loa bluetooth Havit SK842BT" class="lazyload" data-src="https://cdnv2.tgdd.vn/mwg-static/dmx/Products/Images/2162/360727/loa-bluetooth-havit-sk842bt-thumb-639020963747964582-300x300.jpg" height="207" width="207"/>
+             </div>
+             <h3>
+              Loa bluetooth Havit SK842BT
+             </h3>
+             <strong class="price">
+              730.000₫
+              <span class="price-and-discount">
+               <label class="price-old black">
+                1.090.000₫
+               </label>
+               <small>
+                -33%
+               </small>
+              </span>
+             </strong>
+             <div class="fs-contain">
+              <img alt="icon flashsale" height="15" src="//cdnv2.tgdd.vn/webmwg/2024/ContentMwg/images/homev2/flash-sale.png" width="15">
+               <span class="rq_count fscount">
+                <i class="fs-iconfire" style="width:100%;">
+                </i>
+                <b>
+                 Còn 10/10 suất
+                </b>
+               </span>
+              </img>
+             </div>
+            </a>
+            <div class="btn-buy">
+             <a class="see-detail hide" href="/loa-laptop/loa-bluetooth-havit-sk842bt?utm_flashsale=1">
+              Xem chi tiết
+             </a>
+             <a class="buy-now" href="/cart/them-vao-gio-hang?productId=360727&amp;productCode=0161031000404&amp;productType=6">
+              Mua ngay
+             </a>
+            </div>
+           </div>
+           <div class="item" data-id="361087" data-pos="22">
+            <a class="remain_quantity main-contain" data-box="BoxHomeFlashsale" data-brand="AUKEY" data-cache="True" data-cate="Sạc dự phòng" data-color="Xám" data-crm="3521852" data-id="361087" data-name="Pin sạc dự phòng Polymer 20000mAh Type C PD QC 3.0 100W Aukey PB-Y44 Sprint X" data-pos="0" data-premium="False" data-price="1590000.0" data-pro="1027" data-productstatus="" data-promotiontype="" data-s="TwoPriceDetailOLOLCMS" data-site="1" href="/sac-dtdd/pin-sac-du-phong-polymer-20000mah-type-c-pd-qc-30-100w-aukey-pby44-sprint-x?utm_flashsale=1">
+             <div class="item-img">
+              <img alt="Aukey 100W PB-Y44 Sprint X" class="lazyload" data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/57/361087/pin-sac-du-phong-polymer-20000mah-type-c-pd-qc-30-100w-aukey-pby44-sprint-x-thumb-639022204108772757-600x600.jpg" height="207" width="207"/>
+             </div>
+             <h3>
+              Aukey 100W PB-Y44 Sprint X
+             </h3>
+             <strong class="price">
+              1.590.000₫
+              <span class="price-and-discount">
+               <label class="price-old black">
+                2.400.000₫
+               </label>
+               <small>
+                -33%
+               </small>
+              </span>
+             </strong>
+             <div class="fs-contain">
+              <img alt="icon flashsale" height="15" src="//cdnv2.tgdd.vn/webmwg/2024/ContentMwg/images/homev2/flash-sale.png" width="15">
+               <span class="rq_count fscount">
+                <i class="fs-iconfire" style="width:100%;">
+                </i>
+                <b>
+                 Còn 10/10 suất
+                </b>
+               </span>
+              </img>
+             </div>
+            </a>
+            <div class="btn-buy">
+             <a class="see-detail hide" href="/sac-dtdd/pin-sac-du-phong-polymer-20000mah-type-c-pd-qc-30-100w-aukey-pby44-sprint-x?utm_flashsale=1">
+              Xem chi tiết
+             </a>
+             <a class="buy-now" href="/cart/them-vao-gio-hang?productId=361087&amp;productCode=0160012000690&amp;productType=6">
+              Mua ngay
+             </a>
+            </div>
+           </div>
+           <div class="item" data-id="360850" data-pos="23">
+            <a class="remain_quantity main-contain" data-box="BoxHomeFlashsale" data-brand="Dekey" data-cache="True" data-cate="Miếng dán Camera" data-color="Đen" data-crm="3460817" data-id="360850" data-name="Miếng dán camera iPhone 15 Pro/Pro Max DEKEY 3D Camera Lens - Đen" data-pos="0" data-premium="False" data-price="168000.0" data-pro="1027" data-productstatus="" data-promotiontype="" data-s="TwoPriceDetailOLOLCMS" data-site="1" href="/mieng-dan-camera/mieng-dan-camera-iphone-15-pro-promax-dekey-3d-camera-lens-den?utm_flashsale=1">
+             <div class="item-img">
+              <img alt="Miếng dán camera iPhone 15 Pro/Pro Max DEKEY 3D Camera Lens - Đen" class="lazyload" data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/13118/360850/mieng-dan-camera-iphone-15-pro-promax-dekey-3d-camera-lens-den-thumb-639043640052258976-600x600.jpg" height="207" width="207"/>
+             </div>
+             <h3>
+              Miếng dán camera iPhone 15 Pro/Pro Max DEKEY 3D Camera Lens - Đen
+             </h3>
+             <strong class="price">
+              168.000₫
+              <span class="price-and-discount">
+               <label class="price-old black">
+                239.000₫
+               </label>
+               <small>
+                -29%
+               </small>
+              </span>
+             </strong>
+             <div class="fs-contain">
+              <img alt="icon flashsale" height="15" src="//cdnv2.tgdd.vn/webmwg/2024/ContentMwg/images/homev2/flash-sale.png" width="15">
+               <span class="rq_count fscount">
+                <i class="fs-iconfire" style="width:100%;">
+                </i>
+                <b>
+                 Còn 5/5 suất
+                </b>
+               </span>
+              </img>
+             </div>
+            </a>
+            <div class="btn-buy">
+             <a class="see-detail hide" href="/mieng-dan-camera/mieng-dan-camera-iphone-15-pro-promax-dekey-3d-camera-lens-den?utm_flashsale=1">
+              Xem chi tiết
+             </a>
+             <a class="buy-now" href="/cart/them-vao-gio-hang?productId=360850&amp;productCode=1844199000183&amp;productType=6">
+              Mua ngay
+             </a>
+            </div>
+           </div>
+           <div class="item" data-id="361243" data-pos="24">
+            <a class="remain_quantity main-contain" data-box="BoxHomeFlashsale" data-brand="DEKEY" data-cache="True" data-cate="Miếng dán" data-color="Trắng" data-crm="3460943" data-id="361243" data-name="Miếng dán kính cường lực iPhone 15 Plus/16 Plus DEKEY 3D Luxury" data-pos="0" data-premium="False" data-price="229000.0" data-pro="1027" data-productstatus="" data-promotiontype="" data-s="TwoPriceDetailOLOLCMS" data-site="1" href="/mieng-dan-man-hinh/mieng-dan-kinh-cuong-luc-iphone-15-plus-16-plus-dekey-3d-luxury?utm_flashsale=1">
+             <div class="item-img">
+              <img alt="Miếng dán iPhone 15 Plus/16 Plus DEKEY 3D Luxury" class="lazyload" data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/1363/361243/mieng-dan-kinh-cuong-luc-iphone-15-plus-16-plus-dekey-3d-luxury-thumb-639043890781330925-600x600.jpg" height="207" width="207"/>
+             </div>
+             <h3>
+              Miếng dán iPhone 15 Plus/16 Plus DEKEY 3D Luxury
+             </h3>
+             <strong class="price">
+              229.000₫
+              <span class="price-and-discount">
+               <label class="price-old black">
+                269.000₫
+               </label>
+               <small>
+                -14%
+               </small>
+              </span>
+             </strong>
+             <div class="fs-contain">
+              <img alt="icon flashsale" height="15" src="//cdnv2.tgdd.vn/webmwg/2024/ContentMwg/images/homev2/flash-sale.png" width="15">
+               <span class="rq_count fscount">
+                <i class="fs-iconfire" style="width:100%;">
+                </i>
+                <b>
+                 Còn 5/5 suất
+                </b>
+               </span>
+              </img>
+             </div>
+            </a>
+            <div class="btn-buy">
+             <a class="see-detail hide" href="/mieng-dan-man-hinh/mieng-dan-kinh-cuong-luc-iphone-15-plus-16-plus-dekey-3d-luxury?utm_flashsale=1">
+              Xem chi tiết
+             </a>
+             <a class="buy-now" href="/cart/them-vao-gio-hang?productId=361243&amp;productCode=1844199000309&amp;productType=6">
+              Mua ngay
+             </a>
+            </div>
+           </div>
+           <div class="item" data-id="360034" data-pos="25">
+            <a class="remain_quantity main-contain" data-box="BoxHomeFlashsale" data-brand="Earfun" data-cache="True" data-cate="Tai nghe" data-color="Đen" data-crm="3522102" data-id="360034" data-name="Tai nghe Bluetooth chụp tai Earfun WavePro" data-pos="0" data-premium="False" data-price="1290000.0" data-pro="1027" data-productstatus="" data-promotiontype="" data-s="TwoPriceDetailOLOLCMS" data-site="1" href="/tai-nghe/tai-nghe-blutetooth-chup-tai-earfun-wavepro?utm_flashsale=1">
+             <div class="item-img">
+              <img alt="Tai nghe chụp tai Earfun WavePro" class="lazyload" data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/54/360034/tai-nghe-blutetooth-chup-tai-earfun-wavepro-thumb-639012641698760982-600x600.jpg" height="207" width="207"/>
+             </div>
+             <h3>
+              Tai nghe chụp tai Earfun WavePro
+             </h3>
+             <strong class="price">
+              1.290.000₫
+              <span class="price-and-discount">
+               <label class="price-old black">
+                1.990.000₫
+               </label>
+               <small>
+                -35%
+               </small>
+              </span>
+             </strong>
+             <div class="fs-contain">
+              <img alt="icon flashsale" height="15" src="//cdnv2.tgdd.vn/webmwg/2024/ContentMwg/images/homev2/flash-sale.png" width="15">
+               <span class="rq_count fscount">
+                <i class="fs-iconfire" style="width:100%;">
+                </i>
+                <b>
+                 Còn 10/10 suất
+                </b>
+               </span>
+              </img>
+             </div>
+            </a>
+            <div class="btn-buy">
+             <a class="see-detail hide" href="/tai-nghe/tai-nghe-blutetooth-chup-tai-earfun-wavepro?utm_flashsale=1">
+              Xem chi tiết
+             </a>
+             <a class="buy-now" href="/cart/them-vao-gio-hang?productId=360034&amp;productCode=0163346000761&amp;productType=6">
+              Mua ngay
+             </a>
+            </div>
+           </div>
+           <div class="item" data-id="361091" data-pos="26">
+            <a class="remain_quantity main-contain" data-box="BoxHomeFlashsale" data-brand="AUKEY" data-cache="True" data-cate="Sạc dự phòng" data-color="Bạc" data-crm="3521871" data-id="361091" data-name="Pin sạc dự phòng Polymer 10000mAh Type C PD 15W Aukey PB-Y53 - Xám Bạc" data-pos="0" data-premium="False" data-price="390000.0" data-pro="1027" data-productstatus="" data-promotiontype="" data-s="TwoPriceDetailOLOLCMS" data-site="1" href="/sac-dtdd/pin-sac-du-phong-polymer-10000mah-type-c-pd-15w-aukey-pb-y53-xam-bac?utm_flashsale=1">
+             <div class="item-img">
+              <img alt="Aukey 15W PB-Y53 - Xám Bạc" class="lazyload" data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/57/361091/pin-sac-du-phong-polymer-10000mah-type-c-pd-15w-aukey-pb-y53-xam-bac-thumb-639022212304420979-600x600.jpg" height="207" width="207"/>
+             </div>
+             <h3>
+              Aukey 15W PB-Y53 - Xám Bạc
+             </h3>
+             <strong class="price">
+              390.000₫
+              <span class="price-and-discount">
+               <label class="price-old black">
+                790.000₫
+               </label>
+               <small>
+                -50%
+               </small>
+              </span>
+             </strong>
+             <div class="fs-contain">
+              <img alt="icon flashsale" height="15" src="//cdnv2.tgdd.vn/webmwg/2024/ContentMwg/images/homev2/flash-sale.png" width="15">
+               <span class="rq_count fscount">
+                <i class="fs-iconfire" style="width:100%;">
+                </i>
+                <b>
+                 Còn 10/10 suất
+                </b>
+               </span>
+              </img>
+             </div>
+            </a>
+            <div class="btn-buy">
+             <a class="see-detail hide" href="/sac-dtdd/pin-sac-du-phong-polymer-10000mah-type-c-pd-15w-aukey-pb-y53-xam-bac?utm_flashsale=1">
+              Xem chi tiết
+             </a>
+             <a class="buy-now" href="/cart/them-vao-gio-hang?productId=361091&amp;productCode=0160012000696&amp;productType=6">
+              Mua ngay
+             </a>
+            </div>
+           </div>
+           <div class="item" data-id="361151" data-pos="27">
+            <a class="remain_quantity main-contain" data-box="BoxHomeFlashsale" data-brand="DEKEY" data-cache="True" data-cate="Miếng dán" data-color="Trắng" data-crm="3460877" data-id="361151" data-name="Miếng dán kính cường lực Samsung S24 Plus DEKEY 3D Sentery" data-pos="0" data-premium="False" data-price="161000.0" data-pro="1027" data-productstatus="" data-promotiontype="" data-s="TwoPriceDetailOLOLCMS" data-site="1" href="/mieng-dan-man-hinh/mieng-dan-kinh-cuong-luc-samsung-s24-plus-3d-sentery-dekey?utm_flashsale=1">
+             <div class="item-img">
+              <img alt="Miếng dán kính cường lực Samsung S24 Plus DEKEY 3D Sentery" class="lazyload" data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/1363/361151/mieng-dan-kinh-cuong-luc-samsung-s24-plus-3d-sentery-dekey-thumb-639043671150343927-600x600.jpg" height="207" width="207"/>
+             </div>
+             <h3>
+              Miếng dán kính cường lực Samsung S24 Plus DEKEY 3D Sentery
+             </h3>
+             <strong class="price">
+              161.000₫
+              <span class="price-and-discount">
+               <label class="price-old black">
+                189.000₫
+               </label>
+               <small>
+                -14%
+               </small>
+              </span>
+             </strong>
+             <div class="fs-contain">
+              <img alt="icon flashsale" height="15" src="//cdnv2.tgdd.vn/webmwg/2024/ContentMwg/images/homev2/flash-sale.png" width="15">
+               <span class="rq_count fscount">
+                <i class="fs-iconfire" style="width:100%;">
+                </i>
+                <b>
+                 Còn 5/5 suất
+                </b>
+               </span>
+              </img>
+             </div>
+            </a>
+            <div class="btn-buy">
+             <a class="see-detail hide" href="/mieng-dan-man-hinh/mieng-dan-kinh-cuong-luc-samsung-s24-plus-3d-sentery-dekey?utm_flashsale=1">
+              Xem chi tiết
+             </a>
+             <a class="buy-now" href="/cart/them-vao-gio-hang?productId=361151&amp;productCode=1844199000243&amp;productType=6">
+              Mua ngay
+             </a>
+            </div>
+           </div>
+           <div class="item" data-id="361189" data-pos="28">
+            <a class="remain_quantity main-contain" data-box="BoxHomeFlashsale" data-brand="DEKEY" data-cache="True" data-cate="Miếng dán" data-color="Trắng" data-crm="3460911" data-id="361189" data-name="Miếng dán kính cường lực iPhone 17 Pro Max DEKEY 3D Quintessence" data-pos="0" data-premium="False" data-price="422000.0" data-pro="1027" data-productstatus="" data-promotiontype="" data-s="TwoPriceDetailOLOLCMS" data-site="1" href="/mieng-dan-man-hinh/mieng-dan-kinh-cuong-luc-iphone-17-promax-dekey-3d-quintessence?utm_flashsale=1">
+             <div class="item-img">
+              <img alt="Miếng dán iPhone 17 Pro Max DEKEY 3D Quintessence" class="lazyload" data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/1363/361189/mieng-dan-kinh-cuong-luc-iphone-17-promax-dekey-3d-quintessence-thumb-639043876284800078-600x600.jpg" height="207" width="207"/>
+             </div>
+             <h3>
+              Miếng dán iPhone 17 Pro Max DEKEY 3D Quintessence
+             </h3>
+             <strong class="price">
+              422.000₫
+              <span class="price-and-discount">
+               <label class="price-old black">
+                496.000₫
+               </label>
+               <small>
+                -14%
+               </small>
+              </span>
+             </strong>
+             <div class="fs-contain">
+              <img alt="icon flashsale" height="15" src="//cdnv2.tgdd.vn/webmwg/2024/ContentMwg/images/homev2/flash-sale.png" width="15">
+               <span class="rq_count fscount">
+                <i class="fs-iconfire" style="width:100%;">
+                </i>
+                <b>
+                 Còn 5/5 suất
+                </b>
+               </span>
+              </img>
+             </div>
+            </a>
+            <div class="btn-buy">
+             <a class="see-detail hide" href="/mieng-dan-man-hinh/mieng-dan-kinh-cuong-luc-iphone-17-promax-dekey-3d-quintessence?utm_flashsale=1">
+              Xem chi tiết
+             </a>
+             <a class="buy-now" href="/cart/them-vao-gio-hang?productId=361189&amp;productCode=1844199000277&amp;productType=6">
+              Mua ngay
+             </a>
+            </div>
+           </div>
+           <div class="item" data-id="360300" data-pos="29">
+            <a class="remain_quantity main-contain" data-box="BoxHomeFlashsale" data-brand="ONEODIO" data-cache="True" data-cate="Tai nghe" data-color="Tím" data-crm="3522104" data-id="360300" data-name="Tai nghe chụp tai OneOdio Pro 10 - Bạc" data-pos="0" data-premium="False" data-price="630000.0" data-pro="1027" data-productstatus="" data-promotiontype="" data-s="TwoPriceDetailOLOLCMS" data-site="1" href="/tai-nghe/tai-nghe-chup-tai-oneodio-pro-10-bac?utm_flashsale=1">
+             <div class="item-img">
+              <img alt="Tai nghe chụp tai OneOdio Pro 10 - Bạc" class="lazyload" data-src="https://cdnv2.tgdd.vn/mwg-static/dmx/Products/Images/54/360300/tai-nghe-chup-tai-oneodio-pro-10-bac-thumb-639011364066429509-600x600.jpg" height="207" width="207"/>
+             </div>
+             <h3>
+              Tai nghe chụp tai OneOdio Pro 10 - Bạc
+             </h3>
+             <strong class="price">
+              630.000₫
+              <span class="price-and-discount">
+               <label class="price-old black">
+                950.000₫
+               </label>
+               <small>
+                -33%
+               </small>
+              </span>
+             </strong>
+             <div class="fs-contain">
+              <img alt="icon flashsale" height="15" src="//cdnv2.tgdd.vn/webmwg/2024/ContentMwg/images/homev2/flash-sale.png" width="15">
+               <span class="rq_count fscount">
+                <i class="fs-iconfire" style="width:100%;">
+                </i>
+                <b>
+                 Còn 10/10 suất
+                </b>
+               </span>
+              </img>
+             </div>
+            </a>
+            <div class="btn-buy">
+             <a class="see-detail hide" href="/tai-nghe/tai-nghe-chup-tai-oneodio-pro-10-bac?utm_flashsale=1">
+              Xem chi tiết
+             </a>
+             <a class="buy-now" href="/cart/them-vao-gio-hang?productId=360300&amp;productCode=0160015000959&amp;productType=6">
+              Mua ngay
+             </a>
+            </div>
+           </div>
+           <div class="item" data-id="360879" data-pos="30">
+            <a class="remain_quantity main-contain" data-box="BoxHomeFlashsale" data-brand="AUKEY" data-cache="True" data-cate="Sạc dự phòng" data-color="Hồng" data-crm="3521854" data-id="360879" data-name="Pin sạc dự phòng Không dây Polymer 10000mAh Type C 30W Aukey PB-MS02 - Hồng" data-pos="0" data-premium="False" data-price="790000.0" data-pro="1027" data-productstatus="" data-promotiontype="" data-s="TwoPriceDetailOLOLCMS" data-site="1" href="/sac-dtdd/pin-sac-du-phong-khong-day-polymer-10000mah-type-c-30w-aukey-pb-ms02-hong?utm_flashsale=1">
+             <div class="item-img">
+              <img alt="Aukey 30W PB-MS02 - Hồng" class="lazyload" data-src="https://cdnv2.tgdd.vn/mwg-static/dmx/Products/Images/57/360879/pin-sac-du-phong-khong-day-polymer-10000mah-type-c-30w-aukey-pb-ms02-hong-1-thumb-639020972777074415-300x300.jpg" height="207" width="207"/>
+             </div>
+             <h3>
+              Aukey 30W PB-MS02 - Hồng
+             </h3>
+             <strong class="price">
+              790.000₫
+              <span class="price-and-discount">
+               <label class="price-old black">
+                1.600.000₫
+               </label>
+               <small>
+                -50%
+               </small>
+              </span>
+             </strong>
+             <div class="fs-contain">
+              <img alt="icon flashsale" height="15" src="//cdnv2.tgdd.vn/webmwg/2024/ContentMwg/images/homev2/flash-sale.png" width="15">
+               <span class="rq_count fscount">
+                <i class="fs-iconfire" style="width:100%;">
+                </i>
+                <b>
+                 Còn 10/10 suất
+                </b>
+               </span>
+              </img>
+             </div>
+            </a>
+            <div class="btn-buy">
+             <a class="see-detail hide" href="/sac-dtdd/pin-sac-du-phong-khong-day-polymer-10000mah-type-c-30w-aukey-pb-ms02-hong?utm_flashsale=1">
+              Xem chi tiết
+             </a>
+             <a class="buy-now" href="/cart/them-vao-gio-hang?productId=360879&amp;productCode=0160012000676&amp;productType=6">
+              Mua ngay
+             </a>
+            </div>
+           </div>
+           <div class="item" data-id="361115" data-pos="31">
+            <a class="remain_quantity main-contain" data-box="BoxHomeFlashsale" data-brand="DEKEY" data-cache="True" data-cate="Miếng dán" data-color="Trắng" data-crm="3460841" data-id="361115" data-name="Miếng dán cường lực Apple Watch 42mm DEKEY" data-pos="0" data-premium="False" data-price="161000.0" data-pro="1027" data-productstatus="" data-promotiontype="" data-s="TwoPriceDetailOLOLCMS" data-site="1" href="/mieng-dan-man-hinh/mieng-dan-cuong-luc-apple-watch-42mm-dekey?utm_flashsale=1">
+             <div class="item-img">
+              <img alt="Miếng dán Apple Watch 42mm DEKEY" class="lazyload" data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/1363/361115/mieng-dan-cuong-luc-apple-watch-42mm-dekey-thumb-639043600546764603-600x600.jpg" height="207" width="207"/>
+             </div>
+             <h3>
+              Miếng dán Apple Watch 42mm DEKEY
+             </h3>
+             <strong class="price">
+              161.000₫
+              <span class="price-and-discount">
+               <label class="price-old black">
+                189.000₫
+               </label>
+               <small>
+                -14%
+               </small>
+              </span>
+             </strong>
+             <div class="fs-contain">
+              <img alt="icon flashsale" height="15" src="//cdnv2.tgdd.vn/webmwg/2024/ContentMwg/images/homev2/flash-sale.png" width="15">
+               <span class="rq_count fscount">
+                <i class="fs-iconfire" style="width:100%;">
+                </i>
+                <b>
+                 Còn 5/5 suất
+                </b>
+               </span>
+              </img>
+             </div>
+            </a>
+            <div class="btn-buy">
+             <a class="see-detail hide" href="/mieng-dan-man-hinh/mieng-dan-cuong-luc-apple-watch-42mm-dekey?utm_flashsale=1">
+              Xem chi tiết
+             </a>
+             <a class="buy-now" href="/cart/them-vao-gio-hang?productId=361115&amp;productCode=1844199000207&amp;productType=6">
+              Mua ngay
+             </a>
+            </div>
+           </div>
+           <div class="item" data-id="360792" data-pos="32">
+            <a class="remain_quantity main-contain" data-box="BoxHomeFlashsale" data-brand="DEKEY" data-cache="True" data-cate="Sạc dự phòng" data-color="Đen" data-crm="3460801" data-id="360792" data-name="Pin sạc dự phòng Polymer 10000mAh Type-C QC 3.0 22.5W Dekey Power Pioneer P2786 kèm cáp Type-C - Đen" data-pos="0" data-premium="False" data-price="645000.0" data-pro="1027" data-productstatus="" data-promotiontype="" data-s="TwoPriceDetailOLOLCMS" data-site="1" href="/sac-dtdd/pin-sac-du-phong-polymer-10000mah-type-c-qc-3-0-22-5w-power-pioneer-den?utm_flashsale=1">
+             <div class="item-img">
+              <img alt="Dekey Power Pioneer 22.5W P2786" class="lazyload" data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/57/360792/pin-sac-du-phong-polymer-10000mah-type-c-qc-3-0-22-5w-power-pioneer-den-thumb-639043595778487056-600x600.jpg" height="207" width="207"/>
+             </div>
+             <h3>
+              Dekey Power Pioneer 22.5W P2786
+             </h3>
+             <strong class="price">
+              645.000₫
+              <span class="price-and-discount">
+               <label class="price-old black">
+                760.000₫
+               </label>
+               <small>
+                -15%
+               </small>
+              </span>
+             </strong>
+             <div class="fs-contain">
+              <img alt="icon flashsale" height="15" src="//cdnv2.tgdd.vn/webmwg/2024/ContentMwg/images/homev2/flash-sale.png" width="15">
+               <span class="rq_count fscount">
+                <i class="fs-iconfire" style="width:100%;">
+                </i>
+                <b>
+                 Còn 5/5 suất
+                </b>
+               </span>
+              </img>
+             </div>
+            </a>
+            <div class="btn-buy">
+             <a class="see-detail hide" href="/sac-dtdd/pin-sac-du-phong-polymer-10000mah-type-c-qc-3-0-22-5w-power-pioneer-den?utm_flashsale=1">
+              Xem chi tiết
+             </a>
+             <a class="buy-now" href="/cart/them-vao-gio-hang?productId=360792&amp;productCode=0160012000718&amp;productType=6">
+              Mua ngay
+             </a>
+            </div>
+           </div>
+           <div class="item" data-id="360354" data-pos="33">
+            <a class="remain_quantity main-contain" data-box="BoxHomeFlashsale" data-brand="Earfun" data-cache="True" data-cate="Tai nghe" data-color="Trắng" data-crm="3522109" data-id="360354" data-name="Tai nghe Bluetooth True Wireless Earfun Air Pro 4 - Trắng" data-pos="0" data-premium="False" data-price="1840000.0" data-pro="1027" data-productstatus="" data-promotiontype="" data-s="TwoPriceDetailOLOLCMS" data-site="1" href="/tai-nghe/tai-nghe-blutetooth-true-wireless-earfun-air-pro-4-trang?utm_flashsale=1">
+             <div class="item-img">
+              <img alt="Tai nghe TWS Earfun Air Pro 4 - Trắng" class="lazyload" data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/54/360354/tai-nghe-blutetooth-true-wireless-earfun-air-pro-4-trang-thumb-639011791452986714-600x600.jpg" height="207" width="207"/>
+             </div>
+             <h3>
+              Tai nghe TWS Earfun Air Pro 4 - Trắng
+             </h3>
+             <strong class="price">
+              1.840.000₫
+              <span class="price-and-discount">
+               <label class="price-old black">
+                2.590.000₫
+               </label>
+               <small>
+                -28%
+               </small>
+              </span>
+             </strong>
+             <div class="fs-contain">
+              <img alt="icon flashsale" height="15" src="//cdnv2.tgdd.vn/webmwg/2024/ContentMwg/images/homev2/flash-sale.png" width="15">
+               <span class="rq_count fscount">
+                <i class="fs-iconfire" style="width:100%;">
+                </i>
+                <b>
+                 Còn 10/10 suất
+                </b>
+               </span>
+              </img>
+             </div>
+            </a>
+            <div class="btn-buy">
+             <a class="see-detail hide" href="/tai-nghe/tai-nghe-blutetooth-true-wireless-earfun-air-pro-4-trang?utm_flashsale=1">
+              Xem chi tiết
+             </a>
+             <a class="buy-now" href="/cart/them-vao-gio-hang?productId=360354&amp;productCode=0163346000752&amp;productType=6">
+              Mua ngay
+             </a>
+            </div>
+           </div>
+           <div class="item" data-id="360881" data-pos="34">
+            <a class="remain_quantity main-contain" data-box="BoxHomeFlashsale" data-brand="AUKEY" data-cache="True" data-cate="Sạc dự phòng" data-color="Xám" data-crm="3521857" data-id="360881" data-name="Pin sạc dự phòng Không dây Polymer 10000mAh Type C 20W Aukey PB-MS04 - Xám Đen" data-pos="0" data-premium="False" data-price="590000.0" data-pro="1027" data-productstatus="" data-promotiontype="" data-s="TwoPriceDetailOLOLCMS" data-site="1" href="/sac-dtdd/pin-sac-du-phong-polymer-10000mah-type-c-20w-aukey-pb-ms04-xam-den?utm_flashsale=1">
+             <div class="item-img">
+              <img alt="Aukey 20W PB-MS04 - Xám Đen" class="lazyload" data-src="https://cdnv2.tgdd.vn/mwg-static/dmx/Products/Images/57/360881/pin-sac-du-phong-polymer-10000mah-type-c-20w-aukey-pb-ms04-xam-den-thumb-639023415255374626-300x300.jpg" height="207" width="207"/>
+             </div>
+             <h3>
+              Aukey 20W PB-MS04 - Xám Đen
+             </h3>
+             <strong class="price">
+              590.000₫
+              <span class="price-and-discount">
+               <label class="price-old black">
+                1.090.000₫
+               </label>
+               <small>
+                -45%
+               </small>
+              </span>
+             </strong>
+             <div class="fs-contain">
+              <img alt="icon flashsale" height="15" src="//cdnv2.tgdd.vn/webmwg/2024/ContentMwg/images/homev2/flash-sale.png" width="15">
+               <span class="rq_count fscount">
+                <i class="fs-iconfire" style="width:100%;">
+                </i>
+                <b>
+                 Còn 10/10 suất
+                </b>
+               </span>
+              </img>
+             </div>
+            </a>
+            <div class="btn-buy">
+             <a class="see-detail hide" href="/sac-dtdd/pin-sac-du-phong-polymer-10000mah-type-c-20w-aukey-pb-ms04-xam-den?utm_flashsale=1">
+              Xem chi tiết
+             </a>
+             <a class="buy-now" href="/cart/them-vao-gio-hang?productId=360881&amp;productCode=0160012000678&amp;productType=6">
+              Mua ngay
+             </a>
+            </div>
+           </div>
+           <div class="item" data-id="361239" data-pos="35">
+            <a class="remain_quantity main-contain" data-box="BoxHomeFlashsale" data-brand="DEKEY" data-cache="True" data-cate="Miếng dán" data-color="Trắng" data-crm="3460939" data-id="361239" data-name="Miếng dán kính cường lực iPhone 14 Pro Max DEKEY 3D Luxury" data-pos="0" data-premium="False" data-price="229000.0" data-pro="1027" data-productstatus="" data-promotiontype="" data-s="TwoPriceDetailOLOLCMS" data-site="1" href="/mieng-dan-man-hinh/mieng-dan-kinh-cuong-luc-iphone-14-promax-dekey-3d-luxury?utm_flashsale=1">
+             <div class="item-img">
+              <img alt="Miếng dán iPhone 14 Pro Max DEKEY 3D Luxury" class="lazyload" data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/1363/361239/mieng-dan-kinh-cuong-luc-iphone-14-promax-dekey-3d-luxury-thumb-639043889053868079-600x600.jpg" height="207" width="207"/>
+             </div>
+             <h3>
+              Miếng dán iPhone 14 Pro Max DEKEY 3D Luxury
+             </h3>
+             <strong class="price">
+              229.000₫
+              <span class="price-and-discount">
+               <label class="price-old black">
+                269.000₫
+               </label>
+               <small>
+                -14%
+               </small>
+              </span>
+             </strong>
+             <div class="fs-contain">
+              <img alt="icon flashsale" height="15" src="//cdnv2.tgdd.vn/webmwg/2024/ContentMwg/images/homev2/flash-sale.png" width="15">
+               <span class="rq_count fscount">
+                <i class="fs-iconfire" style="width:100%;">
+                </i>
+                <b>
+                 Còn 5/5 suất
+                </b>
+               </span>
+              </img>
+             </div>
+            </a>
+            <div class="btn-buy">
+             <a class="see-detail hide" href="/mieng-dan-man-hinh/mieng-dan-kinh-cuong-luc-iphone-14-promax-dekey-3d-luxury?utm_flashsale=1">
+              Xem chi tiết
+             </a>
+             <a class="buy-now" href="/cart/them-vao-gio-hang?productId=361239&amp;productCode=1844199000305&amp;productType=6">
+              Mua ngay
+             </a>
+            </div>
+           </div>
+           <div class="item" data-id="361143" data-pos="36">
+            <a class="remain_quantity main-contain" data-box="BoxHomeFlashsale" data-brand="DEKEY" data-cache="True" data-cate="Miếng dán" data-color="Trắng" data-crm="3460869" data-id="361143" data-name="Miếng dán kính cường lực iPhone 17 Pro DEKEY 3D Sentery" data-pos="0" data-premium="False" data-price="171000.0" data-pro="1027" data-productstatus="" data-promotiontype="" data-s="TwoPriceDetailOLOLCMS" data-site="1" href="/mieng-dan-man-hinh/mieng-dan-kinh-cuong-luc-iphone-17-pro-dekey-3d-sentery?utm_flashsale=1">
+             <div class="item-img">
+              <img alt="Miếng dán iPhone 17 Pro DEKEY 3D Sentery" class="lazyload" data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/1363/361143/mieng-dan-kinh-cuong-luc-iphone-17-pro-dekey-3d-sentery-thumb-639043657217556064-600x600.jpg" height="207" width="207"/>
+             </div>
+             <h3>
+              Miếng dán iPhone 17 Pro DEKEY 3D Sentery
+             </h3>
+             <strong class="price">
+              171.000₫
+              <span class="price-and-discount">
+               <label class="price-old black">
+                189.000₫
+               </label>
+               <small>
+                -9%
+               </small>
+              </span>
+             </strong>
+             <div class="fs-contain">
+              <img alt="icon flashsale" height="15" src="//cdnv2.tgdd.vn/webmwg/2024/ContentMwg/images/homev2/flash-sale.png" width="15">
+               <span class="rq_count fscount">
+                <i class="fs-iconfire" style="width:100%;">
+                </i>
+                <b>
+                 Còn 5/5 suất
+                </b>
+               </span>
+              </img>
+             </div>
+            </a>
+            <div class="btn-buy">
+             <a class="see-detail hide" href="/mieng-dan-man-hinh/mieng-dan-kinh-cuong-luc-iphone-17-pro-dekey-3d-sentery?utm_flashsale=1">
+              Xem chi tiết
+             </a>
+             <a class="buy-now" href="/cart/them-vao-gio-hang?productId=361143&amp;productCode=1844199000235&amp;productType=6">
+              Mua ngay
+             </a>
+            </div>
+           </div>
+           <div class="item" data-id="360032" data-pos="37">
+            <a class="remain_quantity main-contain" data-box="BoxHomeFlashsale" data-brand="Earfun" data-cache="True" data-cate="Tai nghe" data-color="Đen" data-crm="3522114" data-id="360032" data-name="Tai nghe Bluetooth True Wireless Earfun Air 2 - Đen" data-pos="0" data-premium="False" data-price="790000.0" data-pro="1027" data-productstatus="" data-promotiontype="" data-s="TwoPriceDetailOLOLCMS" data-site="1" href="/tai-nghe/tai-nghe-blutetooth-true-wireless-earfun-air-2-den?utm_flashsale=1">
+             <div class="item-img">
+              <img alt="Tai nghe TWS Earfun Air 2 - Đen" class="lazyload" data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/54/360032/tai-nghe-blutetooth-true-wireless-earfun-air-2-den-thumb-639012620631320905-600x600.jpg" height="207" width="207"/>
+             </div>
+             <h3>
+              Tai nghe TWS Earfun Air 2 - Đen
+             </h3>
+             <strong class="price">
+              790.000₫
+              <span class="price-and-discount">
+               <label class="price-old black">
+                1.190.000₫
+               </label>
+               <small>
+                -33%
+               </small>
+              </span>
+             </strong>
+             <div class="fs-contain">
+              <img alt="icon flashsale" height="15" src="//cdnv2.tgdd.vn/webmwg/2024/ContentMwg/images/homev2/flash-sale.png" width="15">
+               <span class="rq_count fscount">
+                <i class="fs-iconfire" style="width:100%;">
+                </i>
+                <b>
+                 Còn 10/10 suất
+                </b>
+               </span>
+              </img>
+             </div>
+            </a>
+            <div class="btn-buy">
+             <a class="see-detail hide" href="/tai-nghe/tai-nghe-blutetooth-true-wireless-earfun-air-2-den?utm_flashsale=1">
+              Xem chi tiết
+             </a>
+             <a class="buy-now" href="/cart/them-vao-gio-hang?productId=360032&amp;productCode=0163346000758&amp;productType=6">
+              Mua ngay
+             </a>
+            </div>
+           </div>
+           <div class="item" data-id="360873" data-pos="38">
+            <a class="remain_quantity main-contain" data-box="BoxHomeFlashsale" data-brand="AUKEY" data-cache="True" data-cate="Cáp sạc" data-color="Đen" data-crm="3521863" data-id="360873" data-name="Cáp sạc và truyền dữ liệu USB-A - Lightning 12W 0.9m Aukey CB-BAL7 - Đen" data-pos="0" data-premium="False" data-price="190000.0" data-pro="1027" data-productstatus="" data-promotiontype="" data-s="TwoPriceDetailOLOLCMS" data-site="1" href="/cap-dien-thoai/cap-sac-va-truyen-du-lieu-usb-a-lightning-12w-09m-aukey-cb-bal7-den?utm_flashsale=1">
+             <div class="item-img">
+              <img alt="Cáp sạc và truyền dữ liệu 0.9m Aukey CB-BAL7 - Đen" class="lazyload" data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/58/360873/cap-sac-va-truyen-du-lieu-usb-a-lightning-12w-09m-aukey-cb-bal7-den-231225-104206-659-600x600.jpg" height="207" width="207"/>
+             </div>
+             <h3>
+              Cáp sạc và truyền dữ liệu 0.9m Aukey CB-BAL7 - Đen
+             </h3>
+             <strong class="price">
+              190.000₫
+              <span class="price-and-discount">
+               <label class="price-old black">
+                310.000₫
+               </label>
+               <small>
+                -38%
+               </small>
+              </span>
+             </strong>
+             <div class="fs-contain">
+              <img alt="icon flashsale" height="15" src="//cdnv2.tgdd.vn/webmwg/2024/ContentMwg/images/homev2/flash-sale.png" width="15">
+               <span class="rq_count fscount">
+                <i class="fs-iconfire" style="width:100%;">
+                </i>
+                <b>
+                 Còn 10/10 suất
+                </b>
+               </span>
+              </img>
+             </div>
+            </a>
+            <div class="btn-buy">
+             <a class="see-detail hide" href="/cap-dien-thoai/cap-sac-va-truyen-du-lieu-usb-a-lightning-12w-09m-aukey-cb-bal7-den?utm_flashsale=1">
+              Xem chi tiết
+             </a>
+             <a class="buy-now" href="/cart/them-vao-gio-hang?productId=360873&amp;productCode=0163345000994&amp;productType=6">
+              Mua ngay
+             </a>
+            </div>
+           </div>
+           <div class="item" data-id="361145" data-pos="39">
+            <a class="remain_quantity main-contain" data-box="BoxHomeFlashsale" data-brand="DEKEY" data-cache="True" data-cate="Miếng dán" data-color="Trắng" data-crm="3460871" data-id="361145" data-name="Miếng dán kính cường lực iPhone 17 Pro Max DEKEY 3D Sentery" data-pos="0" data-premium="False" data-price="171000.0" data-pro="1027" data-productstatus="" data-promotiontype="" data-s="TwoPriceDetailOLOLCMS" data-site="1" href="/mieng-dan-man-hinh/mieng-dan-kinh-cuong-luc-iphone-17-pro-max-dekey-3d-sentery?utm_flashsale=1">
+             <div class="item-img">
+              <img alt="Miếng dán iPhone 17 Pro Max DEKEY 3D Sentery" class="lazyload" data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/1363/361145/mieng-dan-kinh-cuong-luc-iphone-17-pro-max-dekey-3d-sentery-thumb-639043658548015599-600x600.jpg" height="207" width="207"/>
+             </div>
+             <h3>
+              Miếng dán iPhone 17 Pro Max DEKEY 3D Sentery
+             </h3>
+             <strong class="price">
+              171.000₫
+              <span class="price-and-discount">
+               <label class="price-old black">
+                189.000₫
+               </label>
+               <small>
+                -9%
+               </small>
+              </span>
+             </strong>
+             <div class="fs-contain">
+              <img alt="icon flashsale" height="15" src="//cdnv2.tgdd.vn/webmwg/2024/ContentMwg/images/homev2/flash-sale.png" width="15">
+               <span class="rq_count fscount">
+                <i class="fs-iconfire" style="width:100%;">
+                </i>
+                <b>
+                 Còn 5/5 suất
+                </b>
+               </span>
+              </img>
+             </div>
+            </a>
+            <div class="btn-buy">
+             <a class="see-detail hide" href="/mieng-dan-man-hinh/mieng-dan-kinh-cuong-luc-iphone-17-pro-max-dekey-3d-sentery?utm_flashsale=1">
+              Xem chi tiết
+             </a>
+             <a class="buy-now" href="/cart/them-vao-gio-hang?productId=361145&amp;productCode=1844199000237&amp;productType=6">
+              Mua ngay
+             </a>
+            </div>
+           </div>
+           <div class="item" data-id="361246" data-pos="40">
+            <a class="remain_quantity main-contain" data-box="BoxHomeFlashsale" data-brand="DEKEY" data-cache="True" data-cate="Miếng dán" data-color="Trắng" data-crm="3460946" data-id="361246" data-name="Miếng dán kính cường lực iPhone Air DEKEY 3D Luxury" data-pos="0" data-premium="False" data-price="229000.0" data-pro="1027" data-productstatus="" data-promotiontype="" data-s="TwoPriceDetailOLOLCMS" data-site="1" href="/mieng-dan-man-hinh/mieng-dan-kinh-cuong-luc-iphone-air-dekey-3d-luxury?utm_flashsale=1">
+             <div class="item-img">
+              <img alt="Miếng dán iPhone Air DEKEY 3D Luxury" class="lazyload" data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/1363/361246/mieng-dan-kinh-cuong-luc-iphone-air-dekey-3d-luxury-thumb-639043892224238130-600x600.jpg" height="207" width="207"/>
+             </div>
+             <h3>
+              Miếng dán iPhone Air DEKEY 3D Luxury
+             </h3>
+             <strong class="price">
+              229.000₫
+              <span class="price-and-discount">
+               <label class="price-old black">
+                269.000₫
+               </label>
+               <small>
+                -14%
+               </small>
+              </span>
+             </strong>
+             <div class="fs-contain">
+              <img alt="icon flashsale" height="15" src="//cdnv2.tgdd.vn/webmwg/2024/ContentMwg/images/homev2/flash-sale.png" width="15">
+               <span class="rq_count fscount">
+                <i class="fs-iconfire" style="width:100%;">
+                </i>
+                <b>
+                 Còn 5/5 suất
+                </b>
+               </span>
+              </img>
+             </div>
+            </a>
+            <div class="btn-buy">
+             <a class="see-detail hide" href="/mieng-dan-man-hinh/mieng-dan-kinh-cuong-luc-iphone-air-dekey-3d-luxury?utm_flashsale=1">
+              Xem chi tiết
+             </a>
+             <a class="buy-now" href="/cart/them-vao-gio-hang?productId=361246&amp;productCode=1844199000312&amp;productType=6">
+              Mua ngay
+             </a>
+            </div>
+           </div>
+           <div class="item" data-id="360378" data-pos="41">
+            <a class="remain_quantity main-contain" data-box="BoxHomeFlashsale" data-brand="Earfun" data-cache="True" data-cate="Tai nghe" data-color="Xám" data-crm="3522115" data-id="360378" data-name="Tai nghe Bluetooth Open-Ear Earfun Clip - Xám Bạc" data-pos="0" data-premium="False" data-price="1390000.0" data-pro="1027" data-productstatus="" data-promotiontype="" data-s="TwoPriceDetailOLOLCMS" data-site="1" href="/tai-nghe/tai-nghe-blutetooth-open-ear-earfun-clip-xam-bac?utm_flashsale=1">
+             <div class="item-img">
+              <img alt="Tai nghe Open-Ear Earfun Clip - Xám Bạc" class="lazyload" data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/54/360378/tai-nghe-blutetooth-open-ear-earfun-clip-xam-bac-thumb-639013062187374650-600x600.jpg" height="207" width="207"/>
+             </div>
+             <h3>
+              Tai nghe Open-Ear Earfun Clip - Xám Bạc
+             </h3>
+             <strong class="price">
+              1.390.000₫
+              <span class="price-and-discount">
+               <label class="price-old black">
+                1.990.000₫
+               </label>
+               <small>
+                -30%
+               </small>
+              </span>
+             </strong>
+             <div class="fs-contain">
+              <img alt="icon flashsale" height="15" src="//cdnv2.tgdd.vn/webmwg/2024/ContentMwg/images/homev2/flash-sale.png" width="15">
+               <span class="rq_count fscount">
+                <i class="fs-iconfire" style="width:100%;">
+                </i>
+                <b>
+                 Còn 10/10 suất
+                </b>
+               </span>
+              </img>
+             </div>
+            </a>
+            <div class="btn-buy">
+             <a class="see-detail hide" href="/tai-nghe/tai-nghe-blutetooth-open-ear-earfun-clip-xam-bac?utm_flashsale=1">
+              Xem chi tiết
+             </a>
+             <a class="buy-now" href="/cart/them-vao-gio-hang?productId=360378&amp;productCode=0163346000747&amp;productType=6">
+              Mua ngay
+             </a>
+            </div>
+           </div>
+           <div class="item" data-id="360890" data-pos="42">
+            <a class="remain_quantity main-contain" data-box="BoxHomeFlashsale" data-brand="AUKEY" data-cache="True" data-cate="Sạc dự phòng" data-color="Xám" data-crm="3521858" data-id="360890" data-name="Pin sạc dự phòng Polymer 10000mAh Type C PD QC 3.0 30W Aukey PB-Y41 Sprint X" data-pos="0" data-premium="False" data-price="590000.0" data-pro="1027" data-productstatus="" data-promotiontype="" data-s="TwoPriceDetailOLOLCMS" data-site="1" href="/sac-dtdd/pin-sac-du-phong-polymer-10000mah-type-c-pd-qc-30-30w-aukey-pb-y41-sprint-x?utm_flashsale=1">
+             <div class="item-img">
+              <img alt="Aukey 30W PB-Y41 Sprint X" class="lazyload" data-src="https://cdnv2.tgdd.vn/mwg-static/dmx/Products/Images/57/360890/pin-sac-du-phong-polymer-10000mah-type-c-pd-qc-30-30w-aukey-pb-y41-sprint-x-thumb-639023649378117730-300x300.jpg" height="207" width="207"/>
+             </div>
+             <h3>
+              Aukey 30W PB-Y41 Sprint X
+             </h3>
+             <strong class="price">
+              590.000₫
+              <span class="price-and-discount">
+               <label class="price-old black">
+                1.080.000₫
+               </label>
+               <small>
+                -45%
+               </small>
+              </span>
+             </strong>
+             <div class="fs-contain">
+              <img alt="icon flashsale" height="15" src="//cdnv2.tgdd.vn/webmwg/2024/ContentMwg/images/homev2/flash-sale.png" width="15">
+               <span class="rq_count fscount">
+                <i class="fs-iconfire" style="width:100%;">
+                </i>
+                <b>
+                 Còn 10/10 suất
+                </b>
+               </span>
+              </img>
+             </div>
+            </a>
+            <div class="btn-buy">
+             <a class="see-detail hide" href="/sac-dtdd/pin-sac-du-phong-polymer-10000mah-type-c-pd-qc-30-30w-aukey-pb-y41-sprint-x?utm_flashsale=1">
+              Xem chi tiết
+             </a>
+             <a class="buy-now" href="/cart/them-vao-gio-hang?productId=360890&amp;productCode=0160012000687&amp;productType=6">
+              Mua ngay
+             </a>
+            </div>
+           </div>
+           <div class="item" data-id="361226" data-pos="43">
+            <a class="remain_quantity main-contain" data-box="BoxHomeFlashsale" data-brand="Tucano" data-cache="True" data-cate="Balo, túi chống sốc" data-color="Xanh bộ đội" data-crm="3460787" data-id="361226" data-name="Túi xách Laptop 16 inch TUCANO Compatto Eco Duffle - Xanh lá" data-pos="0" data-premium="False" data-price="990000.0" data-pro="1027" data-productstatus="" data-promotiontype="" data-s="TwoPriceDetailOLOLCMS" data-site="1" href="/tui-chong-soc/tui-xach-laptop-16-inch-tucano-compatto-eco-duffle-xanh-la?utm_flashsale=1">
+             <div class="item-img">
+              <img alt="Túi xách Laptop 16 inch TUCANO Compatto Eco Duffle - Xanh lá" class="lazyload" data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/7923/361226/tui-xach-chong-soc-laptop-16-inch-compatto-eco-duffle-xanh-la-thumb-639023400158457401-600x600.jpg" height="207" width="207"/>
+             </div>
+             <h3>
+              Túi xách Laptop 16 inch TUCANO Compatto Eco Duffle - Xanh lá
+             </h3>
+             <strong class="price">
+              990.000₫
+              <span class="price-and-discount">
+               <label class="price-old black">
+                1.100.000₫
+               </label>
+               <small>
+                -10%
+               </small>
+              </span>
+             </strong>
+             <div class="fs-contain">
+              <img alt="icon flashsale" height="15" src="//cdnv2.tgdd.vn/webmwg/2024/ContentMwg/images/homev2/flash-sale.png" width="15">
+               <span class="rq_count fscount">
+                <i class="fs-iconfire" style="width:100%;">
+                </i>
+                <b>
+                 Còn 5/5 suất
+                </b>
+               </span>
+              </img>
+             </div>
+            </a>
+            <div class="btn-buy">
+             <a class="see-detail hide" href="/tui-chong-soc/tui-xach-laptop-16-inch-tucano-compatto-eco-duffle-xanh-la?utm_flashsale=1">
+              Xem chi tiết
+             </a>
+             <a class="buy-now" href="/cart/them-vao-gio-hang?productId=361226&amp;productCode=1845975000265&amp;productType=6">
+              Mua ngay
+             </a>
+            </div>
+           </div>
+           <div class="item" data-id="360835" data-pos="44">
+            <a class="remain_quantity main-contain" data-box="BoxHomeFlashsale" data-brand="Tucano" data-cache="True" data-cate="Balo, túi chống sốc" data-color="Xanh lam" data-crm="3460770" data-id="360835" data-name="Balo Laptop 14inch TUCANO Fodable Compatto Eco - Xanh da trời" data-pos="0" data-premium="False" data-price="675000.0" data-pro="1027" data-productstatus="" data-promotiontype="" data-s="TwoPriceDetailOLOLCMS" data-site="1" href="/tui-chong-soc/balo-laptop-14inch-tucano-fodable-compatto-eco-xanh-da-troi?utm_flashsale=1">
+             <div class="item-img">
+              <img alt="Balo Laptop 14inch TUCANO Fodable Compatto Eco - Xanh da trời" class="lazyload" data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/7923/360835/balo-laptop-14inch-tucano-fodable-compatto-eco-xanh-da-troi-261225-093310-948-600x600.jpg" height="207" width="207"/>
+             </div>
+             <h3>
+              Balo Laptop 14inch TUCANO Fodable Compatto Eco - Xanh da trời
+             </h3>
+             <strong class="price">
+              675.000₫
+              <span class="price-and-discount">
+               <label class="price-old black">
+                750.000₫
+               </label>
+               <small>
+                -10%
+               </small>
+              </span>
+             </strong>
+             <div class="fs-contain">
+              <img alt="icon flashsale" height="15" src="//cdnv2.tgdd.vn/webmwg/2024/ContentMwg/images/homev2/flash-sale.png" width="15">
+               <span class="rq_count fscount">
+                <i class="fs-iconfire" style="width:100%;">
+                </i>
+                <b>
+                 Còn 5/5 suất
+                </b>
+               </span>
+              </img>
+             </div>
+            </a>
+            <div class="btn-buy">
+             <a class="see-detail hide" href="/tui-chong-soc/balo-laptop-14inch-tucano-fodable-compatto-eco-xanh-da-troi?utm_flashsale=1">
+              Xem chi tiết
+             </a>
+             <a class="buy-now" href="/cart/them-vao-gio-hang?productId=360835&amp;productCode=1845975000248&amp;productType=6">
+              Mua ngay
+             </a>
+            </div>
+           </div>
+           <div class="item" data-id="360666" data-pos="45">
+            <a class="remain_quantity main-contain" data-box="BoxHomeFlashsale" data-brand="Golf" data-cache="True" data-cate="Sạc dự phòng" data-color="Đen" data-crm="3522088" data-id="360666" data-name="Pin sạc dự phòng Polymer 20000mAh Type C 10.5W Golf L206" data-pos="0" data-premium="False" data-price="290000.0" data-pro="1027" data-productstatus="" data-promotiontype="" data-s="TwoPriceDetailOLOLCMS" data-site="1" href="/sac-dtdd/pin-sac-du-phong-polymer-20000mah-type-c-105w-golf-l206?utm_flashsale=1">
+             <div class="item-img">
+              <img alt="Golf 10.5W L206" class="lazyload" data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/57/360666/pin-sac-du-phong-polymer-20000mah-type-c-105w-golf-l206-thumb-639020969245938967-600x600.jpg" height="207" width="207"/>
+             </div>
+             <h3>
+              Golf 10.5W L206
+             </h3>
+             <strong class="price">
+              290.000₫
+              <span class="price-and-discount">
+               <label class="price-old black">
+                570.000₫
+               </label>
+               <small>
+                -49%
+               </small>
+              </span>
+             </strong>
+             <div class="fs-contain">
+              <img alt="icon flashsale" height="15" src="//cdnv2.tgdd.vn/webmwg/2024/ContentMwg/images/homev2/flash-sale.png" width="15">
+               <span class="rq_count fscount">
+                <i class="fs-iconfire" style="width:100%;">
+                </i>
+                <b>
+                 Còn 10/10 suất
+                </b>
+               </span>
+              </img>
+             </div>
+            </a>
+            <div class="btn-buy">
+             <a class="see-detail hide" href="/sac-dtdd/pin-sac-du-phong-polymer-20000mah-type-c-105w-golf-l206?utm_flashsale=1">
+              Xem chi tiết
+             </a>
+             <a class="buy-now" href="/cart/them-vao-gio-hang?productId=360666&amp;productCode=0160012000707&amp;productType=6">
+              Mua ngay
+             </a>
+            </div>
+           </div>
+           <div class="item" data-id="361099" data-pos="46">
+            <a class="remain_quantity main-contain" data-box="BoxHomeFlashsale" data-brand="AUKEY" data-cache="True" data-cate="Sạc dự phòng" data-color="Bạc" data-crm="3521874" data-id="361099" data-name="Pin sạc dự phòng Polymer 20000mAh Type C PD QC 3.0 20W Aukey PB-Y57 Spark Mini - Xám Bạc" data-pos="0" data-premium="False" data-price="640000.0" data-pro="1027" data-productstatus="" data-promotiontype="" data-s="TwoPriceDetailOLOLCMS" data-site="1" href="/sac-dtdd/pin-sac-du-phong-polymer-20000mah-type-c-20w-aukey-pby57-spark-mini-xam-bac?utm_flashsale=1">
+             <div class="item-img">
+              <img alt="Aukey 20W PB-Y57 Spark Mini - Xám Bạc" class="lazyload" data-src="https://cdnv2.tgdd.vn/mwg-static/dmx/Products/Images/57/361099/pin-sac-du-phong-polymer-20000mah-type-c-30-20w-aukey-pb-y57-spark-mini-xam-bac-thumb-639023493494174865-300x300.jpg" height="207" width="207"/>
+             </div>
+             <h3>
+              Aukey 20W PB-Y57 Spark Mini - Xám Bạc
+             </h3>
+             <strong class="price">
+              640.000₫
+              <span class="price-and-discount">
+               <label class="price-old black">
+                1.190.000₫
+               </label>
+               <small>
+                -46%
+               </small>
+              </span>
+             </strong>
+             <div class="fs-contain">
+              <img alt="icon flashsale" height="15" src="//cdnv2.tgdd.vn/webmwg/2024/ContentMwg/images/homev2/flash-sale.png" width="15">
+               <span class="rq_count fscount">
+                <i class="fs-iconfire" style="width:100%;">
+                </i>
+                <b>
+                 Còn 10/10 suất
+                </b>
+               </span>
+              </img>
+             </div>
+            </a>
+            <div class="btn-buy">
+             <a class="see-detail hide" href="/sac-dtdd/pin-sac-du-phong-polymer-20000mah-type-c-20w-aukey-pby57-spark-mini-xam-bac?utm_flashsale=1">
+              Xem chi tiết
+             </a>
+             <a class="buy-now" href="/cart/them-vao-gio-hang?productId=361099&amp;productCode=0160012000704&amp;productType=6">
+              Mua ngay
+             </a>
+            </div>
+           </div>
+           <div class="item" data-id="361365" data-pos="47">
+            <a class="remain_quantity main-contain" data-box="BoxHomeFlashsale" data-brand="DEKEY" data-cache="True" data-cate="Miếng dán" data-color="Trắng" data-crm="3460976" data-id="361365" data-name="Miếng dán kính cường lực iPhone 17 Pro Max DEKEY 3D Premium" data-pos="0" data-premium="False" data-price="322000.0" data-pro="1027" data-productstatus="" data-promotiontype="" data-s="TwoPriceDetailOLOLCMS" data-site="1" href="/mieng-dan-man-hinh/mieng-dan-kinh-cuong-luc-iphone-17-promax-dekey-3d-premium?utm_flashsale=1">
+             <div class="item-img">
+              <img alt="Miếng dán iPhone 17 Pro Max DEKEY 3D Premium" class="lazyload" data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/1363/361365/mieng-dan-kinh-cuong-luc-iphone-17-promax-dekey-3d-premium-thumb-639043925329643604-600x600.jpg" height="207" width="207"/>
+             </div>
+             <h3>
+              Miếng dán iPhone 17 Pro Max DEKEY 3D Premium
+             </h3>
+             <strong class="price">
+              322.000₫
+              <span class="price-and-discount">
+               <label class="price-old black">
+                378.000₫
+               </label>
+               <small>
+                -14%
+               </small>
+              </span>
+             </strong>
+             <div class="fs-contain">
+              <img alt="icon flashsale" height="15" src="//cdnv2.tgdd.vn/webmwg/2024/ContentMwg/images/homev2/flash-sale.png" width="15">
+               <span class="rq_count fscount">
+                <i class="fs-iconfire" style="width:100%;">
+                </i>
+                <b>
+                 Còn 5/5 suất
+                </b>
+               </span>
+              </img>
+             </div>
+            </a>
+            <div class="btn-buy">
+             <a class="see-detail hide" href="/mieng-dan-man-hinh/mieng-dan-kinh-cuong-luc-iphone-17-promax-dekey-3d-premium?utm_flashsale=1">
+              Xem chi tiết
+             </a>
+             <a class="buy-now" href="/cart/them-vao-gio-hang?productId=361365&amp;productCode=1844199000342&amp;productType=6">
+              Mua ngay
+             </a>
+            </div>
+           </div>
+           <div class="item" data-id="361378" data-pos="48">
+            <a class="remain_quantity main-contain" data-box="BoxHomeFlashsale" data-brand="DEKEY" data-cache="True" data-cate="Miếng dán" data-color="Trắng" data-crm="3460977" data-id="361378" data-name="Miếng dán kính cường lực chống nhìn trộm iPhone 17 Pro Max DEKEY 3D Premium" data-pos="0" data-premium="False" data-price="364000.0" data-pro="1027" data-productstatus="" data-promotiontype="" data-s="TwoPriceDetailOLOLCMS" data-site="1" href="/mieng-dan-man-hinh/mieng-dan-kinh-cuong-luc-chong-nhin-trom-iphone-17-promax-dekey-3d-premium?utm_flashsale=1">
+             <div class="item-img">
+              <img alt="Miếng dán iPhone 17 Pro Max DEKEY 3D Premium" class="lazyload" data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/1363/361378/mieng-dan-kinh-cuong-luc-chong-nhin-trom-iphone-17-promax-dekey-3d-premium-thumb-639043925838274879-600x600.jpg" height="207" width="207"/>
+             </div>
+             <h3>
+              Miếng dán iPhone 17 Pro Max DEKEY 3D Premium
+             </h3>
+             <strong class="price">
+              364.000₫
+              <span class="price-and-discount">
+               <label class="price-old black">
+                428.000₫
+               </label>
+               <small>
+                -14%
+               </small>
+              </span>
+             </strong>
+             <div class="fs-contain">
+              <img alt="icon flashsale" height="15" src="//cdnv2.tgdd.vn/webmwg/2024/ContentMwg/images/homev2/flash-sale.png" width="15">
+               <span class="rq_count fscount">
+                <i class="fs-iconfire" style="width:100%;">
+                </i>
+                <b>
+                 Còn 5/5 suất
+                </b>
+               </span>
+              </img>
+             </div>
+            </a>
+            <div class="btn-buy">
+             <a class="see-detail hide" href="/mieng-dan-man-hinh/mieng-dan-kinh-cuong-luc-chong-nhin-trom-iphone-17-promax-dekey-3d-premium?utm_flashsale=1">
+              Xem chi tiết
+             </a>
+             <a class="buy-now" href="/cart/them-vao-gio-hang?productId=361378&amp;productCode=1844199000343&amp;productType=6">
+              Mua ngay
+             </a>
+            </div>
+           </div>
+          </div>
+          <a class="readmore-btn fl-btn" href="https://www.thegioididong.com/khuyen-mai-campaign">
+           <span>
+            Xem thêm sản
+                                        phẩm
+           </span>
+          </a>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <!-- Non-Promotion Section (Web Only) -->
+     <section class="web-only" th:if="${not #lists.isEmpty(regularProducts)}" style="margin-top: 20px; width: 100%; max-width: 1200px; margin-left: auto; margin-right: auto;">
+       <h2 class="web-only__title" style="text-transform: uppercase; font-weight: bold; margin-bottom: 10px; padding-left: 5px;">
+        Các sản phẩm không khuyến mãi
+       </h2>
+       <div class="web-only__list" style="display: flex; flex-wrap: wrap; margin: 0 -5px;"> 
+         <div class="item" th:each="product : ${regularProducts}" th:data-id="${product.id}" style="width: 20%; padding: 0 5px; margin-bottom: 20px; box-sizing: border-box;">
+             <div class="web-only__item" style="background: #fff; border-radius: 4px; padding: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); height: 100%; display: flex; flex-direction: column;">
+                 <a class="web-only__image" th:href="@{/products/detail/{id}(id=${product.id})}" style="display: block; text-align: center;">
+                  <img th:if="${product.image != null and !product.image.isEmpty()}" th:alt="${product.name}" class="web-only__product-image" th:src="@{'/images/' + ${product.image}}" style="width: 100%; height: auto; object-fit: contain; aspect-ratio: 1/1;">
+                  <img th:unless="${product.image != null and !product.image.isEmpty()}" th:alt="${product.name}" class="web-only__product-image" src="https://placehold.co/300x300?text=No+Image" style="width: 100%; height: auto; object-fit: contain; aspect-ratio: 1/1;">
+                 </a>
+                 <div class="web-only__description" style="margin-top: 10px; flex-grow: 1;">
+                  <h3 th:text="${product.name}" style="font-size: 14px; margin-bottom: 5px; height: 40px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">Product Name</h3>
+                  <strong class="price" th:text="${#numbers.formatDecimal(product.price, 0, 'POINT', 0, 'COMMA')} + '₫'" style="color: #d0021b; display: block; margin-bottom: 10px;">Price</strong>
+                 </div>
+                 <div class="btn-buy" style="margin-top: auto;">
+                    <a class="buy-now" th:href="@{/cart/add(productId=${product.id})}" style="display: block; background: #fdd504; color: #333; text-align: center; padding: 8px; border-radius: 4px; text-decoration: none; font-weight: bold;">Mua ngay</a>
+                 </div>
+             </div>
+         </div>
+       </div>
+      </section>
+
+     <!--Slide banner promote -->
+     <section class="home-slide-banner">
+      <div class="slider-bannerv3 owl-carousel">
+       <a aria-label="slide" data-cate="0" data-place="7866" href="https://www.thegioididong.com/dtdd/xiaomi-redmi-note-15-8gb-128gb" onclick="jQuery.ajax({ url: '/bannertracking?bid=109185&amp;r='+ (new Date).getTime(), async: true, cache: false });">
+        <img alt="Xiaomi Redmi Note 15" class="lazyload" data-src="//cdnv2.tgdd.vn/mwg-static/tgdd/Banner/a4/34/a43451a9cdd7b403eacc6191a31dac25.png" height="180" loading="lazy" width="600"/>
+       </a>
+       <a aria-label="slide" data-cate="0" data-place="7866" href="https://www.thegioididong.com/dtdd-samsung-galaxy-a" onclick="jQuery.ajax({ url: '/bannertracking?bid=109356&amp;r='+ (new Date).getTime(), async: true, cache: false });">
+        <img alt="Samsung" class="lazyload" data-src="//cdnv2.tgdd.vn/mwg-static/tgdd/Banner/be/fd/befd15c07d058426d79ef014d1026848.png" height="180" loading="lazy" width="600"/>
+       </a>
+       <a aria-label="slide" data-cate="0" data-place="7866" href="https://www.thegioididong.com/dtdd/oppo-reno15-5g-8gb-256gb" onclick="jQuery.ajax({ url: '/bannertracking?bid=108841&amp;r='+ (new Date).getTime(), async: true, cache: false });">
+        <img alt="OPPO RENO15 SERIES" class="lazyload owl-lazy" data-src="//cdnv2.tgdd.vn/mwg-static/tgdd/Banner/ba/b4/bab46e25f0e83b32e2b827a83eeb5aea.jpg" height="180" loading="lazy" width="600"/>
+       </a>
+       <a aria-label="slide" data-cate="0" data-place="7866" href="https://www.thegioididong.com/laptop" onclick="jQuery.ajax({ url: '/bannertracking?bid=109161&amp;r='+ (new Date).getTime(), async: true, cache: false });">
+        <img alt="Laptop AI" class="lazyload owl-lazy" data-src="//cdnv2.tgdd.vn/mwg-static/tgdd/Banner/f2/11/f211d09ae538f0998ee3f33314aaa8b7.png" height="180" loading="lazy" width="600"/>
+       </a>
+      </div>
+      <div class="close-slide">
+      </div>
+     </section>
+     <section class="web-only">
+      <h2 class="web-only__title">
+       Mua Online - Hàng chuẩn, giá mê
+      </h2>
+      <div class="web-only__list owl-carousel">
+       <div class="web-only__item">
+        <a class="web-only__image" href="https://www.thegioididong.com/khuyen-mai-campaign">
+         <img alt="Sản phẩm Elmich" class="web-only__product-image" src="https://cdnv2.tgdd.vn/mwg-static/common/Campaign/3e/61/3e618f94000d996fce4d34bb237ebb03.gif"/>
+        </a>
+        <div class="web-only__description">
+         <span>
+          Phụ kiện xịn Tết sale đến 50%
+         </span>
+        </div>
+       </div>
+       <div class="web-only__item">
+        <a class="web-only__image" href="https://www.thegioididong.com/khuyen-mai-earfun">
+         <img alt="Sản phẩm Elmich" class="web-only__product-image" src="https://cdnv2.tgdd.vn/mwg-static/common/Campaign/68/40/6840165e9f25814b0038e9e3583287ac.png"/>
+        </a>
+        <div class="web-only__description">
+         <span>
+          Bật nhạc cực đã Ưu đãi
+                                40%+
+         </span>
+        </div>
+       </div>
+       <div class="web-only__item">
+        <a class="web-only__image" href="https://www.thegioididong.com/khuyen-mai-micropack">
+         <img alt="Sản phẩm Elmich" class="web-only__product-image" src="https://cdnv2.tgdd.vn/mwg-static/common/Campaign/e4/ff/e4ffa62a4c3e68dd1121a5ea74e04fb2.png"/>
+        </a>
+        <div class="web-only__description">
+         <span>
+          Trạm Sắc Màu Bảo Hành 2 Năm
+         </span>
+        </div>
+       </div>
+       <div class="web-only__item">
+        <a class="web-only__image" href="https://www.thegioididong.com/khuyen-mai-dekey">
+         <img alt="Sản phẩm Elmich" class="web-only__product-image" src="https://cdnv2.tgdd.vn/mwg-static/common/Campaign/ca/65/ca65209607da17dcbb93c045d864a87d.png"/>
+        </a>
+        <div class="web-only__description">
+         <span>
+          Chạm là khác Khám phá Dekey
+         </span>
+        </div>
+       </div>
+       <div class="web-only__item">
+        <a class="web-only__image" href="https://www.thegioididong.com/khuyen-mai-tucano-idmix">
+         <img alt="Sản phẩm Elmich" class="web-only__product-image" src="https://cdnv2.tgdd.vn/mwg-static/common/Campaign/d7/ed/d7edb9fdd12a7914dc4645f43483599f.png"/>
+        </a>
+        <div class="web-only__description">
+         <span>
+          Phụ kiện chuẩn gu Mua ngay!
+         </span>
+        </div>
+       </div>
+       <div class="web-only__item">
+        <a class="web-only__image" href="https://www.thegioididong.com/khuyen-mai-aukey">
+         <img alt="Sản phẩm Elmich" class="web-only__product-image" src="https://cdnv2.tgdd.vn/mwg-static/common/Campaign/c1/90/c190499f303f5c2ca9c35a223e5c4713.png"/>
+        </a>
+        <div class="web-only__description">
+         <span>
+          Chuẩn công nghệ Giảm giá tới 50%+
+         </span>
+        </div>
+       </div>
+      </div>
+     </section>
+     <div class="homeproducts-block hide" id="daily-recommended">
+      <ul>
+       <li data-id="recommend">
+       </li>
+      </ul>
+      <div class="block-products relative">
+       <div class="preloader">
+        <div class="loaderweb">
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="monopoly-product-block">
+      <h3>
+       Lễ Hội Trả Chậm
+      </h3>
+      <a data-cate="0" data-place="8072" href="https://www.thegioididong.com/chuong-trinh-tra-cham-ict" onclick="jQuery.ajax({ url: '/bannertracking?bid=106338&amp;r='+ (new Date).getTime(), async: true, cache: false });">
+       <img alt="Lễ Hội Trả Chậm" height="1000" src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Banner/d1/02/d10256aa180524e900b52d52234a4ae4.png" style="cursor:pointer" width="760"/>
+      </a>
+      <div class="listproduct monopoly-product-slider owl-carousel">
+       <div class="item">
+        <a class="main-contain" data-box="BoxCate" data-brand="OPPO" data-cache="False" data-cate="Điện thoại" data-color="Hồng" data-id="360239" data-name="Điện thoại OPPO Reno15 F 5G 12GB/256GB" data-pos="0" data-premium="False" data-price="12990000.0" data-pro="1027" data-productstatus="" data-promotiontype="" data-s="ShortDayPromotion" data-site="1" data-sv="webtgdd-26-87" href="/dtdd/oppo-reno15f-5g-12gb-256gb">
+         <div class="item-label">
+          <span class="ln-new">
+           Mẫu mới
+          </span>
+          <span class="lb-tragop">
+           Trả chậm 0% trả trước
+                                    0đ
+          </span>
+         </div>
+         <div class="item-img item-img_42">
+          <img alt="OPPO Reno15 F 5G 12GB/256GB" class="lazyload thumb" data-src="https://cdn.tgdd.vn/Products/Images/42/360239/TimerThumb/oppo-reno15f-5g-xanh-duong-thumb.jpg"/>
+         </div>
+         <h3>
+          OPPO Reno15 F 5G 12GB/256GB
+          <span class="newModel">
+           Mẫu mới
+          </span>
+         </h3>
+         <div class="item-compare gray-bg">
+          <span>
+           Full HD+
+          </span>
+          <span>
+           6.57"
+          </span>
+         </div>
+         <strong class="price">
+          12.990.000₫
+         </strong>
+         <p class="item-gift">
+          Quà
+          <b>
+           700.000₫
+          </b>
+         </p>
+        </a>
+        <div class="item-bottom">
+         <a aria-label="shiping" class="shiping" href="javascript:;">
+         </a>
+        </div>
+        <div class="rating_Compare has_quantity">
+         <div class="vote-txt">
+          <i class="iconnewglobal-vote">
+          </i>
+          <b>
+           5
+          </b>
+         </div>
+         <span>
+          • Đã bán 16,4k
+         </span>
+        </div>
+       </div>
+       <div class="item">
+        <a class="main-contain" data-box="BoxCate" data-brand="Xiaomi" data-cache="False" data-cate="Điện thoại" data-color="Xanh Dương" data-id="360310" data-name="Điện thoại Xiaomi Redmi Note 15 5G 6GB/128GB" data-pos="0" data-premium="False" data-price="7490000.0" data-pro="1027" data-productstatus="" data-promotiontype="" data-s="ShortDayPromotion" data-site="1" data-sv="webtgdd-26-87" href="/dtdd/xiaomi-redmi-note-15-5g-6gb-128gb">
+         <div class="item-label">
+          <span class="ln-new">
+           Mẫu mới
+          </span>
+          <span class="lb-tragop">
+           Trả chậm 0% trả trước
+                                    0đ
+          </span>
+         </div>
+         <div class="item-img item-img_42">
+          <img alt="Xiaomi Redmi Note 15 5G 6GB/128GB" class="lazyload thumb" data-src="https://cdn.tgdd.vn/Products/Images/42/360310/xiaomi-redmi-note-15-5g-thumb-600x600.jpg"/>
+         </div>
+         <h3>
+          Xiaomi Redmi Note 15 5G 6GB/128GB
+          <span class="newModel">
+           Mẫu mới
+          </span>
+         </h3>
+         <div class="item-compare gray-bg">
+          <span>
+           Full HD+
+          </span>
+          <span>
+           6.77"
+          </span>
+         </div>
+         <strong class="price">
+          7.490.000₫
+         </strong>
+         <p class="item-gift">
+          Quà
+          <b>
+           1.270.000₫
+          </b>
+         </p>
+        </a>
+        <div class="item-bottom">
+         <a aria-label="shiping" class="shiping" href="javascript:;">
+         </a>
+        </div>
+        <div class="rating_Compare has_quantity">
+         <div class="vote-txt">
+          <i class="iconnewglobal-vote">
+          </i>
+          <b>
+           5
+          </b>
+         </div>
+         <span>
+          • Đã bán 127
+         </span>
+        </div>
+       </div>
+       <div class="item">
+        <a class="main-contain" data-box="BoxCate" data-brand="HP" data-cache="False" data-cate="Laptop" data-color="Vàng" data-id="327098" data-name="Laptop HP 15 fc0085AU - A6VV8PA (R5 7430U, 16GB, 512GB, Full HD, Win11)" data-pos="0" data-premium="False" data-price="14690000.0" data-pro="1027" data-productstatus="" data-promotiontype="" data-s="Nomal" data-site="1" data-sv="webtgdd-26-87" href="/laptop/hp-15-fc0085au-r5-a6vv8pa">
+         <div class="item-label">
+          <span class="lb-tragop">
+           Trả chậm 0% trả trước
+                                    0đ
+          </span>
+         </div>
+         <div class="item-img item-img_44">
+          <img alt="HP 15 fc0085AU R5 7430U (A6VV8PA)" class="lazyload thumb" data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/327098/hp-15-fc0085au-r5-a6vv8pa-170225-110652-878-600x600.jpg"/>
+         </div>
+         <h3>
+          HP 15 fc0085AU R5 7430U (A6VV8PA)
+         </h3>
+         <div class="item-compare gray-bg">
+          <span>
+           RAM 16 GB
+          </span>
+          <span>
+           SSD 512 GB
+          </span>
+         </div>
+         <strong class="price">
+          14.690.000₫
+         </strong>
+         <div class="box-p">
+          <p class="price-old black">
+           15.790.000₫
+          </p>
+          <span class="percent">
+           -6%
+          </span>
+         </div>
+         <p class="item-gift">
+          Quà
+          <b>
+           2.190.000₫
+          </b>
+         </p>
+        </a>
+        <div class="item-bottom">
+         <a aria-label="shiping" class="shiping" href="javascript:;">
+         </a>
+        </div>
+        <div class="rating_Compare has_quantity">
+         <div class="vote-txt">
+          <i class="iconnewglobal-vote">
+          </i>
+          <b>
+           4.9
+          </b>
+         </div>
+         <span>
+          • Đã bán 19,5k
+         </span>
+        </div>
+       </div>
+       <div class="item">
+        <a class="main-contain" data-box="BoxCate" data-brand="Samsung" data-cache="False" data-cate="Điện thoại" data-color="Xanh Navy" data-id="342565" data-name="Điện thoại Samsung Galaxy S25 FE 5G 8GB/256GB" data-pos="0" data-premium="False" data-price="15990000.0" data-pro="1027" data-productstatus="" data-promotiontype="" data-s="Nomal" data-site="1" data-sv="webtgdd-26-87" href="/dtdd/samsung-galaxy-s25-fe-5g-8gb-256gb">
+         <div class="item-label">
+          <span class="lb-tragop">
+           Trả chậm 0% trả trước
+                                    0đ
+          </span>
+         </div>
+         <div class="item-img item-img_42">
+          <img alt="Samsung Galaxy S25 FE 5G 8GB/256GB" class="lazyload thumb" data-src="https://cdn.tgdd.vn/Products/Images/42/342565/samsung-galaxy-s25-fe-navy-thumbai-600x600.jpg"/>
+         </div>
+         <h3>
+          Samsung Galaxy S25 FE 5G 8GB/256GB
+         </h3>
+         <div class="item-compare gray-bg">
+          <span>
+           Full HD+
+          </span>
+          <span>
+           6.7"
+          </span>
+         </div>
+         <strong class="price">
+          15.990.000₫
+         </strong>
+         <div class="box-p">
+          <p class="price-old black">
+           18.490.000₫
+          </p>
+          <span class="percent">
+           -13%
+          </span>
+         </div>
+        </a>
+        <div class="item-bottom">
+         <a aria-label="shiping" class="shiping" href="javascript:;">
+         </a>
+        </div>
+        <div class="rating_Compare has_quantity">
+         <div class="vote-txt">
+          <i class="iconnewglobal-vote">
+          </i>
+          <b>
+           4.9
+          </b>
+         </div>
+         <span>
+          • Đã bán 14,2k
+         </span>
+        </div>
+       </div>
+       <div class="item">
+        <a class="main-contain" data-box="BoxCate" data-brand="vivo" data-cache="False" data-cate="Điện thoại" data-color="Nâu" data-id="334227" data-name="Điện thoại vivo Y29 8GB/256GB" data-pos="0" data-premium="False" data-price="6660000.0" data-pro="1027" data-productstatus="" data-promotiontype="" data-s="Nomal" data-site="1" data-sv="webtgdd-26-87" href="/dtdd/vivo-y29-8gb-256gb">
+         <div class="item-label">
+          <span class="lb-tragop">
+           Trả chậm 0% trả trước
+                                    0đ
+          </span>
+         </div>
+         <div class="item-img item-img_42">
+          <img alt="vivo Y29 8GB/256GB" class="lazyload thumb" data-src="https://cdn.tgdd.vn/Products/Images/42/334227/vivo-y29-nau-thumb-600x600.jpg"/>
+         </div>
+         <h3>
+          vivo Y29 8GB/256GB
+         </h3>
+         <div class="item-compare gray-bg">
+          <span>
+           HD+
+          </span>
+          <span>
+           6.68 "
+          </span>
+         </div>
+         <strong class="price">
+          6.660.000₫
+         </strong>
+         <div class="box-p">
+          <p class="price-old black">
+           7.160.000₫
+          </p>
+          <span class="percent">
+           -6%
+          </span>
+         </div>
+        </a>
+        <div class="item-bottom">
+         <a aria-label="shiping" class="shiping" href="javascript:;">
+         </a>
+        </div>
+        <div class="rating_Compare has_quantity">
+         <div class="vote-txt">
+          <i class="iconnewglobal-vote">
+          </i>
+          <b>
+           4.9
+          </b>
+         </div>
+         <span>
+          • Đã bán 19,9k
+         </span>
+        </div>
+       </div>
+       <div class="item">
+        <a class="main-contain" data-box="BoxCate" data-brand="realme" data-cache="False" data-cate="Điện thoại" data-color="Trắng" data-id="361703" data-name="Điện thoại realme 16 5G 8GB/256GB" data-pos="0" data-premium="False" data-price="11490000.0" data-pro="1027" data-productstatus="" data-promotiontype="" data-s="ShortDayPromotion" data-site="1" data-sv="webtgdd-26-87" href="/dtdd/realme-16-5g-8gb-256gb">
+         <div class="item-label">
+          <span class="ln-new">
+           Mẫu mới
+          </span>
+          <span class="lb-tragop">
+           Trả chậm 0% trả trước
+                                    0đ
+          </span>
+         </div>
+         <div class="item-img item-img_42">
+          <img alt="realme 16 5G 8GB/256GB" class="lazyload thumb" data-src="https://cdn.tgdd.vn/Products/Images/42/361703/realme-16-5g-8gb-256gb-trang-thumb-1-600x600.jpg"/>
+         </div>
+         <p class="result-label temp1">
+          <img alt="label template" class="lazyload" data-src="https://cdn.tgdd.vn/2020/10/content/icon1-50x50.png" height="20" width="20"/>
+          <span>
+           HOTSALE
+                                    29.1-28.2
+          </span>
+         </p>
+         <h3>
+          realme 16 5G 8GB/256GB
+          <span class="newModel">
+           Mẫu mới
+          </span>
+         </h3>
+         <div class="item-compare gray-bg">
+          <span>
+           Full HD+
+          </span>
+          <span>
+           6.57"
+          </span>
+         </div>
+         <strong class="price">
+          11.490.000₫
+         </strong>
+         <p class="item-gift">
+          Quà
+          <b>
+           700.000₫
+          </b>
+         </p>
+        </a>
+        <div class="item-bottom">
+         <a aria-label="shiping" class="shiping" href="javascript:;">
+         </a>
+        </div>
+        <div class="rating_Compare has_quantity">
+         <div class="vote-txt">
+          <i class="iconnewglobal-vote">
+          </i>
+          <b>
+           5
+          </b>
+         </div>
+         <span>
+          • Đã bán 24
+         </span>
+        </div>
+       </div>
+       <div class="item">
+        <a class="main-contain" data-box="BoxCate" data-brand="HONOR" data-cache="False" data-cate="Điện thoại" data-color="Đen" data-id="358687" data-name="Điện thoại HONOR X9d 5G 8GB/256GB" data-pos="0" data-premium="False" data-price="9990000.0" data-pro="1027" data-productstatus="" data-promotiontype="" data-s="Nomal" data-site="1" data-sv="webtgdd-26-87" href="/dtdd/honor-x9d-5g-8gb-256gb">
+         <div class="item-label">
+          <span class="lb-tragop">
+           Trả chậm 0% trả trước
+                                    0đ
+          </span>
+         </div>
+         <div class="item-img item-img_42">
+          <img alt="HONOR X9d 5G 8GB/256GB" class="lazyload thumb" data-src="https://cdn.tgdd.vn/Products/Images/42/358687/honor-x9d-5g-8gb-256gb-den-thumb-1-600x600.jpg"/>
+         </div>
+         <h3>
+          HONOR X9d 5G 8GB/256GB
+         </h3>
+         <div class="item-compare gray-bg">
+          <span>
+           6.79"
+          </span>
+         </div>
+         <strong class="price">
+          9.990.000₫
+         </strong>
+         <p class="item-gift">
+          Quà
+          <b>
+           600.000₫
+          </b>
+         </p>
+        </a>
+        <div class="item-bottom">
+         <a aria-label="shiping" class="shiping" href="javascript:;">
+         </a>
+        </div>
+        <div class="rating_Compare has_quantity">
+         <div class="vote-txt">
+          <i class="iconnewglobal-vote">
+          </i>
+          <b>
+           5
+          </b>
+         </div>
+         <span>
+          • Đã bán 658
+         </span>
+        </div>
+       </div>
+       <div class="item">
+        <a class="main-contain" data-box="BoxCate" data-brand="Motorola" data-cache="False" data-cate="Điện thoại" data-color="Xanh tím" data-id="358225" data-name="Điện thoại Motorola G86 POWER 5G 8GB/128GB" data-pos="0" data-premium="False" data-price="7090000.0" data-pro="1027" data-productstatus="" data-promotiontype="" data-s="Nomal" data-site="1" data-sv="webtgdd-26-87" href="/dtdd/motorola-moto-g86-5g-8gb-128gb">
+         <div class="item-label">
+          <span class="lb-tragop">
+           Trả chậm 0% trả trước
+                                    0đ
+          </span>
+         </div>
+         <div class="item-img item-img_42">
+          <img alt="Motorola G86 POWER 5G 8GB/128GB" class="lazyload thumb" data-src="https://cdn.tgdd.vn/Products/Images/42/358225/motorola-moto-g86-5g-8gb-128gb-xam-thumb-600x600.jpg"/>
+         </div>
+         <h3>
+          Motorola G86 POWER 5G 8GB/128GB
+         </h3>
+         <div class="item-compare gray-bg">
+          <span>
+           1.5K
+          </span>
+          <span>
+           6.7"
+          </span>
+         </div>
+         <strong class="price">
+          7.090.000₫
+         </strong>
+         <p class="item-gift">
+          Quà
+          <b>
+           1.390.000₫
+          </b>
+         </p>
+        </a>
+        <div class="item-bottom">
+         <a aria-label="shiping" class="shiping" href="javascript:;">
+         </a>
+        </div>
+        <div class="rating_Compare has_quantity">
+         <div class="vote-txt">
+          <i class="iconnewglobal-vote">
+          </i>
+          <b>
+           4.9
+          </b>
+         </div>
+         <span>
+          • Đã bán 2,1k
+         </span>
+        </div>
+       </div>
+       <div class="item">
+        <a class="main-contain" data-box="BoxCate" data-brand="Dell" data-cache="False" data-cate="Laptop" data-color="Xanh Đậm" data-id="362024" data-name="Laptop Dell Pro 14 Essential PV14250 - PV14250-120U-16512W-BL (Core 5 120U, 16GB, 512GB, Full HD+, OfficeH24+365, Win11)" data-pos="0" data-premium="False" data-price="21690000.0" data-pro="1027" data-productstatus="" data-promotiontype="" data-s="Nomal" data-site="1" data-sv="webtgdd-26-87" href="/laptop/dell-pro-14-essential-pv14250-core-5-120u-pv14250-120u-16512w-bl">
+         <div class="item-label">
+          <span class="ln-new">
+           Mẫu mới
+          </span>
+          <span class="lb-tragop">
+           Trả chậm 0% trả trước
+                                    0đ
+          </span>
+         </div>
+         <div class="item-img item-img_44">
+          <img alt="Dell Pro 14 Essential PV14250 Core 5 120U (PV14250-120U-16512W-BL)" class="lazyload thumb" data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/362024/dell-pro-14-essential-pv14250-core-5-120u-pv14250-120u-16512w-bl-thumb-639046727854987975-600x600.jpg"/>
+         </div>
+         <h3>
+          Dell Pro 14 Essential PV14250 Core 5 120U (PV14250-120U-16512W-BL)
+          <span class="newModel">
+           Mẫu mới
+          </span>
+         </h3>
+         <div class="item-compare gray-bg">
+          <span>
+           RAM 16 GB
+          </span>
+          <span>
+           SSD 512 GB
+          </span>
+         </div>
+         <strong class="price">
+          21.690.000₫
+         </strong>
+         <div class="box-p">
+          <p class="price-old black">
+           22.590.000₫
+          </p>
+         </div>
+         <p class="item-gift">
+          Quà
+          <b>
+           100.000₫
+          </b>
+         </p>
+        </a>
+        <div class="item-bottom">
+         <a aria-label="shiping" class="shiping" href="javascript:;">
+         </a>
+        </div>
+        <div class="rating_Compare has_quantity">
+         <div class="vote-txt">
+          <i class="iconnewglobal-vote">
+          </i>
+          <b>
+           5
+          </b>
+         </div>
+         <span>
+          • Đã bán 4
+         </span>
+        </div>
+       </div>
+       <div class="item">
+        <a class="main-contain" data-box="BoxCate" data-brand="Xiaomi" data-cache="False" data-cate="Đồng hồ thông minh" data-color="Bạc" data-id="332069" data-name="Xiaomi Redmi Watch 5 47.5 mm dây TPU" data-pos="0" data-premium="False" data-price="2940000.0" data-pro="1027" data-productstatus="" data-promotiontype="" data-s="Nomal" data-site="1" data-sv="webtgdd-26-87" href="/dong-ho-thong-minh/xiaomi-redmi-watch-5">
+         <div class="item-label">
+          <span class="lb-tragop">
+           Trả chậm 0% trả trước
+                                    0đ
+          </span>
+         </div>
+         <div class="item-img item-img_7077">
+          <img alt="Xiaomi Redmi Watch 5 47.5 mm dây TPU" class="lazyload thumb" data-src="https://cdn.tgdd.vn/Products/Images/7077/332069/xiaomi-redmi-watch-5-bac-tb-600x600.jpg"/>
+         </div>
+         <h3>
+          Xiaomi Redmi Watch 5 47.5 mm dây TPU
+         </h3>
+         <strong class="price">
+          2.940.000₫
+         </strong>
+        </a>
+        <div class="item-bottom">
+         <a aria-label="shiping" class="shiping" href="javascript:;">
+         </a>
+        </div>
+        <div class="rating_Compare has_quantity">
+         <div class="vote-txt">
+          <i class="iconnewglobal-vote">
+          </i>
+          <b>
+           4.9
+          </b>
+         </div>
+         <span>
+          • Đã bán 34k
+         </span>
+        </div>
+       </div>
+       <div class="item">
+        <a class="main-contain" data-box="BoxCate" data-brand="Harman Kardon" data-cache="False" data-cate="Loa" data-color="Đen" data-id="356828" data-name="Loa Bluetooth Harman Kardon Aura Studio 5" data-pos="0" data-premium="False" data-price="8490000.0" data-pro="1027" data-productstatus="" data-promotiontype="" data-s="Nomal" data-site="1" data-sv="webtgdd-26-87" href="/loa-laptop/loa-bluetooth-harman-kardon-aura-studio-5">
+         <div class="item-label">
+          <span class="lb-tragop">
+           Trả chậm 0% trả trước
+                                    0đ
+          </span>
+         </div>
+         <div class="item-img item-img_2162">
+          <img alt="Loa Bluetooth Harman Kardon Aura Studio 5" class="lazyload thumb" data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/2162/356828/loa-bluetooth-harman-kardon-aura-studio-5-thumb-638973289182305670-600x600.jpg"/>
+         </div>
+         <h3>
+          Loa Bluetooth Harman Kardon Aura Studio 5
+         </h3>
+         <strong class="price">
+          8.490.000₫
+         </strong>
+        </a>
+        <div class="item-bottom">
+         <a aria-label="shiping" class="shiping" href="javascript:;">
+         </a>
+        </div>
+        <div class="rating_Compare has_quantity">
+         <div class="vote-txt">
+          <i class="iconnewglobal-vote">
+          </i>
+          <b>
+           5
+          </b>
+         </div>
+         <span>
+          • Đã bán 87
+         </span>
+        </div>
+       </div>
+       <div class="item">
+        <a class="main-contain" data-box="BoxCate" data-brand="G-SHOCK" data-cache="False" data-cate="Đồng hồ thời trang" data-color="Hồng" data-id="358742" data-name="Đồng hồ G-Shock 40.5 mm Nữ GMA-P2110-4ADR" data-pos="0" data-premium="False" data-price="4244000.0" data-pro="1027" data-productstatus="" data-promotiontype="" data-s="Nomal" data-site="1" data-sv="webtgdd-26-87" href="/dong-ho-deo-tay/g-shock-gma-p2110-4adr-nu">
+         <div class="item-label">
+          <span class="lb-tragop">
+           Trả chậm 0%
+          </span>
+         </div>
+         <div class="item-img item-img_7264">
+          <img alt="G-SHOCK 40.5 mm Nữ GMA-P2110-4ADR" class="lazyload thumb" data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/7264/358742/casio-gma-p2110-4adr-nu-thumb-638981277816183093-600x600.jpg"/>
+         </div>
+         <h3 class="fashionWatch-name">
+          G-SHOCK 40.5 mm Nữ GMA-P2110-4ADR
+         </h3>
+         <strong class="price">
+          4.244.000₫
+         </strong>
+         <div class="box-p">
+          <p class="price-old black">
+           4.994.000₫
+          </p>
+          <span class="percent">
+           -15%
+          </span>
+         </div>
+        </a>
+        <div class="item-bottom">
+         <a aria-label="shiping" class="shiping" href="javascript:;">
+         </a>
+        </div>
+        <div class="rating_Compare has_quantity">
+         <div class="vote-txt">
+          <i class="iconnewglobal-vote">
+          </i>
+          <b>
+           5
+          </b>
+         </div>
+         <span>
+          • Đã bán 6
+         </span>
+        </div>
+       </div>
+      </div>
+     </div>
+     <!--Tuần lễ thương hiệu-->
+     <section class="banner-brand-week">
+      <div class="box-banner-title">
+       Sắm Tết Sớm - Giá Rẻ Hơn
+      </div>
+      <div class="box-banner-offers">
+       <div class="banner-offers-item" data-banner="108547">
+        <a aria-label="slide" data-cate="0" data-place="7892" href="https://www.thegioididong.com/khuyen-mai-soc-smartphone-cao-cap" onclick="jQuery.ajax({ url: '/bannertracking?bid=108547&amp;r='+ (new Date).getTime(), async: true, cache: false });">
+         <img alt="Sắm Tết Sớm - Giá Rẻ Hơn" class="lazyload" data-src="//cdnv2.tgdd.vn/mwg-static/tgdd/Banner/97/3d/973d2b268fbfc231898a9f3df1347ad2.png" loading="lazy"/>
+        </a>
+       </div>
+      </div>
+     </section>
+     <!-- Banner ưu đãi từ hãng-->
+     <section class="banner-offers">
+      <div class="box-banner-title">
+       Gian hàng ưu đãi
+      </div>
+      <div class="box-banner-offers banner-listing">
+       <div class="banner-offers-item" data-banner="109396">
+        <a aria-label="slide" data-cate="0" data-place="7808" href="https://www.thegioididong.com/khuyen-mai-laptop-gaming" onclick="jQuery.ajax({ url: '/bannertracking?bid=109396&amp;r='+ (new Date).getTime(), async: true, cache: false });">
+         <img alt="Gian hàng ưu đãi" class="lazyload" data-src="//cdnv2.tgdd.vn/mwg-static/tgdd/Banner/b6/52/b652d0f1c7eda331cacb6c233561f898.png" loading="lazy"/>
+        </a>
+       </div>
+       <div class="banner-offers-item" data-banner="108700">
+        <a aria-label="slide" data-cate="0" data-place="7808" href="https://www.thegioididong.com/dtdd/xiaomi-redmi-note-15-8gb-128gb" onclick="jQuery.ajax({ url: '/bannertracking?bid=108700&amp;r='+ (new Date).getTime(), async: true, cache: false });">
+         <img alt="Gian hàng ưu đãi" class="lazyload" data-src="//cdnv2.tgdd.vn/mwg-static/tgdd/Banner/1d/79/1d79de2aee6ebab97830d75286f27dab.png" loading="lazy"/>
+        </a>
+       </div>
+       <div class="banner-offers-item" data-banner="108718">
+        <a aria-label="slide" data-cate="0" data-place="7808" href="https://www.thegioididong.com/dtdd/oppo-reno15-5g-8gb-256gb" onclick="jQuery.ajax({ url: '/bannertracking?bid=108718&amp;r='+ (new Date).getTime(), async: true, cache: false });">
+         <img alt="Gian hàng ưu đãi" class="lazyload" data-src="//cdnv2.tgdd.vn/mwg-static/tgdd/Banner/ca/93/ca9314f7d7c9810fd71d805d3fc64363.jpg" loading="lazy"/>
+        </a>
+       </div>
+       <div class="banner-offers-item" data-banner="109270">
+        <a aria-label="slide" data-cate="0" data-place="7808" href="https://www.thegioididong.com/dtdd/samsung-galaxy-s25-fe-5g-8gb-256gb" onclick="jQuery.ajax({ url: '/bannertracking?bid=109270&amp;r='+ (new Date).getTime(), async: true, cache: false });">
+         <img alt="Gian Hàng Ưu Đãi" class="lazyload" data-src="//cdnv2.tgdd.vn/mwg-static/tgdd/Banner/bf/43/bf43b0f1ed7bdfdc64d7821cd7adf726.png" loading="lazy"/>
+        </a>
+       </div>
+      </div>
+     </section>
+     <!--Bài tin-->
+     <section class="home-news">
+      <h2 class="title-news">
+       Mạng xã hội thegioididong.com
+      </h2>
+      <div class="box-listing-news">
+       <div id="preloader">
+        <div id="loader">
+        </div>
+       </div>
+       <div class="navigation-left">
+       </div>
+       <div class="listing-news owl-carousel owl-theme">
+        <div class="item-news">
+         <a href="/tin-tuc/nhung-khac-biet-giua-xiaomi-17-ultra-voi-xiaomi-15-ultra-1589020">
+          <img alt="tin-tuc/nhung-khac-biet-giua-xiaomi-17-ultra-voi-xiaomi-15-ultra" class="lazyload" data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/News/Thumb/1589020/Xiaomi-17-ultra-5g-17639050426544623266.jpg" loading="lazy">
+           <p>
+            Những khác biệt giữa Xiaomi 17 Ultra với Xiaomi 15
+                                    Ultra, người dùng có nên chờ đợi?
+           </p>
+          </img>
+         </a>
+        </div>
+        <div class="item-news">
+         <a href="/hoi-dap/6-tinh-nang-moi-tren-galaxy-s26-plus-khien-1589550">
+          <img alt="hoi-dap/6-tinh-nang-moi-tren-galaxy-s26-plus-khien" class="lazyload" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/samsung-s26-plus-khi-nao-ra-mat-1.jpg" loading="lazy">
+           <p>
+            6 tính năng mới trên Galaxy S26 Plus khiến Samfans
+                                    đứng ngồi không yên
+           </p>
+          </img>
+         </a>
+        </div>
+        <div class="item-news">
+         <a href="/tin-tuc/mwg-shop-2026-len-lich-san-sale-nhieu-uu-dai-dac-biet-xuan-binh-ngo-thoi-nao-1589225">
+          <img alt="tin-tuc/mwg-shop-2026-len-lich-san-sale-nhieu-uu-dai-dac-biet-xuan-binh-ngo-thoi-nao" class="lazyload" data-src="https://cdnv2.tgdd.vn/mwg-static/common/News/Thumb/1589225/12341234BA%CC%80I%20TIN%201200x628639058866722291794.jpg" loading="lazy">
+           <p>
+            MWG Shop 2026: Lên lịch săn sale nhiều ưu
+                                    đãi đặc biệt xuân Bính Ngọ thôi
+                                    nào
+           </p>
+          </img>
+         </a>
+        </div>
+        <div class="item-news">
+         <a href="/hoi-dap/lich-nghi-tet-nguyen-dan-1587253">
+          <img alt="hoi-dap/lich-nghi-tet-nguyen-dan" class="lazyload" data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/lich-nghi-tet-nguyen-dan.jpg" loading="lazy">
+           <p>
+            Lịch nghỉ Tết Nguyên Đán 2026, cập
+                                    nhật mới nhất
+           </p>
+          </img>
+         </a>
+        </div>
+       </div>
+       <div class="navigation-right">
+       </div>
+      </div>
+      <div class="show-more-news">
+       <a href="/tin-tuc">
+        <strong>
+         Xem thêm
+        </strong>
+       </a>
+      </div>
+     </section>
+    </div>
+    <!-- Tìm kiếm nhiều -->
+    <section class="search-trend">
+     <div class="bottom-search">
+      <p class="bottom-search__title">
+       Mọi người cũng tìm kiếm
+      </p>
+      <div class="bottom-search__container">
+       <ul>
+        <li style="list-style-type: none;">
+         <ul>
+          <li>
+           <a href="https://www.thegioididong.com/laptop">
+            laptop
+           </a>
+          </li>
+          <li>
+           <a href="https://www.thegioididong.com/tai-nghe">
+            tai nghe
+           </a>
+          </li>
+          <li>
+           <a href="https://www.thegioididong.com/dong-ho-deo-tay">
+            đồng hồ
+           </a>
+          </li>
+          <li>
+           <a href="https://www.thegioididong.com/may-tinh-de-ban">
+            pc
+           </a>
+          </li>
+          <li>
+           <a href="https://www.thegioididong.com/laptop-apple-macbook">
+            macbook
+           </a>
+          </li>
+          <li>
+           <a href="https://www.thegioididong.com/laptop-dell">
+            dell
+           </a>
+          </li>
+          <li>
+           <a href="https://www.thegioididong.com/laptop-asus">
+            asus
+           </a>
+          </li>
+          <li>
+           <a href="https://www.thegioididong.com/dtdd-xiaomi">
+            xiaomi
+           </a>
+          </li>
+          <li>
+           <a href="https://www.thegioididong.com/may-tinh-bang-lenovo">
+            máy tính bảng
+                                        lenovo
+           </a>
+          </li>
+          <li>
+           <a href="https://www.thegioididong.com/dong-ho-deo-tay-orient-star">
+            orient star
+           </a>
+          </li>
+          <li>
+           <a href="https://www.thegioididong.com/loa-laptop-marshall">
+            loa marshall
+           </a>
+          </li>
+          <li>
+           <a href="https://www.thegioididong.com/loa-laptop-jbl">
+            loa jbl
+           </a>
+          </li>
+          <li>
+           <a href="https://www.thegioididong.com/dong-ho-deo-tay-movado">
+            đồng hồ movado
+           </a>
+          </li>
+          <li>
+           <a href="https://www.thegioididong.com/laptop?g=laptop-gaming">
+            laptop gaming
+           </a>
+          </li>
+          <li>
+           <a href="https://www.thegioididong.com/chuot-may-tinh-chuot-gaming">
+            chuột gaming
+           </a>
+          </li>
+          <li>
+           <a href="https://www.thegioididong.com/dtdd-choi-game">
+            gaming phone
+           </a>
+          </li>
+          <li>
+           <a href="https://www.thegioididong.com/dong-ho-deo-tay-cap-doi">
+            đồng hồ đôi
+           </a>
+          </li>
+          <li>
+           <a href="https://www.thegioididong.com/laptop?g=do-hoa-ky-thuat">
+            laptop đồ họa
+           </a>
+          </li>
+          <li>
+           <a href="https://www.thegioididong.com/dtdd-apple-iphone-14-series">
+            iphone 14
+           </a>
+          </li>
+          <li>
+           <a href="https://www.thegioididong.com/dtdd-apple-iphone-15-series">
+            iphone 15
+           </a>
+          </li>
+          <li>
+           <a href="https://www.thegioididong.com/dtdd-apple-iphone-16-series">
+            iphone 16
+           </a>
+          </li>
+          <li>
+           <a href="https://www.thegioididong.com/dtdd-apple-iphone-17-series">
+            iphone 17
+           </a>
+          </li>
+          <li>
+           <a href="https://www.thegioididong.com/laptop-lenovo-gaming-legion">
+            lenovo
+                                        legion
+           </a>
+          </li>
+          <li>
+           <a href="https://www.thegioididong.com/laptop-lenovo-thinkpad">
+            lenovo thinkpad
+           </a>
+          </li>
+          <li>
+           <a href="https://www.thegioididong.com/laptop-apple-macbook-pro-m5-series">
+            macbook
+                                        pro m5
+           </a>
+          </li>
+          <li>
+           <a href="https://www.thegioididong.com/may-tinh-bang-apple-ipad-pro-m5">
+            ipad pro
+                                        m5
+           </a>
+          </li>
+          <li>
+           <a href="https://www.thegioididong.com/laptop-apple-macbook-pro-m4-series">
+            macbook
+                                        pro m4
+           </a>
+          </li>
+          <li>
+           <a href="https://www.thegioididong.com/laptop-asus-tuf-gaming">
+            asus tuf gaming
+           </a>
+          </li>
+          <li>
+           <a href="https://www.thegioididong.com/dtdd/iphone-17-pro">
+            iphone 17 pro
+           </a>
+          </li>
+          <li>
+           <a href="https://www.thegioididong.com/dtdd/iphone-17">
+            iphone 17 256gb
+           </a>
+          </li>
+          <li>
+           <a href="https://www.thegioididong.com/dtdd/iphone-17-pro-max">
+            iphone 17 pro max
+           </a>
+          </li>
+          <li>
+           <a href="https://www.thegioididong.com/chuot-may-tinh/chuot-khong-day-gaming-logitech-g304">
+            g304
+           </a>
+          </li>
+          <li>
+           <a href="https://www.thegioididong.com/loa-laptop/bluetooth-jbl-charge-5">
+            jbl charge
+                                        5
+           </a>
+          </li>
+          <li>
+           <a href="https://www.thegioididong.com/laptop/dell-g15-5530-i7-i7hx161w11gr4060">
+            dell
+                                        g15 5530
+           </a>
+          </li>
+          <li>
+           <a href="https://www.thegioididong.com/laptop/hp-spectre-x360-14-eu0050tu-ultra-7-a19blpa">
+            hp
+                                        spectre x360
+           </a>
+          </li>
+          <li>
+           <a href="https://www.thegioididong.com/laptop/msi-katana-15-b13vfk-i7-676vn">
+            msi
+                                        katana 15
+           </a>
+          </li>
+          <li>
+           <a href="https://www.thegioididong.com/dong-ho-thong-minh/garmin-fenix-8">
+            garmin
+                                        fenix 8
+           </a>
+          </li>
+          <li>
+           <a href="https://www.thegioididong.com/dong-ho-thong-minh/garmin-forerunner-55-day-silicone-den">
+            garmin
+                                        forerunner 55
+           </a>
+          </li>
+          <li>
+           <a href="https://www.dienmayxanh.com/may-chay-bo">
+            Máy chạy bộ
+           </a>
+          </li>
+          <li>
+           <a href="https://www.dienmayxanh.com/may-loc-nuoc">
+            máy lọc nước
+           </a>
+          </li>
+          <li>
+           <a href="https://www.thegioididong.com/dtdd/iphone-16-plus">
+            iPhone 16 Plus
+           </a>
+          </li>
+          <li>
+           <a href="https://www.thegioididong.com/dtdd/iphone-16-pro-max">
+            iPhone 16 Pro Max
+           </a>
+          </li>
+          <li>
+           <a href="https://www.thegioididong.com/dtdd/iphone-16e">
+            iPhone 16e
+           </a>
+          </li>
+          <li>
+           <a href="https://www.dienmayxanh.com/tu-lanh" rel="noopener" target="_blank">
+            tủ
+                                        lạnh
+           </a>
+          </li>
+         </ul>
+        </li>
+       </ul>
+      </div>
+     </div>
+    </section>
+   </div>
+   <div class="preloader preall">
+    <div class="loaderweb">
+    </div>
+   </div>
+   <p class="hide" id="gb-top-page">
+    ↑
+   </p>
+
+    </div>
+</body>
+</html>

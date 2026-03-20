@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="vi-VN" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout}">
+<head>
+    <title>Điểm tích lũy - Tra cứu điểm &amp; Đổi voucher</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .points-page {
+            min-height: 60vh;
+            padding: 20px 16px 40px;
+            background: #f4f6f8;
+            font-family: inherit;
+        }
+        .points-container {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+        .points-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 0 20px;
+            gap: 12px;
+        }
+        .points-top__back {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #333;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        .points-top__back:hover { color: #d0021c; }
+        .points-top__title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #202b36;
+            margin: 0;
+        }
+        .points-card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            overflow: hidden;
+            margin-bottom: 16px;
+            border: 1px solid #e8e8e8;
+        }
+        .points-card__header {
+            background: linear-gradient(90deg, #ffd400 0%, #facc00 100%);
+            color: #333;
+            padding: 14px 20px;
+            font-weight: 700;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .points-card__body { padding: 20px; }
+        .total-points-wrap {
+            text-align: center;
+            padding: 28px 20px;
+            background: linear-gradient(180deg, #fffbf0 0%, #fff 100%);
+            border-radius: 12px;
+            border: 1px solid #ffe58f;
+        }
+        .total-points-wrap .value {
+            font-size: 2.75rem;
+            font-weight: 800;
+            color: #d48806;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+        }
+        .total-points-wrap .label {
+            font-size: 15px;
+            color: #666;
+            margin-top: 6px;
+        }
+        .total-points-wrap .hint {
+            font-size: 12px;
+            color: #8c8c8c;
+            margin-top: 8px;
+        }
+        .voucher-list { display: flex; flex-direction: column; gap: 14px; }
+        .voucher-item {
+            display: flex;
+            align-items: stretch;
+            gap: 0;
+            min-height: 72px;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            background: #fff;
+            overflow: hidden;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .voucher-item:hover { border-color: #facc00; box-shadow: 0 4px 12px rgba(250,204,0,0.2); }
+        .voucher-item .voucher-left {
+            flex: 1;
+            min-width: 0;
+            padding: 16px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 4px;
+        }
+        .voucher-item .voucher-left .name {
+            font-weight: 700;
+            font-size: 18px;
+            color: #d0021c;
+            line-height: 1.3;
+            word-wrap: break-word;
+        }
+        .voucher-item .voucher-left .desc {
+            font-size: 13px;
+            color: #6b7280;
+            line-height: 1.4;
+            word-wrap: break-word;
+        }
+        .voucher-item .voucher-right {
+            width: 180px;
+            flex-shrink: 0;
+            padding: 16px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: center;
+            gap: 10px;
+            border-left: 1px dashed #e5e7eb;
+            background: #fafafa;
+        }
+        .voucher-item .cost {
+            font-weight: 700;
+            color: #b45309;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+        .voucher-item .btn-exchange {
+            padding: 10px 18px;
+            border-radius: 8px;
+            border: none;
+            background: linear-gradient(90deg, #ffd400 0%, #ff9900 100%);
+            color: #1a1a1a;
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 13px;
+            white-space: nowrap;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .voucher-item .btn-exchange:hover:not(:disabled) {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(255,153,0,0.35);
+        }
+        .voucher-item .btn-exchange:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            background: #e5e7eb;
+            color: #6b7280;
+        }
+        @media (max-width: 520px) {
+            .voucher-item { flex-direction: column; min-height: 0; }
+            .voucher-item .voucher-right { width: 100%; border-left: none; border-top: 1px dashed #e5e7eb; flex-direction: row; align-items: center; justify-content: space-between; }
+        }
+        .points-alert {
+            padding: 14px 18px;
+            border-radius: 10px;
+            margin-bottom: 16px;
+            font-size: 14px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        .points-alert--success {
+            background: #f0fff4;
+            color: #276749;
+            border: 1px solid #9ae6b4;
+        }
+        .points-alert--error {
+            background: #fff5f5;
+            color: #c53030;
+            border: 1px solid #feb2b2;
+        }
+        .points-alert i { margin-top: 2px; flex-shrink: 0; }
+        .my-voucher-item {
+            padding: 14px 16px;
+            border: 1px solid #e8e8e8;
+            border-radius: 10px;
+            background: #fff;
+            margin-bottom: 10px;
+        }
+        .my-voucher-item .name { font-weight: 700; color: #333; margin-bottom: 4px; }
+        .my-voucher-item .meta { font-size: 13px; color: #666; margin-bottom: 8px; }
+        .code-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .code-box {
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 15px;
+            font-weight: 600;
+            padding: 10px 14px;
+            background: #f4f6f8;
+            border: 1px dashed #ccc;
+            border-radius: 8px;
+            letter-spacing: 0.05em;
+            color: #202b36;
+        }
+        .btn-copy {
+            padding: 8px 14px;
+            border-radius: 6px;
+            border: 1px solid #d0021c;
+            background: #fff;
+            color: #d0021c;
+            font-weight: 600;
+            font-size: 13px;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+        }
+        .btn-copy:hover { background: #d0021c; color: #fff; }
+        .badge-used { font-size: 12px; color: #8c8c8c; }
+        .badge-unused { font-size: 12px; color: #00ab55; font-weight: 600; }
+        /* Modal OTP */
+        .otp-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+        }
+        .otp-overlay.show { display: flex; }
+        .otp-modal {
+            background: #fff;
+            border-radius: 16px;
+            max-width: 420px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        .otp-modal__header {
+            background: linear-gradient(90deg, #ffd400 0%, #facc00 100%);
+            padding: 16px 20px;
+            font-weight: 700;
+            font-size: 16px;
+            color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .otp-modal__body { padding: 24px 20px; }
+        .otp-modal__step { display: none; }
+        .otp-modal__step.active { display: block; }
+        .otp-modal__msg { font-size: 14px; color: #555; margin-bottom: 16px; line-height: 1.5; }
+        .otp-modal__input {
+            width: 100%;
+            padding: 12px 14px;
+            font-size: 16px;
+            letter-spacing: 0.2em;
+            text-align: center;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+        .otp-modal__input:focus { outline: none; border-color: #facc00; }
+        .otp-modal__btn {
+            width: 100%;
+            padding: 12px;
+            font-weight: 700;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            background: linear-gradient(90deg, #ffd400 0%, #ff9900 100%);
+            color: #1a1a1a;
+        }
+        .otp-modal__btn:hover { opacity: 0.95; }
+        .otp-modal__btn:disabled { opacity: 0.6; cursor: not-allowed; }
+        .otp-modal__close {
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: #333;
+            padding: 0;
+            line-height: 1;
+        }
+        .otp-modal__close:hover { color: #000; }
+        .otp-modal__error { font-size: 13px; color: #c53030; margin-top: 8px; }
+    </style>
+</head>
+<body>
+<div layout:fragment="content">
+    <section class="points-page">
+        <div class="points-container">
+            <div class="points-top">
+                <a href="/" class="points-top__back">
+                    <i class="fa-solid fa-arrow-left"></i> Về trang chủ
+                </a>
+                <h1 class="points-top__title">
+                    <i class="fa-solid fa-star" style="color: #d48806;"></i> Tra cứu điểm &amp; Đổi voucher
+                </h1>
+            </div>
+
+            <div th:if="${exchangeSuccess}" class="points-alert points-alert--success">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Đổi voucher thành công! Mã của bạn: <strong th:text="${voucherCode}"></strong> — Hãy lưu mã để nhập khi thanh toán.</span>
+            </div>
+            <div th:if="${exchangeError}" class="points-alert points-alert--error">
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <span th:if="${otpError}" th:text="${otpError}">Mã OTP không đúng hoặc đã hết hạn.</span>
+                <span th:unless="${otpError}">Không thể đổi voucher (điểm không đủ hoặc voucher không hợp lệ). Vui lòng thử lại.</span>
+            </div>
+
+            <div class="points-card">
+                <div class="points-card__header">
+                    <i class="fa-solid fa-coins"></i> Tổng điểm tích lũy
+                </div>
+                <div class="points-card__body">
+                    <div class="total-points-wrap">
+                        <div class="value" th:text="${totalPoints != null ? #numbers.formatInteger(totalPoints, 1, 'COMMA') : '0'}">0</div>
+                        <div class="label">điểm</div>
+                        <div class="hint">Quy đổi: 1 điểm = 10.000đ khi mua hàng</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="points-card">
+                <div class="points-card__header">
+                    <i class="fa-solid fa-ticket"></i> Voucher đang có — Đổi bằng điểm
+                </div>
+                <div class="points-card__body">
+                    <div th:if="${vouchers == null or #lists.isEmpty(vouchers)}" style="color:#666; text-align:center; padding:24px;">
+                        Chưa có voucher nào để đổi. Hãy tích điểm khi mua hàng nhé!
+                    </div>
+                    <div class="voucher-list" th:unless="${vouchers == null or #lists.isEmpty(vouchers)}">
+                        <div class="voucher-item" th:each="v : ${vouchers}">
+                            <div class="voucher-left">
+                                <div class="name" th:text="${v.name}">Voucher</div>
+                                <div class="desc" th:text="${v.description}">Áp dụng cho đơn hàng</div>
+                            </div>
+                            <div class="voucher-right">
+                                <span class="cost" th:text="'Cần ' + ${v.pointsRequired} + ' điểm'">Cần X điểm</span>
+                                <button type="button" class="btn-exchange"
+                                        th:disabled="${totalPoints < v.pointsRequired}"
+                                        th:attr="data-voucher-id=${v.id}, data-voucher-name=${v.name}"
+                                        onclick="openOtpModal(this)">
+                                    Đổi voucher
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="points-card" th:if="${myVouchers != null and !#lists.isEmpty(myVouchers)}">
+                <div class="points-card__header">
+                    <i class="fa-solid fa-gift"></i> Voucher đã đổi của tôi
+                </div>
+                <div class="points-card__body">
+                    <div class="voucher-list">
+                        <div class="my-voucher-item" th:each="uv : ${myVouchers}">
+                            <div class="name" th:text="${uv.voucher.name}">Tên</div>
+                            <div class="meta">
+                                Giảm <span th:text="|${uv.voucher.discountAmount}đ|">0đ</span>
+                                — <span class="badge-unused" th:if="${!uv.used}">Chưa sử dụng</span>
+                                <span class="badge-used" th:if="${uv.used}">Đã sử dụng</span>
+                            </div>
+                            <div class="code-row">
+                                <span class="code-box" th:text="${uv.code}" th:id="|code-${uv.id}|">CODE</span>
+                                <button type="button" class="btn-copy" th:attr="data-code=${uv.code}" onclick="copyCode(this)">Sao chép mã</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal xác thực OTP khi đổi voucher -->
+    <div id="otpOverlay" class="otp-overlay">
+        <div class="otp-modal">
+            <div class="otp-modal__header">
+                <span>Xác thực đổi voucher</span>
+                <button type="button" class="otp-modal__close" onclick="closeOtpModal()" aria-label="Đóng">&times;</button>
+            </div>
+            <div class="otp-modal__body">
+                <div id="otpStep1" class="otp-modal__step active">
+                    <p class="otp-modal__msg">
+                        Mã OTP sẽ được gửi đến email đăng ký của bạn: <strong th:text="${userEmailMasked}">***@***</strong>.
+                        Bấm "Gửi mã OTP" để nhận mã xác thực.
+                    </p>
+                    <p id="otpStep1Error" class="otp-modal__error" style="display:none;"></p>
+                    <button type="button" class="otp-modal__btn" id="btnSendOtp" onclick="sendOtp()">Gửi mã OTP</button>
+                </div>
+                <div id="otpStep2" class="otp-modal__step">
+                    <p class="otp-modal__msg" id="otpSentMsg">Mã OTP đã gửi đến email của bạn. Nhập mã bên dưới:</p>
+                    <form id="otpConfirmForm" th:action="@{/user/points/exchange/confirm}" method="post">
+                        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+                        <input type="hidden" name="voucherId" id="otpVoucherId" value=""/>
+                        <input type="text" name="otp" id="otpInput" class="otp-modal__input" placeholder="Nhập 6 số"
+                               maxlength="6" pattern="[0-9]*" inputmode="numeric" autocomplete="one-time-code"/>
+                        <button type="submit" class="otp-modal__btn">Xác nhận đổi voucher</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script th:inline="javascript">
+        var _csrfHeader = /*[[${_csrf?.headerName}]]*/ '';
+        var _csrfToken = /*[[${_csrf?.token}]]*/ '';
+        var _sendOtpUrlTemplate = /*[[@{/user/points/exchange/send-otp/0}]]*/ '/user/points/exchange/send-otp/0';
+        var _currentVoucherId = null;
+
+        function openOtpModal(btn) {
+            _currentVoucherId = btn.getAttribute('data-voucher-id');
+            document.getElementById('otpVoucherId').value = _currentVoucherId;
+            document.getElementById('otpStep1').classList.add('active');
+            document.getElementById('otpStep2').classList.remove('active');
+            document.getElementById('otpStep1Error').style.display = 'none';
+            document.getElementById('otpInput').value = '';
+            document.getElementById('otpOverlay').classList.add('show');
+        }
+        function closeOtpModal() {
+            document.getElementById('otpOverlay').classList.remove('show');
+            _currentVoucherId = null;
+        }
+        function sendOtp() {
+            var btn = document.getElementById('btnSendOtp');
+            btn.disabled = true;
+            btn.textContent = 'Đang gửi...';
+            document.getElementById('otpStep1Error').style.display = 'none';
+            var url = _sendOtpUrlTemplate.replace(/0$/, _currentVoucherId);
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    [_csrfHeader]: _csrfToken
+                }
+            }).then(function(r) { return r.json(); })
+            .then(function(data) {
+                if (data.success) {
+                    document.getElementById('otpStep1').classList.remove('active');
+                    document.getElementById('otpStep2').classList.add('active');
+                    var msg = document.getElementById('otpSentMsg');
+                    if (data.emailMasked) msg.textContent = 'Mã OTP đã gửi đến ' + data.emailMasked + '. Nhập mã bên dưới:';
+                    document.getElementById('otpInput').focus();
+                } else {
+                    document.getElementById('otpStep1Error').textContent = data.message || 'Không gửi được OTP.';
+                    document.getElementById('otpStep1Error').style.display = 'block';
+                }
+            }).catch(function() {
+                document.getElementById('otpStep1Error').textContent = 'Lỗi kết nối. Vui lòng thử lại.';
+                document.getElementById('otpStep1Error').style.display = 'block';
+            }).finally(function() {
+                btn.disabled = false;
+                btn.textContent = 'Gửi mã OTP';
+            });
+        }
+        document.getElementById('otpOverlay').addEventListener('click', function(e) {
+            if (e.target === this) closeOtpModal();
+        });
+
+        function copyCode(btn) {
+            var code = btn.getAttribute('data-code');
+            if (!code) return;
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(code).then(function() {
+                    var t = btn.textContent;
+                    btn.textContent = 'Đã copy!';
+                    btn.disabled = true;
+                    setTimeout(function() { btn.textContent = t; btn.disabled = false; }, 2000);
+                });
+            } else {
+                var ta = document.createElement('textarea');
+                ta.value = code;
+                document.body.appendChild(ta);
+                ta.select();
+                document.execCommand('copy');
+                document.body.removeChild(ta);
+                var t = btn.textContent;
+                btn.textContent = 'Đã copy!';
+                setTimeout(function() { btn.textContent = t; }, 2000);
+            }
+        }
+    </script>
+</div>
+</body>
+</html>

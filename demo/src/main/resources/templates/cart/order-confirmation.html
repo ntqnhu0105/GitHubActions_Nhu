@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="vi-VN" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout}">
+<head>
+    <title>Đặt hàng thành công</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#f3f4f6]">
+<div layout:fragment="content" class="py-10">
+    <div class="max-w-[600px] mx-auto bg-white rounded-lg shadow-sm p-10 text-center border">
+        <div class="w-24 h-24 bg-[#4caf50] rounded-full flex items-center justify-center mx-auto mb-6">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="w-12 h-12 text-white">
+                <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+        </div>
+        <h1 class="text-3xl font-bold text-[#333] mb-4 block w-full clear-both">Đặt hàng thành công!</h1>
+        <p class="text-[15px] text-[#666] mb-2 block w-full clear-both" th:text="${message}">Đơn hàng của bạn đã được đặt thành công.</p>
+        <p class="text-[15px] text-[#666] mb-8 leading-relaxed block w-full clear-both">Cảm ơn bạn đã mua sắm tại Thế Giới Di Động.<br>Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất để xác nhận đơn hàng.</p>
+        <a href="/" class="inline-block bg-[#288ad6] hover:bg-[#2076b9] text-white font-bold py-3 px-8 rounded transition-colors">Về trang chủ</a>
+    </div>
+</div>
+</body>
+</html>

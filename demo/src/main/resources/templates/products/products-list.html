@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      layout:decorate="~{layout}">
+<head>
+    <title>Danh sách sản phẩm</title>
+</head>
+<body>
+<section layout:fragment="content">
+    <div class="card border-0 shadow-sm">
+        <div class="card-header bg-white border-bottom-0 py-3">
+            <h4 class="mb-0 fw-bold text-uppercase"><i class="bi bi-list-ul me-2"></i> Danh sách sản phẩm</h4>
+        </div>
+        <div class="card-body">
+            <div class="mb-3 d-flex justify-content-between align-items-center" sec:authorize="hasAnyAuthority('ADMIN', 'MANAGER')">
+                <a th:href="@{/products/add}" class="btn btn-warning fw-bold">
+                    <i class="bi bi-plus-circle me-1"></i> Thêm sản phẩm mới
+                </a>
+            </div>
+            
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover align-middle">
+                    <thead style="background-color: #ffd400; color: #333;">
+                    <tr>
+                        <th class="text-center" style="width: 50px;">#</th>
+                        <th style="width: 100px;">Ảnh</th>
+                        <th>Tên sản phẩm</th>
+                        <th>Mô tả</th>
+                        <th>Danh mục</th>
+                        <th>Giá</th>
+                        <th class="text-center" style="width: 150px;">Thao tác</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="product : ${products}">
+                        <td th:text="${product.id}" class="text-center fw-bold"></td>
+                        <td>
+                             <img th:src="@{${product.image != null} ? '/images/' + ${product.image} : 'https://placehold.co/100x100?text=No+Img'}" 
+                                  class="img-thumbnail" style="width: 80px; height: 80px; object-fit: contain;" alt="Img">
+                        </td>
+                        <td th:text="${product.name}" class="fw-bold"></td>
+                        <td th:text="${product.description}" class="text-muted small"></td>
+                        <td>
+                            <span class="badge bg-light text-dark border" 
+                                  th:text="${product.category != null ? product.category.name : 'Chưa phân loại'}"></span>
+                        </td>
+                        <td th:text="${#numbers.formatDecimal(product.price, 0, 'COMMA', 0, 'POINT')} + ' VNĐ'" class="text-danger fw-bold"></td>
+                        <td class="text-center">
+                            <span sec:authorize="hasAnyAuthority('ADMIN', 'MANAGER')">
+                                <a th:href="@{/products/edit/{id}(id=${product.id})}" 
+                                   class="btn btn-warning btn-sm me-1" title="Sửa">
+                                    <i class="bi bi-pencil-square"></i> Sửa
+                                </a>
+                                <a th:href="@{/products/delete/{id}(id=${product.id})}"
+                                   class="btn btn-danger btn-sm" 
+                                   onclick="return confirm('Bạn có chắc chắn muốn xóa?')" title="Xóa">
+                                    <i class="bi bi-trash"></i> Xóa
+                                </a>
+                            </span>
+                            <span sec:authorize="!hasAnyAuthority('ADMIN', 'MANAGER')">
+                                <a th:href="@{/products/detail/{id}(id=${product.id})}" class="btn btn-sm btn-outline-primary" title="Xem chi tiết">Xem</a>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr th:if="${#lists.isEmpty(products)}">
+                        <td colspan="7" class="text-center py-4 text-muted">
+                            Chưa có dữ liệu sản phẩm.
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>
