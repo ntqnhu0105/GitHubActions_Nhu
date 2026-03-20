@@ -27,6 +27,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: |
-                ${{ secrets.DOCKER_USERNAME }}/springboot-app:latest
-                ${{ secrets.DOCKER_USERNAME }}/springboot-app:${{ github.sha }}
+          tags: ${{ secrets.DOCKER_USERNAME }}/springboot-app:latest
